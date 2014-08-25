@@ -39,7 +39,6 @@ ___________                                                   .__
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.user-select,
 .no-user-select {
   -webkit-user-select: none;
   -khtml-user-select: none;

@@ -1,0 +1,27 @@
+{
+  "name": "treasure-less",
+  "version": "1.0.0",
+  "authors": [
+    "Guilherme Haschel <ghaschel@gmail.com>"
+  ],
+  "description": "A pack of useful LESS mixins found on the internet / made by me to ease the front-end web /dev",
+  "main": "./dist/less/treasure.less, ./dist/htc/pie.htc",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "pie",
+    "htc",
+    "treasure",
+    "less",
+    "front-end"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

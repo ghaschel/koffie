@@ -53,13 +53,652 @@
 html {
 	body {
 		section {
-			&#example-1 {
-				.expl {
-
+			&#content {
+				.top {
+					pre {
+						background-color: #fff;
+						border: 0;
+					}
 				}
-				.example {
-					.colored-text-border(red, 2, red, 2, red, 2, red, 2);
-					font-size: 32pt;
+			}
+			#js {
+				pre {
+					background-color: #fff;
+					border: 0;
+				}
+			}
+			.example {
+				margin-bottom: 25px;
+				border-bottom: 1px solid #ccc;
+				padding-bottom: 50px;
+			}
+			&#example-1 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						.colored-text-border(yellow, 2, green, 2, red, 2, blue, 2);
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-2 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						input {
+							&.error-input {
+								.error-input();
+							}
+						}
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-3 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						input {
+							&.colored-placeholder {
+								.placeholder(green);
+							}
+						}
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-4 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						input {
+							&.rounded {
+								border: 1px solid #333;
+								.border-radius(15px);
+							}
+						}
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-5,
+			&#example-6,
+			&#example-7,
+			&#example-8 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-9 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						.opacity(0.5);
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-10 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						input {
+							&.no-outline {
+								.no-outline();
+							}
+						}
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-11 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						&:extend(.antialiasing);
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-12 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						position: relative;
+						&:before {
+							.top-triangle(15px, #ccc);
+						}
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-13 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						position: relative;
+						&:before {
+							.bottom-triangle(15px, #ccc);
+						}
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-14 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						position: relative;
+						&:before {
+							.left-triangle(15px, #ccc);
+						}
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-15 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						position: relative;
+						&:before {
+							.right-triangle(15px, #ccc);
+						}
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-16 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						position: relative;
+						.text-overflow();
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-17 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						position: relative;
+						&:extend(.no-user-select);
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-18 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						position: relative;
+						.user-select();
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
+				}
+			}
+			&#example-19 {
+				h1,h3 {
+					float: left;
+					clear: both;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				.border-box {
+					float: left;
+					width: 100%;
+					span {
+						float: left;
+						display: block;
+						padding: 9.5px;
+						margin: 0 0 10px;
+						line-height: 1.42857143;
+						color: #333;
+						word-break: break-all;
+						word-wrap: break-word;
+						background-color: #f5f5f5;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						max-width: 100%;
+						font-size: 22pt;
+						position: relative;
+						height: 200px;
+						overflow-y: scroll;
+						.scroll-bar(6px, #ccc, darkblue, 0px);
+					}
+				}
+				.expl {
+					float: left;
+					text-indent: 15px;
+					margin-top: 15px;
+				}
+				pre {
+					max-width: 100%;
+					float: left;
 				}
 			}
 		}

@@ -1,4 +1,4 @@
-<!doctype HTML>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Treasure LESS / Treasure JS Demo</title>
@@ -12,17 +12,27 @@
 	<body>
 		<input type="hidden" id="me" value="demo" />
 		<section id="content" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-			<div class="container container-fluid">
+			<div class="container container-fluid top">
 				<center>
-					<h1>Treasure</h1>
+					<h1><pre>
+ _______                                 
+|__   __|                                
+   | |_ __ ___  __ _ ___ _   _ _ __ ___  
+   | | '__/ _ \/ _` / __| | | | '__/ _ \ 
+   | | | |  __/ (_| \__ \ |_| | | |  __/ 
+   |_|_|  \___|\__,_|___/\__,_|_|  \___| 
+					</pre></h1>
 					<span class="expl">
 						Treasure is a set of functions, classes, hacks, and useful stuff that I found in the internet / made by myself.<br/>
 						All of them are credited with it's author names.<br/>
 						If one of them is not, and you made it, let me know. :)
 					</span>
 				</center>
-				Comming soon~
-				<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			</div>
+		</section>
+		<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding" id="examples">
+			<div class="container container-fluid">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<ul class="nav nav-tabs" role="tablist">
 						<li class="active"><a href="#less" role="tab" data-toggle="tab">LESS</a></li>
 						<li><a href="#js" role="tab" data-toggle="tab">JS</a></li>
@@ -30,20 +40,726 @@
 					<div class="tab-content">
 						<div class="tab-pane fade in active" id="less">
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding" id="example-1">
-									<div class="expl">
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-1">
+									<h1 class="clearfix">
 										.colored-text-border();
-										This may be used as a outline text
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											.colored-text-border();
+										</span>
 									</div>
-									<span class="example">
-										teste teste
-									</span>
+									<div class="expl">
+										This may be used as a outline text.<br/>
+									</div>
+									<h3>Usage</h3>
+									<p>
+										<pre>
+.colored-text-border(color-1, size-1 (in px), color-2, size-2 (in px), color-3, size-3 (in px), color-4, size-4 (in px));
+
+.colored-text-border(); - This will use the default sizes and colors.
+
+.colored-text-border(yellow, 2, green, 2, red, 2, blue, 2);
+
+.colored-text-border(#ffff00, 2, #008000, 2, #ff0000, 2, #0000ff, 2);
+
+.colored-text-border(rgba(0, 128, 0, 0.98), 2, rgba(255, 255, 0, 0.98), 2, rgba(255, 0, 0, 0.96), 2, rgba(0, 0, 255, 0.91), 2);
+										</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+text-shadow: 2px 2px #ffff00,
+            -2px -2px #008000,
+             2px -2px #ff0000,
+            -2px 2px #0000ff;
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-2">
+									<h1 class="clearfix">
+										.error-input();
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											<input type="text" class="error-input" placeholder="Colored Placeholder">
+										</span>
+									</div>
+									<div class="expl">
+										It generates an error-explicit class for the inputs. Useful for field validation.<br/>
+										Both text and placeholder are colored.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+.error {
+    .error-input();
+    /* You can use colors inside the parents */
+    /* RGBA/RGB/Hex/Nominal colors */
+}
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+.error {
+    border: 1px solid #e36d56 !important;
+    color: #e36d56;
+}
+.error::-webkit-input-placeholder{
+    color: #e36d56;
+}
+.error::-moz-placeholder {
+    color: #e36d56;
+}
+.error:-moz-placeholder {
+    color: #e36d56;
+}
+.error:-ms-input-placeholder {
+    color: #e36d56;
+}
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-3">
+									<h1 class="clearfix">
+										.placeholder();
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											<input type="text" class="colored-placeholder" placeholder="Colored Placeholder">
+										</span>
+									</div>
+									<div class="expl">
+										Changes placeholder color for input fields.<br/>
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+.error {
+    .placeholder(green);
+    /* You can use colors inside the parents */
+    /* RGBA/RGB/Hex/Nominal colors */
+}
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+.colored-placeholder::-webkit-input-placeholder{
+    color: #ddd;
+}
+.colored-placeholder::-moz-placeholder {
+    color: #ddd;
+}
+.colored-placeholder:-moz-placeholder {
+    color: #ddd;
+}
+.colored-placeholder:-ms-input-placeholder {
+    color: #ddd;
+}
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-4">
+									<h1 class="clearfix">
+										.border-radius();
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											<input type="text" class="rounded" placeholder="Rounded">
+										</span>
+									</div>
+									<div class="expl">
+										Generates a cross browser border-radius.<br/>
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+.border-radius(15px);
+.border-radius(10%);
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+-webkit-border-radius: 15px;
+-khtml-border-radius: 15px;
+-icab-border-radius: 15px;
+/* the existence of -icab-border-radius hasn't been proved */
+-moz-border-radius: 15px;
+border-radius: 15px;
+behavior: url('../htc/PIE.htc');
+/* pie.htc is used for older IE support */
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-5">
+									<h1 class="clearfix">
+										.padding-x();
+									</h1>
+									<div class="expl">
+										Outputs padding-left and padding-right.<br/>
+										Easier to remember, than the original padding feature.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+.padding-x(10px);
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+padding-right: 10px;
+padding-left: 10px;
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-6">
+									<h1 class="clearfix">
+										.padding-y();
+									</h1>
+									<div class="expl">
+										Outputs padding-top and padding-bottom.<br/>
+										Easier to remember, than the original padding feature.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+.padding-y(10px);
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+padding-top: 10px;
+padding-bottom: 10px;
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-7">
+									<h1 class="clearfix">
+										.margin-y();
+									</h1>
+									<div class="expl">
+										Outputs margin-top and margin-bottom.<br/>
+										Easier to remember, than the original margin feature.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+.margin-y(10px);
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+margin-top: 10px;
+margin-bottom: 10px;
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-8">
+									<h1 class="clearfix">
+										.margin-x();
+									</h1>
+									<div class="expl">
+										Outputs margin-left and margin-right.<br/>
+										Easier to remember, than the original margin feature.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+.margin-x(10px);
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+margin-left: 10px;
+margin-right: 10px;
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-9">
+									<h1 class="clearfix">
+										.opacity();
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											TEST
+										</span>
+									</div>
+									<div class="expl">
+										Outputs a crossbrowser opacity.<br/>
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+.opacity(0.5);
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+-webkit-opacity: 0.5;
+-khtml-opacity: 0.5;
+-icab-opacity: 0.5;
+/* the existence of -icab-opacity hasn't been proved */
+-moz-opacity: 0.5;
+opacity: 0.5;
+-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+filter: alpha(opacity=50);
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-10">
+									<h1 class="clearfix">
+										.no-outline();
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											<input type="text" class="no-outline" placeholder="Click me">
+										</span>
+									</div>
+									<div class="expl">
+										Removes focus state outline.<br/>
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+input {
+    &.wanted-class {
+        .no-outline();
+    }
+}
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+input.wanted-class {
+    outline: none;
+}
+input.wanted-class:focus {
+    outline: none;
+    /*Firefox still shows outline, if we not declared on the focus state, so this fix it*/
+}
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-11">
+									<h1 class="clearfix">
+										.antialiasing;<br/>
+										.anti-aliasing;<br/>
+										.font-smoothing;<br/>
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											Antialiased Text.
+										</span>
+									</div>
+									<div class="expl">
+										Enables Webfont smoothing, and antialiasing when available.<br/>
+										Any of the three alias, may be used.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+span {
+    &:extend(.antialiasing);
+}
+/* Or, depending on your compiler */
+span {
+    .antialiasing;
+}
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+span {
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-12">
+									<h1 class="clearfix">
+										.top-triangle();
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											Tooltip Triangle
+										</span>
+									</div>
+									<div class="expl">
+										Displays a triangle tooltip.<br/>
+										Must be used inside an after or before pseudoelement.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+div {
+    &:before {
+        .top-triangle(15px, #ccc);
+    }
+}
+/* or */
+div {
+    &:after {
+        .top-triangle(15px, #ccc);
+    }
+}
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+/* the border sizes and the pseudo element position is based on the size inserted in the mixin call*/
+div:before {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    top: -29px;
+    border-left: 15px solid transparent;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid #cccccc;
+    border-right: 15px solid transparent;
+}
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-13">
+									<h1 class="clearfix">
+										.bottom-triangle();
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											Tooltip Triangle
+										</span>
+									</div>
+									<div class="expl">
+										Displays a triangle tooltip.<br/>
+										Must be used inside an after or before pseudoelement.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+div {
+    &:before {
+        .bottom-triangle(15px, #ccc);
+    }
+}
+/* or */
+div {
+    &:after {
+        .bottom-triangle(15px, #ccc);
+    }
+}
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+/* the border sizes and the pseudo element position is based on the size inserted in the mixin call*/
+div:before {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    bottom: -29px;
+    border-left: 15px solid transparent;
+    border-top: 15px solid #cccccc;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid transparent;
+}
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-14">
+									<h1 class="clearfix">
+										.left-triangle();
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											Tooltip Triangle
+										</span>
+									</div>
+									<div class="expl">
+										Displays a triangle tooltip.<br/>
+										Must be used inside an after or before pseudoelement.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+div {
+    &:before {
+        .left-triangle(15px, #ccc);
+    }
+}
+/* or */
+div {
+    &:after {
+        .left-triangle(15px, #ccc);
+    }
+}
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+/* the border sizes and the pseudo element position is based on the size inserted in the mixin call*/
+div:before {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    left: -29px;
+    border-left: 15px solid transparent;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #cccccc;
+}
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-15">
+									<h1 class="clearfix">
+										.right-triangle();
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											Tooltip Triangle
+										</span>
+									</div>
+									<div class="expl">
+										Displays a triangle tooltip.<br/>
+										Must be used inside an after or before pseudoelement.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+div {
+    &:before {
+        .right-triangle(15px, #ccc);
+    }
+}
+/* or */
+div {
+    &:after {
+        .right-triangle(15px, #ccc);
+    }
+}
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+/* the border sizes and the pseudo element position is based on the size inserted in the mixin call*/
+div:before {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    right: -29px;
+    border-left: 15px solid #cccccc;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid transparent;
+}
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-16">
+									<h1 class="clearfix">
+										.text-overflow();
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae autem delectus tenetur numquam neque esse impedit laboriosam sapiente, laborum accusantium. Ea voluptates architecto soluta, facere nostrum laborum aspernatur molestiae ab.
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio doloremque praesentium nostrum, fugiat quo reiciendis obcaecati. Tempora repellendus similique aperiam dolorum autem beatae facere quae, sunt ipsum, rem maxime, possimus.
+										</span>
+									</div>
+									<div class="expl">
+										Displays ellipsis, on the end of the line, to prevent the line from breaking, and hiding the rest of the text.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+.text-overflow();
+.text-overflow;
+&:extend(.text-overflow);
+/* Any of the three forms may work. Depending on your compiler */
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-17">
+									<h1 class="clearfix">
+										.no-user-select();
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											Try to select me.
+										</span>
+									</div>
+									<div class="expl">
+										Prevent users from selecting the text inside the specified area.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+.no-user-select();
+.no-user-select;
+&:extend(.no-user-select);
+/* Any of the three forms may work. Depending on your compiler */
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-18">
+									<h1 class="clearfix">
+										.user-select();
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											Select me.
+										</span>
+									</div>
+									<div class="expl">
+										Changes the default select color.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+.class {
+    .user-select(yellow, red);
+}
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+.class::selection {
+    color: red;
+    background: yellow;
+}
+.class::-moz-selection {
+    color: red;
+    background: yellow;
+}
+</pre>
+									</p>
+								</section>
+								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-19">
+									<h1 class="clearfix">
+										.scroll-bar();
+									</h1>
+									<h3>Example</h3>
+									<div class="border-box">
+										<span class="example">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore recusandae soluta molestiae illum accusantium enim debitis veniam vero repellendus, dignissimos voluptatum ducimus ea minima sed maxime earum quam eaque rem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis sequi placeat ut, dolor ipsa voluptatum facere fugit praesentium a cumque! Eum minus ratione veniam numquam magnam. Enim maiores totam praesentium!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur nisi libero asperiores quo optio nam maxime ab modi. Ut reiciendis iusto omnis dolores quisquam architecto nobis repudiandae non? Eaque, beatae.
+										</span>
+									</div>
+									<div class="expl">
+										Changes the default scroll bar color.<br/>
+										NOTE: This only works in webkit, for now.
+									</div>
+									<h3>Usage</h3>
+									<p>
+<pre>
+.class {
+    height: 200px;
+    overflow-y: scroll;
+    .scroll-bar(6px, #ccc, darkblue, 0px);
+}
+/* Parameters:
+    1) Width
+    2) Background-color
+    3) Thumb color
+    4) Thumb Radius */
+</pre>
+									</p>
+									<h3>Output</h3>
+									<p>
+<pre>
+.class::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.class::-webkit-scrollbar-track {
+        background: #ccc;
+}
+.class::-webkit-scrollbar-thumb {
+        background: darkblue;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+}
+</pre>
+									</p>
 								</section>
 							</div>
 						</div>
-						<div class="tab-pane fade" id="js">...</div>
+						<div class="tab-pane fade" id="js">
+<pre>
+  _                                          __       _                    __  
+ (_)_ __     __ _   _ __   ___  __ _ _ __   / _|_   _| |_ _   _ _ __ ___   \ \ 
+ | | '_ \   / _` | | '_ \ / _ \/ _` | '__| | |_| | | | __| | | | '__/ _ \ (_) |
+ | | | | | | (_| | | | | |  __/ (_| | |    |  _| |_| | |_| |_| | | |  __/  _| |
+ |_|_| |_|  \__,_| |_| |_|\___|\__,_|_|    |_|  \__,_|\__|\__,_|_|  \___| ( ) |
+                                                                          |/_/ 
+</pre>
+						</div>
 					</div>
-				</div> -->
+				</div>
 			</div>
 		</section>
 		<footer id="scripts">

@@ -1,6 +1,7 @@
 /*Libraries*/
 .exo-light,
-.exo-regular {
+.exo-regular,
+html body section#example-11 .border-box span {
   -webkit-text-rendering: optimizeLegibility;
   -moz-text-rendering: optimizeLegibility;
   -ms-text-rendering: optimizeLegibility;
@@ -12,6 +13,14 @@
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
   font-smoothing: antialiased;
+}
+html body section#example-17 .border-box span {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 /*~~~~~~~~~*/
 /*Colors*/
@@ -43,7 +52,32 @@
   font-family: 'exo-regular';
 }
 /*~~~~~~~~~~~*/
-html body section#example-1 .example {
+html body section#content .top pre {
+  background-color: #fff;
+  border: 0;
+}
+html body section #js pre {
+  background-color: #fff;
+  border: 0;
+}
+html body section .example {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 50px;
+}
+html body section#example-1 h1,
+html body section#example-1 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-1 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-1 .border-box span {
+  float: left;
   /*
 				Tratamento da entrada da string .
 				Remove %, rem, em, rem, pt, px
@@ -58,6 +92,700 @@ html body section#example-1 .example {
 					direita superior
 					esquerda inferior
 			*/
-  text-shadow: 2px 2px #ff0000, -2px -2px #ff0000, 2px -2px #ff0000, -2px 2px #ff0000;
-  font-size: 32pt;
+  text-shadow: 2px 2px #ffff00, -2px -2px #008000, 2px -2px #ff0000, -2px 2px #0000ff;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+}
+html body section#example-1 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-1 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-2 h1,
+html body section#example-2 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-2 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-2 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+}
+html body section#example-2 .border-box span input.error-input {
+  border: 1px solid #e36d56 !important;
+  color: #e36d56;
+}
+html body section#example-2 .border-box span input.error-input::-webkit-input-placeholder {
+  color: #e36d56;
+}
+html body section#example-2 .border-box span input.error-input::-moz-placeholder {
+  color: #e36d56;
+}
+html body section#example-2 .border-box span input.error-input:-moz-placeholder {
+  color: #e36d56;
+}
+html body section#example-2 .border-box span input.error-input:-ms-input-placeholder {
+  color: #e36d56;
+}
+html body section#example-2 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-2 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-3 h1,
+html body section#example-3 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-3 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-3 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+}
+html body section#example-3 .border-box span input.colored-placeholder::-webkit-input-placeholder {
+  color: #008000;
+}
+html body section#example-3 .border-box span input.colored-placeholder::-moz-placeholder {
+  color: #008000;
+}
+html body section#example-3 .border-box span input.colored-placeholder:-moz-placeholder {
+  color: #008000;
+}
+html body section#example-3 .border-box span input.colored-placeholder:-ms-input-placeholder {
+  color: #008000;
+}
+html body section#example-3 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-3 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-4 h1,
+html body section#example-4 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-4 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-4 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+}
+html body section#example-4 .border-box span input.rounded {
+  border: 1px solid #333;
+  -webkit-border-radius: 15px;
+  -khtml-border-radius: 15px;
+  -icab-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  behavior: url('../htc/PIE.htc');
+}
+html body section#example-4 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-4 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-5 h1,
+html body section#example-6 h1,
+html body section#example-7 h1,
+html body section#example-8 h1,
+html body section#example-5 h3,
+html body section#example-6 h3,
+html body section#example-7 h3,
+html body section#example-8 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-5 .border-box,
+html body section#example-6 .border-box,
+html body section#example-7 .border-box,
+html body section#example-8 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-5 .border-box span,
+html body section#example-6 .border-box span,
+html body section#example-7 .border-box span,
+html body section#example-8 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+}
+html body section#example-5 .expl,
+html body section#example-6 .expl,
+html body section#example-7 .expl,
+html body section#example-8 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-5 pre,
+html body section#example-6 pre,
+html body section#example-7 pre,
+html body section#example-8 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-9 h1,
+html body section#example-9 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-9 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-9 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+  -webkit-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  -icab-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+  filter: alpha(opacity=50);
+}
+html body section#example-9 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-9 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-10 h1,
+html body section#example-10 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-10 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-10 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+}
+html body section#example-10 .border-box span input.no-outline {
+  outline: none;
+}
+html body section#example-10 .border-box span input.no-outline:focus {
+  outline: none;
+}
+html body section#example-10 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-10 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-11 h1,
+html body section#example-11 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-11 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-11 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+}
+html body section#example-11 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-11 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-12 h1,
+html body section#example-12 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-12 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-12 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+  position: relative;
+}
+html body section#example-12 .border-box span:before {
+  content: '';
+  display: inline-block;
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  top: -29px;
+  border-left: 15px solid transparent;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid #cccccc;
+  border-right: 15px solid transparent;
+}
+html body section#example-12 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-12 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-13 h1,
+html body section#example-13 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-13 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-13 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+  position: relative;
+}
+html body section#example-13 .border-box span:before {
+  content: '';
+  display: inline-block;
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  bottom: -29px;
+  border-left: 15px solid transparent;
+  border-top: 15px solid #cccccc;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+html body section#example-13 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-13 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-14 h1,
+html body section#example-14 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-14 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-14 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+  position: relative;
+}
+html body section#example-14 .border-box span:before {
+  content: '';
+  display: inline-block;
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  left: -29px;
+  border-left: 15px solid transparent;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #cccccc;
+}
+html body section#example-14 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-14 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-15 h1,
+html body section#example-15 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-15 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-15 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+  position: relative;
+}
+html body section#example-15 .border-box span:before {
+  content: '';
+  display: inline-block;
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  right: -29px;
+  border-left: 15px solid #cccccc;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+html body section#example-15 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-15 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-16 h1,
+html body section#example-16 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-16 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-16 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+html body section#example-16 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-16 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-17 h1,
+html body section#example-17 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-17 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-17 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+  position: relative;
+}
+html body section#example-17 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-17 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-18 h1,
+html body section#example-18 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-18 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-18 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+  position: relative;
+}
+html body section#example-18 .border-box span::selection {
+  color: #ff0000;
+  background: #ffff00;
+}
+html body section#example-18 .border-box span::-moz-selection {
+  color: #ff0000;
+  background: #ffff00;
+}
+html body section#example-18 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-18 pre {
+  max-width: 100%;
+  float: left;
+}
+html body section#example-19 h1,
+html body section#example-19 h3 {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-bottom: 5px;
+}
+html body section#example-19 .border-box {
+  float: left;
+  width: 100%;
+}
+html body section#example-19 .border-box span {
+  float: left;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 22pt;
+  position: relative;
+  height: 200px;
+  overflow-y: scroll;
+}
+html body section#example-19 .border-box span::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+html body section#example-19 .border-box span::-webkit-scrollbar-track {
+  background: #cccccc;
+}
+html body section#example-19 .border-box span::-webkit-scrollbar-thumb {
+  background: #00008b;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+html body section#example-19 .expl {
+  float: left;
+  text-indent: 15px;
+  margin-top: 15px;
+}
+html body section#example-19 pre {
+  max-width: 100%;
+  float: left;
 }
