@@ -5,7 +5,11 @@
     "Guilherme Haschel <ghaschel@gmail.com>"
   ],
   "description": "A pack of useful LESS mixins and JS/jQuery functions found on the internet / made by me.",
-  "main": "./dist/less/treasure.less, ./dist/htc/pie.htc, ./dist/js/treasure.min.js",
+  "main": [
+    "./dist/less/treasure.less",
+    "./dist/htc/pie.htc",
+    "./dist/js/treasure.min.js"
+  ],
   "moduleType": [
     "node"
   ],
