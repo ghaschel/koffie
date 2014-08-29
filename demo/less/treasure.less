@@ -268,6 +268,8 @@ ___________                                                   .__
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+	max-width: 100%;
+	display: inline-block;
 }
 
 .no-user-select {
@@ -289,4 +291,9 @@ ___________                                                   .__
 		color: @color-2;
 		background: @color-1;
 	}
+}
+
+.fix-flickering {
+	-webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+   	backface-visibility: hidden;
 }
