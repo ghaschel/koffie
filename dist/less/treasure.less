@@ -104,6 +104,26 @@ ___________                                                   .__
     }
 }
 
+.placeholder-important(@color: #eeeeee){
+	//Muda a cor do placeholder fazendo override de um anterior - @ghaschel
+
+    &::-webkit-input-placeholder{
+		color: @color !important;
+    }
+
+    &::-moz-placeholder {
+		color: @color !important;
+    }
+
+    &:-moz-placeholder {
+		color: @color !important;
+    }
+
+	&:-ms-input-placeholder {
+		color: @color !important;
+    }
+}
+
 .font-smoothing, 
 .anti-aliasing,
 .antialiasing {
@@ -296,5 +316,34 @@ ___________                                                   .__
 
 .fix-flickering {
 	-webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+	-ms-backface-visibility: hidden; /* IE */
    	backface-visibility: hidden;
+}
+
+.animated(@time: 0.3s, @ease: ease-in-out, @where: all) {
+	-webkit-transition: @time @ease @where;
+	-khtml-transition: @time @ease @where;
+	-icab-transition: @time @ease @where;
+	-moz-transition: @time @ease @where;
+	-ms-transition: @time @ease @where;
+	-o-transition: @time @ease @where;
+	transition: @time @ease @where;
+}
+
+.img { //&:extend(.r-img all);
+	.dummy {
+		position: relative;
+		width: 100%;
+	}
+	.inner-wrapper {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto auto;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+	}
 }

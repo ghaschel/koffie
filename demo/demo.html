@@ -125,7 +125,8 @@ text-shadow: 2px 2px #ffff00,
 								</section>
 								<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding example" id="example-3">
 									<h1 class="clearfix">
-										.placeholder();
+										.placeholder();<br/>
+										.placeholder-important();
 									</h1>
 									<h3>Example</h3>
 									<div class="border-box">
@@ -135,12 +136,18 @@ text-shadow: 2px 2px #ffff00,
 									</div>
 									<div class="expl">
 										Changes placeholder color for input fields.<br/>
+										And "placeholder-important", overrides any other previous one declared.
 									</div>
 									<h3>Usage</h3>
 									<p>
 <pre>
-.error {
+.colored-placeholder {
     .placeholder(green);
+    /* You can use colors inside the parents */
+    /* RGBA/RGB/Hex/Nominal colors */
+}
+.colored-placeholder-important {
+    .placeholder-important(#f0f0f0);
     /* You can use colors inside the parents */
     /* RGBA/RGB/Hex/Nominal colors */
 }
@@ -150,16 +157,28 @@ text-shadow: 2px 2px #ffff00,
 									<p>
 <pre>
 .colored-placeholder::-webkit-input-placeholder{
-    color: #ddd;
+    color: green;
 }
 .colored-placeholder::-moz-placeholder {
-    color: #ddd;
+    color: green;
 }
 .colored-placeholder:-moz-placeholder {
-    color: #ddd;
+    color: green;
 }
 .colored-placeholder:-ms-input-placeholder {
-    color: #ddd;
+    color: green;
+}
+.colored-placeholder-important::-webkit-input-placeholder{
+    color: #f0f0f0 !important;
+}
+.colored-placeholder-important::-moz-placeholder {
+    color: #f0f0f0 !important;
+}
+.colored-placeholder-important:-moz-placeholder {
+    color: #f0f0f0 !important;
+}
+.colored-placeholder-important:-ms-input-placeholder {
+    color: #f0f0f0 !important;
 }
 </pre>
 									</p>
@@ -338,6 +357,8 @@ filter: alpha(opacity=50);
 input {
     &.wanted-class {
         .no-outline();
+        or
+        &:extend(.no-outline all); <-- this is the best approach
     }
 }
 </pre>
