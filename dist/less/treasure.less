@@ -124,6 +124,20 @@ ___________                                                   .__
     }
 }
 
+.fix-input {
+	//remove o placeholder quando o input está em foco, e remove a sombra vermelha de input invalido do firefox
+	&:focus {
+		&::-webkit-input-placeholder {
+			color: transparent;
+		}
+	}
+	&:invalid {
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+}
+
 .font-smoothing, 
 .anti-aliasing,
 .antialiasing {
@@ -169,7 +183,8 @@ ___________                                                   .__
 	//icab não é comprovado @ghaschel
 	-moz-border-radius: @radius;
 	border-radius: @radius;
-	behavior: url('../htc/pie.htc');
+	behavior: url('htc/pie.htc');
+	-ms-behavior: url('htc/pie.htc');
 }
 
 .padding-x(@value: 0px) {
@@ -346,4 +361,8 @@ ___________                                                   .__
 		background-size: cover;
 		background-position: center center;
 	}
+}
+
+.nospeak {
+	speak: none;
 }
