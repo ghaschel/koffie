@@ -105,6 +105,11 @@ var treasure = {
 			return regex.test(email);
 		}, //testa se a string inserida é um email
 
+		isUrl: function(url) {
+			var regex = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=+\$,\w]+@)?[A-Za-z0-9.-]+(:[0-9]+)?|(?:ww‌​w.|[-;:&=+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[+~%\/.\w-]*)?\??(?:[-+=&;%@.\w])#?‌​(?:[\w]))?)/;
+			return regex.test(url);
+		},
+
 		between: function(minimum, value, maximum) {
 			return value > minimum && value < maximum;
 		}, //thanks to undefined (http://stackoverflow.com/questions/14718561/check-if-a-number-is-between-two-values)
