@@ -363,7 +363,8 @@ ___________                                                   .__
 	}
 }
 
-.nospeak {
+.nospeak,
+.no-speak {
 	speak: none;
 }
 
@@ -408,4 +409,12 @@ ___________                                                   .__
 	var {
 		&:extend(.antialiasing);
 	}
+}
+
+.hw-accelerated {
+	-webkit-transform: rotateZ(360deg);
+	-webkit-backface-visibility: hidden;
+ 	-webkit-perspective: 1000;
+ 	backface-visibility: hidden;
+	perspective: 1000;
 }
