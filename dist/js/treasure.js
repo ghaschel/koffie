@@ -129,6 +129,11 @@ var treasure = {
 
 		getURLParameter: function(name) {
 		  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
-		} // busca o valor de um parametro que foi passado pela url em uma variavel get @David - http://stackoverflow.com/questions/11582512/how-to-get-url-parameters-with-javascript
+		}, // busca o valor de um parametro que foi passado pela url em uma variavel get @David - http://stackoverflow.com/questions/11582512/how-to-get-url-parameters-with-javascript
+
+		isHex: function(hex) {
+			var regex = /^#([a-f\d]{3}){1,2}$/i;
+			return regex.test(hex);
+		}
 	}
 };
