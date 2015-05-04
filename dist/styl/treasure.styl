@@ -1,0 +1,325 @@
+/*
+___________                                                   
+\__    ___/______   ____ _____    ________ _________   ____   
+  |    |  \_  __ \_/ __ \\__  \  /  ___/  |  \_  __ \_/ __ \  
+  |    |   |  | \/\  ___/ / __ \_\___ \|  |  /|  | \/\  ___/  
+  |____|   |__|    \___  >____  /____  >____/ |__|    \___  > 
+                       \/     \/     \/                   \/  
+						
+					   - 1.1.0
+                       - Treasure Less
+                       - Guilherme Haschel
+*/
+
+/*
+	- Colored-text-border
+	-- Usa 4 cores como borda de uma fonte.
+*/
+
+// @TODO: Fix
+// colored-text-border($color1 = red, $size1 = 1px, $color2 = yellow, $size2 = 1px, $color3 = green, $size3 = 1px, $color4 = purple, $size4 = 1px)
+// 			//	Tratamento da entrada da string .
+// 			//	Remove %, rem, em, rem, pt, px		
+// 			$size1-rplc = unit($size1, px)
+// 			$size2-rplc = unit($size2, px)
+// 			$size3-rplc = unit($size3, px)
+// 			$size4-rplc = unit($size4, px)
+// 			//	Concatena as variáveis com seus determinados px, e negativos.
+// 			$size1-1 = $size1-rplc
+// 			$size2-1 = unquote('-' + $size2-rplc)
+// 			$size3-1 = $size3-rplc
+// 			$size3-2 = unquote('-' + $size3-rplc)
+// 			$size4-1 = unquote('-' + $size4-rplc)
+// 			$size4-2 = $size4-rplc
+// 			text-shadow  $size1-1 $size1-1 $color1, $size2-1 $size2-1 $color2, $size3-1 $size3-2 $color3, $size4-1 $size4-2 $color4
+//ctb = colored-text-border
+			
+error-input($color = #e36d56)
+	//cria um elemento de validação com placeholder e borda de ca cor definida na variável. - @ghaschel
+	border 1px solid $color !important
+	color $color
+	&::-webkit-input-placeholder
+		color $color
+	&::-moz-placeholder 
+		color $color
+	&:-moz-placeholder 
+		color $color
+	&:-ms-input-placeholder 
+		color $color
+error = error-input
+err = error-input
+
+placeholder($color = #eeeeee)
+	//Muda a cor do placeholder - @ghaschel
+	&::-webkit-input-placeholder
+		color $color
+	&::-moz-placeholder 
+		color $color
+	&:-moz-placeholder 
+		color $color
+	&:-ms-input-placeholder 
+		color $color
+ph = placeholder
+
+placeholder-important($color = #eeeeee)
+	//Muda a cor do placeholder fazendo override de um anterior - @ghaschel
+	&::-webkit-input-placeholder
+		color $color !important
+	&::-moz-placeholder 
+		color $color !important
+	&:-moz-placeholder 
+		color $color !important
+	&:-ms-input-placeholder 
+		color $color !important
+phi = placeholder-important
+
+.fix-input
+	//remove o placeholder quando o input está em foco, e remove a sombra vermelha de input invalido do firefox
+	&:focus
+		&::-webkit-input-placeholder
+			color transparent
+	&:invalid 
+		-webkit-box-shadow none
+		-moz-box-shadow none
+		box-shadow none
+
+$antialiasing,
+$anti-aliasing,
+$font-smoothing
+	//font-anti aliasing (http://stackoverflow.com/questions/11459746/css3-webfont-smoothing-and-antialiasing-in-firefox-and-opera @Maximilian Hoffmann)
+	//text-rendering (http://drinchev.github.io/monosocialiconsfont/)
+	-webkit-text-rendering optimizeLegibility
+	-moz-text-rendering optimizeLegibility
+	-ms-text-rendering optimizeLegibility
+	-o-text-rendering optimizeLegibility
+	text-rendering optimizeLegibility
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	-moz-font-smoothing antialiased
+	-ms-font-smoothing antialiased
+	-o-font-smoothing antialiased
+	font-smoothing antialiased
+
+scroll-bar($size = 6px, $background1 = transparent, $background2 = #ccc, $radius = 5px)
+	// http://stackoverflow.com/questions/7725652/css-scrollbar-style-cross-browser @Drew Noakes
+	// TODO melhorar - http://css-tricks.com/custom-scrollbars-in-webkit/
+	&::-webkit-scrollbar
+		width $size 
+		height $size
+	&::-webkit-scrollbar-track
+		background $background1
+	&::-webkit-scrollbar-thumb
+		background $background2
+		-webkit-border-radius $radius
+		border-radius $radius
+
+border-radius($radius = 5px)
+	//border-radius mais fácil do que o do elements.less @ghaschel
+	-webkit-border-radius $radius
+	-khtml-border-radius $radius
+	-icab-border-radius $radius
+	//icab não é comprovado @ghaschel
+	-moz-border-radius $radius
+	border-radius $radius
+	behavior url('htc/pie.htc')
+	-ms-behavior url('htc/pie.htc')
+bradius = border-radius
+
+padding-x($value = 0px)
+	//padding horizontal @ghaschel
+	padding-left $value
+	padding-right $value
+paddingx = padding-x
+
+padding-y($value = 0px)
+	//padding vertical @ghaschel
+	padding-top $value
+	padding-bottom $value
+paddingy = padding-y
+
+margin-y($value = 0px)
+	//margin vertical @ghaschel
+	margin-top $value
+	margin-bottom $value
+marginy = margin-y
+
+margin-x($value = 0px)
+	//margin horizontal //ghaschel
+	margin-left $value
+	margin-right $value
+marginx  = margin-x
+
+opacity($opacity = 0.5)
+	//opacity @elements.less - adicionando -icab- (@ghaschel)
+  	-webkit-opacity $opacity
+  	-khtml-opacity $opacity
+  	-icab-opacity $opacity
+  	-moz-opacity $opacity
+  	opacity $opacity
+  	-ms-filter unquote('progid:DXImageTransform.Microsoft.Alpha(opacity=' + round($opacity * 100) + ')')
+  	filter unquote('alpha(opacity=' + round($opacity * 100) + ')')
+ opc = opacity
+ 
+.no-outline,
+.nout
+	//remover outline @ghaschel
+	outline none
+	&:focus
+		outline none
+
+top-triangle($size = 15px, $color = #fff)
+	//Mostra um triangulo no topo
+	//Usar no after/before (@ghaschel)
+	content ''
+	display inline-block
+	height 1px
+	width 1px
+	position absolute
+	top round(($size * 2) - 1)
+	border-left $size solid transparent
+	border-top $size solid transparent
+	border-bottom $size solid $color
+	border-right $size solid transparent
+	
+bottom-triangle($size = 15px, $color = #fff)
+	//Mostra um triangulo no bottom
+	//Usar no after/before (@ghaschel)
+	content ''
+	display inline-block
+	height 1px
+	width 1px
+	position absolute
+	bottom round(($size * 2) - 1)
+	border-left $size solid transparent
+	border-top $size solid $color
+	border-bottom $size solid transparent
+	border-right $size solid transparent
+
+left-triangle($size = 15px, $color = #fff) 
+	//Mostra um triangulo no left
+	//Usar no after/before (@ghaschel)
+	content ''
+	display inline-block
+	height 1px
+	width 1px
+	position absolute
+	left round(($size * 2) - 1)
+	border-left $size solid transparent
+	border-top $size solid transparent
+	border-bottom $size solid transparent
+	border-right $size solid $color
+
+right-triangle($size = 15px, $color = #fff)
+	//Mostra um triangulo no right
+	//Usar no after/before (@ghaschel)
+	content ''
+	display inline-block
+	height 1px
+	width 1px
+	position absolute
+	right round(($size * 2) - 1)
+	border-left $size solid $color
+	border-top $size solid transparent
+	border-bottom $size solid transparent
+	border-right $size solid transparent
+	
+$text-overflow,
+$txt-ovf
+	//adiciona reticencias no final da frase caso a mesma nao caiba na linha (@ghaschel).
+	overflow hidden
+	white-space nowrap
+	text-overflow ellipsis
+	max-width 100%
+	display inline-block
+
+$no-user-select,
+$nousel
+	-webkit-user-select none
+	-khtml-user-select none
+	-moz-user-select none
+	-ms-user-select none
+	-o-user-select none
+	user-select none
+	
+user-select($color-1 = yellow, $color-2 = red)
+	// changes the default selected content color (@ghaschel)
+	&::selection
+		color $color-2
+		background $color-1
+	&::-moz-selection
+		color $color-2
+		background $color-1
+usel = user-select
+
+$fix-flickering,
+$fixfl
+	-webkit-backface-visibility hidden /* Chrome, Safari, Opera */
+	-ms-backface-visibility hidden /* IE */
+   	backface-visibility hidden
+   	
+animated($time = 0.3s, $ease = ease-in-out, $where = all)
+	-webkit-transition $time $ease $where
+	-khtml-transition $time $ease $where
+	-icab-transition $time $ease $where
+	-moz-transition $time $ease $where
+	-ms-transition $time $ease $where
+	-o-transition $time $ease $where
+	transition $time $ease $where
+transition = animated
+trans = animated
+
+$nospeak,
+$no-speak
+	speak none
+
+html-antialiasing()
+	a,
+	abbr,
+	address,
+	b,
+	blockquote,
+	cite,
+	code,
+	code,
+	dd,
+	dfn,
+	dt,
+	figcaption,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	i,
+	input,
+	kbd,
+	label,
+	legend,
+	li,
+	mark,
+	option,
+	p,
+	pre,
+	samp,
+	select,
+	small,
+	span,
+	strong,
+	sub,
+	sup,
+	time,
+	var 
+		@extend $antialiasing
+htmlaa = html-antialiasing
+html-anti-aliasing = html-antialiasing
+
+$hw-accelerated,
+$hwacc
+	-webkit-transform rotateZ(360deg)
+	-webkit-backface-visibility hidden
+ 	-webkit-perspective 1000
+ 	-webkit-backface-visibility hidden
+ 	backface-visibility hidden
+	-webkit-perspective 1000
+	perspective 1000
