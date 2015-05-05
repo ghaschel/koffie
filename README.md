@@ -1,7 +1,7 @@
-#Treasure 1.0
+#Treasure 1.1
 
 
-*A pack of useful LESS mixins and JS / jQuery functions found on the internet, or made by myself. The ones found on the internet, or used as a base, are properly credited and linked on the sourcefiles.*
+*A pack of useful LESS/Stylus mixins/classes/functions and JS / jQuery functions found on the internet, or made by myself. The ones found on the internet, or used as a base, are properly credited and linked on the sourcefiles.*
 
 =========
 

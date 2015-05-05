@@ -6,10 +6,12 @@ ___________
   |____|   |__|    \___  >____  /____  >____/ |__|    \___  > 
                        \/     \/     \/                   \/  
 						
-					   - 1.1.0
-                       - Treasure Less
+					   - 1.1.1
+                       - Treasure
                        - Guilherme Haschel
 */
+
+@require "configs"
 
 /*
 	- Colored-text-border
@@ -24,7 +26,7 @@ ___________
 // 			$size2-rplc = unit($size2, px)
 // 			$size3-rplc = unit($size3, px)
 // 			$size4-rplc = unit($size4, px)
-// 			//	Concatena as vari�veis com seus determinados px, e negativos.
+// 			//	Concatena as variáveis com seus determinados px, e negativos.
 // 			$size1-1 = $size1-rplc
 // 			$size2-1 = unquote('-' + $size2-rplc)
 // 			$size3-1 = $size3-rplc
@@ -35,9 +37,14 @@ ___________
 //ctb = colored-text-border
 			
 error-input($color = #e36d56)
-	//cria um elemento de valida��o com placeholder e borda de ca cor definida na vari�vel. - @ghaschel
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Changes the placeholder color, border color, and outline color.
+	// Description [pt-br]: Muda a cor do placeholder, borda, e outline.
+	// Description [nl]: *soon*
 	border 1px solid $color !important
 	color $color
+	outline-color $color
 	&::-webkit-input-placeholder
 		color $color
 	&::-moz-placeholder 
@@ -46,11 +53,17 @@ error-input($color = #e36d56)
 		color $color
 	&:-ms-input-placeholder 
 		color $color
+	&:focus
+		outline-color $color
 error = error-input
 err = error-input
 
 placeholder($color = #eeeeee)
-	//Muda a cor do placeholder - @ghaschel
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Changes the placeholder color.
+	// Description [pt-br]: Muda a cor do placeholder.
+	// Description [nl]: *soon*
 	&::-webkit-input-placeholder
 		color $color
 	&::-moz-placeholder 
@@ -62,7 +75,11 @@ placeholder($color = #eeeeee)
 ph = placeholder
 
 placeholder-important($color = #eeeeee)
-	//Muda a cor do placeholder fazendo override de um anterior - @ghaschel
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Changes the placeholder color using "!important".
+	// Description [pt-br]: Muda a cor do placeholder usando "!important".
+	// Description [nl]: *soon*
 	&::-webkit-input-placeholder
 		color $color !important
 	&::-moz-placeholder 
@@ -74,7 +91,11 @@ placeholder-important($color = #eeeeee)
 phi = placeholder-important
 
 .fix-input
-	//remove o placeholder quando o input est� em foco, e remove a sombra vermelha de input invalido do firefox
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Removes the placeholder while the input is focused and empty. Also removes the 'invalid' input state's red box shadow from Firefox.
+	// Description [pt-br]: Remove o placeholder enquanto o input está em foco e vazio. Também remove o box shadow vermelho de inputs com estado 'invalid'.
+	// Description [nl]: *soon*
 	&:focus
 		&::-webkit-input-placeholder
 			color transparent
@@ -86,8 +107,12 @@ phi = placeholder-important
 $antialiasing,
 $anti-aliasing,
 $font-smoothing
-	//font-anti aliasing (http://stackoverflow.com/questions/11459746/css3-webfont-smoothing-and-antialiasing-in-firefox-and-opera @Maximilian Hoffmann)
-	//text-rendering (http://drinchev.github.io/monosocialiconsfont/)
+	// Author: Maximilian Hoffmann & drinchev
+	// Ref: http://stackoverflow.com/questions/11459746/css3-webfont-smoothing-and-antialiasing-in-firefox-and-opera [font anti aliasing - Maximilian]
+	// Ref: http://drinchev.github.io/monosocialiconsfont/ [text-rendering - drinchev]
+	// Description [en]: Enables font antialiasing.
+	// Description [pt-br]: Habilita o antialiasing em fontes.
+	// Description [nl]: *soon*
 	-webkit-text-rendering optimizeLegibility
 	-moz-text-rendering optimizeLegibility
 	-ms-text-rendering optimizeLegibility
@@ -101,8 +126,13 @@ $font-smoothing
 	font-smoothing antialiased
 
 scroll-bar($size = 6px, $background1 = transparent, $background2 = #ccc, $radius = 5px)
-	// http://stackoverflow.com/questions/7725652/css-scrollbar-style-cross-browser @Drew Noakes
-	// TODO melhorar - http://css-tricks.com/custom-scrollbars-in-webkit/
+	// Author: Drew Noakes
+	// Ref: http://stackoverflow.com/questions/7725652/css-scrollbar-style-cross-browser
+	// Description [en]: Changes the scrollbar's default style [webkit/bink].
+	// Description [pt-br]: Altera o estilo padrão da scrollbar [webkit/bink].
+	// Description [nl]: *soon*
+	// TODO: [Improve] - http://css-tricks.com/custom-scrollbars-in-webkit/
+	// Search: Improve for IE
 	&::-webkit-scrollbar
 		width $size 
 		height $size
@@ -114,62 +144,100 @@ scroll-bar($size = 6px, $background1 = transparent, $background2 = #ccc, $radius
 		border-radius $radius
 
 border-radius($radius = 5px)
-	//border-radius mais f�cil do que o do elements.less @ghaschel
+	// Author: @ghaschel
+	// Ref: http://css3pie.com
+	// Description [en]: Cross Browser border-radius.
+	// Description [pt-br]: border-radius Cross Browser.
+	// Description [nl]: *soon*
 	-webkit-border-radius $radius
 	-khtml-border-radius $radius
 	-icab-border-radius $radius
-	//icab n�o � comprovado @ghaschel
 	-moz-border-radius $radius
 	border-radius $radius
-	behavior url('htc/pie.htc')
-	-ms-behavior url('htc/pie.htc')
+	if $ie6 || $ie7 || $ie8
+		behavior url('htc/pie.htc')
+		-ms-behavior url('htc/pie.htc')
 bradius = border-radius
 
 padding-x($value = 0px)
-	//padding horizontal @ghaschel
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Wrapper function for easier use of padding-left and padding-right.
+	// Description [pt-br]: Função wrapper para maior facilidade no uso de padding-left e padding-right.
+	// Description [nl]: *soon*
 	padding-left $value
 	padding-right $value
 paddingx = padding-x
+px = padding-x
 
 padding-y($value = 0px)
-	//padding vertical @ghaschel
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Wrapper function for easier use of padding-top and padding-bottom.
+	// Description [pt-br]: Função wrapper para maior facilidade no uso de padding-top e padding-bottom.
+	// Description [nl]: *soon*
 	padding-top $value
 	padding-bottom $value
 paddingy = padding-y
+py = padding-y
 
 margin-y($value = 0px)
-	//margin vertical @ghaschel
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Wrapper function for easier use of margin-top and margin-bottom.
+	// Description [pt-br]: Função wrapper para maior facilidade no uso de margin-top e margin-bottom.
+	// Description [nl]: *soon*
 	margin-top $value
 	margin-bottom $value
 marginy = margin-y
+my = margin-y
 
 margin-x($value = 0px)
-	//margin horizontal //ghaschel
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Wrapper function for easier use of margin-left and margin-right.
+	// Description [pt-br]: Função wrapper para maior facilidade no uso de margin-left e margin-right.
+	// Description [nl]: *soon*
 	margin-left $value
 	margin-right $value
 marginx  = margin-x
+mx = margin-x
 
 opacity($opacity = 0.5)
-	//opacity @elements.less - adicionando -icab- (@ghaschel)
-  	-webkit-opacity $opacity
-  	-khtml-opacity $opacity
-  	-icab-opacity $opacity
-  	-moz-opacity $opacity
-  	opacity $opacity
-  	-ms-filter unquote('progid:DXImageTransform.Microsoft.Alpha(opacity=' + round($opacity * 100) + ')')
-  	filter unquote('alpha(opacity=' + round($opacity * 100) + ')')
- opc = opacity
- 
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Cross Browser opacity function.
+	// Description [pt-br]: Função de opacidade Cross Browser.
+	// Description [nl]: *soon*
+	-webkit-opacity $opacity
+	-khtml-opacity $opacity
+	-icab-opacity $opacity
+	-moz-opacity $opacity
+	opacity $opacity
+	if $ie8
+		-ms-filter unquote('progid:DXImageTransform.Microsoft.Alpha(opacity=' + round($opacity * 100) + ')')
+	if $ie5 || $ie6 || $ie7
+		filter unquote('alpha(opacity=' + round($opacity * 100) + ')')
+opc = opacity
+
 .no-outline,
 .nout
-	//remover outline @ghaschel
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Removes the outline when focus state is active.
+	// Description [pt-br]: Remove o outline quando o estado 'focus' está ativo.
+	// Description [nl]: *soon*
 	outline none
 	&:focus
 		outline none
 
 top-triangle($size = 15px, $color = #fff)
-	//Mostra um triangulo no topo
-	//Usar no after/before (@ghaschel)
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Displays a triangle in the element's top.
+	// Description [pt-br]: Mostra um triangulo no topo do elemento.
+	// Description [nl]: *soon*
+	// Instructions: Usar no After/Before | Use on After/Before | Gebruik op After/Before
 	content ''
 	display inline-block
 	height 1px
@@ -182,8 +250,12 @@ top-triangle($size = 15px, $color = #fff)
 	border-right $size solid transparent
 	
 bottom-triangle($size = 15px, $color = #fff)
-	//Mostra um triangulo no bottom
-	//Usar no after/before (@ghaschel)
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Displays a triangle in the element's bottom.
+	// Description [pt-br]: Mostra um triangulo no inferior do elemento.
+	// Description [nl]: *soon*
+	// Instructions: Usar no After/Before | Use on After/Before | Gebruik op After/Before
 	content ''
 	display inline-block
 	height 1px
@@ -196,8 +268,12 @@ bottom-triangle($size = 15px, $color = #fff)
 	border-right $size solid transparent
 
 left-triangle($size = 15px, $color = #fff) 
-	//Mostra um triangulo no left
-	//Usar no after/before (@ghaschel)
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Displays a triangle in the element's left.
+	// Description [pt-br]: Mostra um triangulo no lado esquerdo do elemento.
+	// Description [nl]: *soon*
+	// Instructions: Usar no After/Before | Use on After/Before | Gebruik op After/Before
 	content ''
 	display inline-block
 	height 1px
@@ -210,8 +286,12 @@ left-triangle($size = 15px, $color = #fff)
 	border-right $size solid $color
 
 right-triangle($size = 15px, $color = #fff)
-	//Mostra um triangulo no right
-	//Usar no after/before (@ghaschel)
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Displays a triangle in the element's right.
+	// Description [pt-br]: Mostra um triangulo no lado direito do elemento.
+	// Description [nl]: *soon*
+	// Instructions: Usar no After/Before | Use on After/Before | Gebruik op After/Before
 	content ''
 	display inline-block
 	height 1px
@@ -225,7 +305,11 @@ right-triangle($size = 15px, $color = #fff)
 	
 $text-overflow,
 $txt-ovf
-	//adiciona reticencias no final da frase caso a mesma nao caiba na linha (@ghaschel).
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Displays reticences in the line's end in case it doesn't fit.
+	// Description [pt-br]: Mostra reticências no final da linha caso não caiba tudo em uma única linha.
+	// Description [nl]: *soon*
 	overflow hidden
 	white-space nowrap
 	text-overflow ellipsis
@@ -234,6 +318,11 @@ $txt-ovf
 
 $no-user-select,
 $nousel
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Disable selection.
+	// Description [pt-br]: Disabilita seleção.
+	// Description [nl]: Uitschakelt de selectie.
 	-webkit-user-select none
 	-khtml-user-select none
 	-moz-user-select none
@@ -242,7 +331,11 @@ $nousel
 	user-select none
 	
 user-select($color-1 = yellow, $color-2 = red)
-	// changes the default selected content color (@ghaschel)
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Changes the selection color.
+	// Description [pt-br]: Altera a cor da seleção.
+	// Description [nl]: Verandert de selectie kleur.
 	&::selection
 		color $color-2
 		background $color-1
@@ -253,11 +346,21 @@ usel = user-select
 
 $fix-flickering,
 $fixfl
-	-webkit-backface-visibility hidden /* Chrome, Safari, Opera */
-	-ms-backface-visibility hidden /* IE */
-   	backface-visibility hidden
-   	
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Fix for the flickering on pseudo elements when animated by transition.
+	// Description [pt-br]: Fix para o 'flickering' que ocorre em pseudo elementos quando animatos via transition.
+	// Description [nl]: *soon*
+	-webkit-backface-visibility hidden
+	-ms-backface-visibility hidden
+	backface-visibility hidden
+
 animated($time = 0.3s, $ease = ease-in-out, $where = all)
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Function for faster transition creation.
+	// Description [pt-br]: Função para gerar transition com mais velocidade.
+	// Description [nl]: *soon*
 	-webkit-transition $time $ease $where
 	-khtml-transition $time $ease $where
 	-icab-transition $time $ease $where
@@ -270,9 +373,19 @@ trans = animated
 
 $nospeak,
 $no-speak
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Hides the element from screen readers.
+	// Description [pt-br]: Esconde o elemento de leitores de tela.
+	// Description [nl]: *soon*
 	speak none
 
 html-antialiasing()
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Function to enable Anti Aliasing in all of the text elements in the page.
+	// Description [pt-br]: Função para habilitar Anti Aliasing em todos os elementos de texto da página.
+	// Description [nl]: *soon*
 	a,
 	abbr,
 	address,
@@ -316,6 +429,12 @@ html-anti-aliasing = html-antialiasing
 
 $hw-accelerated,
 $hwacc
+	// Author: @ghaschel
+	// Ref:
+	// Description [en]: Enables hardware acceleration.
+	// Description [pt-br]: Habilita aceleração por hardware.
+	// Description [nl]: *soon*
+	// Instruction: Use in the parent element. | Use no elemento pai. | Aan de ouder element gebruiken.
 	-webkit-transform rotateZ(360deg)
 	-webkit-backface-visibility hidden
  	-webkit-perspective 1000
