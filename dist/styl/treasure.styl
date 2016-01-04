@@ -304,7 +304,8 @@ right-triangle($size = 15px, $color = #fff)
 	border-right $size solid transparent
 	
 $text-overflow,
-$txt-ovf
+$txt-ovf,
+$txtovf
 	// Author: @ghaschel
 	// Ref:
 	// Description [en]: Displays reticences in the line's end in case it doesn't fit.
@@ -380,53 +381,6 @@ $no-speak
 	// Description [nl]: *soon*
 	speak none
 
-html-antialiasing()
-	// Author: @ghaschel
-	// Ref:
-	// Description [en]: Function to enable Anti Aliasing in all of the text elements in the page.
-	// Description [pt-br]: Função para habilitar Anti Aliasing em todos os elementos de texto da página.
-	// Description [nl]: *soon*
-	a,
-	abbr,
-	address,
-	b,
-	blockquote,
-	cite,
-	code,
-	code,
-	dd,
-	dfn,
-	dt,
-	figcaption,
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	i,
-	input,
-	kbd,
-	label,
-	legend,
-	li,
-	mark,
-	option,
-	p,
-	pre,
-	samp,
-	select,
-	small,
-	span,
-	strong,
-	sub,
-	sup,
-	time,
-	var 
-		@extend $antialiasing
-htmlaa = html-antialiasing
-html-anti-aliasing = html-antialiasing
-
 $hw-accelerated,
 $hwacc
 	// Author: @ghaschel
@@ -442,3 +396,14 @@ $hwacc
  	backface-visibility hidden
 	-webkit-perspective 1000
 	perspective 1000
+
+.fix-select,
+.fixsel
+	-webkit-appearance none
+	-moz-appearance none
+	appearance none
+	overflow -moz-hidden-unscrollable
+	text-indent .01px
+	text-overflow ''
+	&::-ms-expand
+		display none
