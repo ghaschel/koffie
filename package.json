@@ -1,0 +1,28 @@
+{
+  "name": "treasure",
+  "version": "1.1.3",
+  "description": "<img src=\"http://benschwarz.github.io/bower-badges/badge@2x.png\" width=\"130\" height=\"30\">",
+  "main": "dist/styl/treasure.styl",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ghaschel/treasure.git"
+  },
+  "keywords": [
+    "treasure"
+  ],
+  "author": "Guilherme Haschel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghaschel/treasure/issues"
+  },
+  "homepage": "https://github.com/ghaschel/treasure#readme",
+  "devDependencies": {
+    "grunt-mocha-test": "*",
+    "grunt": "*",
+    "chai": "*",
+    "grunt-cli": "*"
+  }
+}
