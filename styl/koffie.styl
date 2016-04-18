@@ -1,0 +1,498 @@
+/*
+
+888   _              88~\   88~\ ,e,
+888 e~ ~   e88~-_  _888__ _888__  "   e88~~8e
+888d8b    d888   i  888    888   888 d888  88b
+888Y88b   8888   |  888    888   888 8888__888
+888 Y88b  Y888   '  888    888   888 Y888    ,
+888  Y88b  "88_-~   888    888   888  "88___/
+
+		     - 1.0
+             - Guilherme Haschel
+*/
+
+@require "configs"
+
+/*
+* @name text-border(color1, size1, color2, size2, color3, size3, color4, size4)
+* @description Creates a four-colored border in the text.
+* @alias tb()
+* @author
+* @ref
+* @usage
+*/
+text-border($color1 = red, $size1 = 1px, $color2 = yellow, $size2 = 1px, $color3 = green, $size3 = 1px, $color4 = purple, $size4 = 1px)
+	$size1-1 = unit($size1, px)
+	$size2-1 = unquote('-' + unit($size2, px))
+	$size3-1 = unit($size3, px)
+	$size3-2 = unquote('-' + unit($size3, px))
+	$size4-1 = unquote('-' + unit($size4, px))
+	$size4-2 = unit($size4, px)
+	text-shadow  $size1-1 $size1-1 $color1, $size2-1 $size2-1 $color2, $size3-1 $size3-2 $color3, $size4-1 $size4-2 $color4
+tb = text-border
+
+/*
+* @name error-input($color)
+* @description Changes the placeholder color, border color, and outline color.
+* @alias error(), err()
+* @author
+* @ref
+* @usage
+*/
+error-input($color = #e36d56)
+	border 1px solid $color !important
+	color $color
+	outline-color $color
+	&::-webkit-input-placeholder
+		color $color
+	&::-moz-placeholder
+		color $color
+	&:-moz-placeholder
+		color $color
+	&:-ms-input-placeholder
+		color $color
+	&::placeholder
+		color $color
+	&:focus
+		outline-color $color
+error = error-input
+err = error-input
+
+/*
+* @name placeholder($color)
+* @description Changes the placeholder color.
+* @alias ph()
+* @author
+* @ref
+* @usage
+*/
+placeholder($color = #eeeeee)
+	&::-webkit-input-placeholder
+		color $color
+	&::-moz-placeholder
+		color $color
+	&:-moz-placeholder
+		color $color
+	&:-ms-input-placeholder
+		color $color
+	&::placeholder
+		color $color
+ph = placeholder
+
+/*
+* @name placeholder-i($color)
+* @description Changes the placeholder color using "!important".
+* @alias ph-i()
+* @author
+* @ref
+* @usage
+*/
+placeholder-i($color = #eeeeee)
+	&::-webkit-input-placeholder
+		color $color !important
+	&::-moz-placeholder
+		color $color !important
+	&:-moz-placeholder
+		color $color !important
+	&:-ms-input-placeholder
+		color $color !important
+	&::placeholder
+		color $color !important
+phi = placeholder-i
+
+/*
+* @name fix-input()
+* @description Removes the placeholder while the input is focused and empty. Also removes the 'invalid' input state's red box shadow from Firefox.
+* @alias
+* @author
+* @ref
+* @usage
+*/
+fix-input()
+	&:focus
+		&::-webkit-input-placeholder
+			color transparent
+	&:invalid
+		-webkit-box-shadow none
+		-moz-box-shadow none
+		box-shadow none
+
+/*
+* @name $antialiasing
+* @description Enables font antialiasing.
+* @alias $anti-aliasing, $font-smoothing
+* @author Maximilian Hoffmann & drinchev
+* @ref http://stackoverflow.com/questions/11459746/css3-webfont-smoothing-and-antialiasing-in-firefox-and-opera, http://drinchev.github.io/monosocialiconsfont/
+* @usage
+*/
+$antialiasing,
+$anti-aliasing,
+$font-smoothing
+	-webkit-text-rendering optimizeLegibility
+	-moz-text-rendering optimizeLegibility
+	-ms-text-rendering optimizeLegibility
+	-o-text-rendering optimizeLegibility
+	text-rendering optimizeLegibility
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	-moz-font-smoothing antialiased
+	-ms-font-smoothing antialiased
+	-o-font-smoothing antialiased
+	font-smoothing antialiased
+
+/*
+* @name scroll-bar($size, $background, $background2, $radius)
+* @description Changes the scrollbar's default style [webkit/blink/trident].
+* @alias
+* @author Drew Noakes
+* @ref http://stackoverflow.com/questions/7725652/css-scrollbar-style-cross-browser
+* @usage
+*/
+scroll-bar($size = 6px, $background1 = transparent, $background2 = #ccc, $radius = 5px)
+	scrollbar-3dlight-color $bakcground1
+	scrollbar-arrow-color darken($background2, 50%)
+	scrollbar-darkshadow-color $bakcground1
+	scrollbar-face-color $background2
+	scrollbar-base-color $bakcground1
+	scrollbar-highlight-color $bakcground1
+	scrollbar-shadow-color $bakcground1
+	scrollbar-track-color $bakcground1
+	&::-webkit-scrollbar
+		width $size
+		height $size
+	&::-webkit-scrollbar-track
+		background $background1
+	&::-webkit-scrollbar-thumb
+		background $background2
+		-webkit-border-radius $radius
+		border-radius $radius
+
+/*
+* @name disable-scroll-styling()
+* @description Disable scrollbar styling by not vendor-prefixed properties.
+* @alias
+* @author W3C
+* @ref https://www.w3.org/Style/Examples/007/scrollbars.en.html
+* Usage html, body {disable-scroll-styling()}
+*/
+disable-scroll-styling()
+	scrollbar-face-color ThreeDFace !important
+	scrollbar-shadow-color ThreeDDarkShadow !important
+	scrollbar-highlight-color ThreeDHighlight !important
+	scrollbar-3dlight-color ThreeDLightShadow !important
+	scrollbar-darkshadow-color ThreeDDarkShadow !important
+	scrollbar-track-color Scrollbar !important
+	scrollbar-arrow-color ButtonText !important
+
+/*
+* @name border-radius($radius)
+* @description Cross-browser border-radius.
+* @alias bradius()
+* @author
+* @ref http://css3pie.com
+* @usage
+*/
+border-radius($radius = 5px)
+	-webkit-border-radius $radius
+	-khtml-border-radius $radius
+	-moz-border-radius $radius
+	border-radius $radius
+	if $ie6 || $ie7 || $ie8
+		behavior url($absPath + 'PIE.htc')
+		-ms-behavior url($absPath + 'PIE.htc')
+bradius = border-radius
+
+/*
+* @name padding-x($value)
+* @description Wrapper function for easier use of padding-left and padding-right.
+* @alias paddingx()
+* @author
+* @ref
+* @usage
+*/
+padding-x($value = 0px)
+	padding-left $value
+	padding-right $value
+paddingx = padding-x
+
+/*
+* @name padding-y($value)
+* @description Wrapper function for easier use of padding-top and padding-bottom.
+* @alias paddingy()
+* @author
+* @ref
+* @usage
+*/
+padding-y($value = 0px)
+	padding-top $value
+	padding-bottom $value
+paddingy = padding-y
+
+/*
+* @name margin-y($value)
+* @description Wrapper function for easier use of margin-top and margin-bottom.
+* @alias marginy()
+* @author
+* @ref
+* @usage
+*/
+margin-y($value = 0px)
+	margin-top $value
+	margin-bottom $value
+marginy = margin-y
+
+/*
+* @name margin-x($value)
+* @description Wrapper function for easier use of margin-left and margin-right.
+* @alias marginx()
+* @author
+* @ref
+* @usage
+*/
+margin-x($value = 0px)
+	margin-left $value
+	margin-right $value
+marginx  = margin-x
+
+/*
+* @name opacity($opacity)
+* @description Cross Browser opacity function.
+* @alias opc()
+* @author
+* @ref
+* @usage
+*/
+opacity($opacity = 0.5)
+	-webkit-opacity $opacity
+	-khtml-opacity $opacity
+	-moz-opacity $opacity
+	opacity $opacity
+	if $ie8
+		-ms-filter unquote('progid:DXImageTransform.Microsoft.Alpha(opacity=' + round($opacity * 100) + ')')
+	if $ie5 || $ie6 || $ie7
+		filter unquote('alpha(opacity=' + round($opacity * 100) + ')')
+opc = opacity
+
+/*
+* @name nout()
+* @description Removes the outline when focus state is active.
+* @alias
+* @author
+* @ref
+* @usage
+*/
+nout()
+	outline none
+	&:focus
+		outline none
+
+/*
+* @name top-triangle($size, $color)
+* @description Displays a triangle at the element's top.
+* @alias
+* @author
+* @ref
+* @usage Use on :after/:before
+*/
+top-triangle($size = 15px, $color = #fff)
+	content ''
+	display inline-block
+	height 1px
+	width 1px
+	position absolute
+	top round(($size * 2) - 1)
+	border-left $size solid transparent
+	border-top $size solid transparent
+	border-bottom $size solid $color
+	border-right $size solid transparent
+
+/*
+* @name bottom-triangle($size, $color)
+* @description Displays a triangle in the element's bottom.
+* @alias
+* @author
+* @ref
+* @usage Use on :after/:before
+*/
+bottom-triangle($size = 15px, $color = #fff)
+	content ''
+	display inline-block
+	height 1px
+	width 1px
+	position absolute
+	bottom round(($size * 2) - 1)
+	border-left $size solid transparent
+	border-top $size solid $color
+	border-bottom $size solid transparent
+	border-right $size solid transparent
+
+/*
+* @name left-triangle($size, $color)
+* @description Displays a triangle in the element's left.
+* @alias
+* @author
+* @ref
+* @usage Use on :after/:before
+*/
+left-triangle($size = 15px, $color = #fff)
+	content ''
+	display inline-block
+	height 1px
+	width 1px
+	position absolute
+	left round(($size * 2) - 1)
+	border-left $size solid transparent
+	border-top $size solid transparent
+	border-bottom $size solid transparent
+	border-right $size solid $color
+
+/*
+* @name right-triangle($size, $color)
+* @description Displays a triangle in the element's right.
+* @alias
+* @author
+* @ref
+* @usage Use on :after/:before
+*/
+right-triangle($size = 15px, $color = #fff)
+	content ''
+	display inline-block
+	height 1px
+	width 1px
+	position absolute
+	right round(($size * 2) - 1)
+	border-left $size solid $color
+	border-top $size solid transparent
+	border-bottom $size solid transparent
+	border-right $size solid transparent
+
+/*
+* @name $text-overflow
+* @description Displays reticences in the line's end in case it doesn't fit.
+* @alias $txt-ovf, $txtovf
+* @author
+* @ref
+* @usage
+*/
+$text-overflow,
+$txt-ovf,
+$txtovf
+	overflow hidden
+	white-space nowrap
+	text-overflow ellipsis
+	max-width 100%
+	display inline-block
+
+/*
+* @name $no-user-select
+* @description Disable user's content selection.
+* @alias $nousel
+* @author
+* @ref
+* @usage
+*/
+$no-user-select,
+$nousel
+	-webkit-user-select none
+	-khtml-user-select none
+	-moz-user-select none
+	-ms-user-select none
+	-o-user-select none
+	user-select none
+
+/*
+* @name user-select($color-1, $color-2)
+* @description Changes the user's content selection color.
+* @alias usel()
+* @author
+* @ref
+* @usage
+*/
+user-select($color-1 = yellow, $color-2 = red)
+	&::selection
+		color $color-2
+		background $color-1
+	&::-moz-selection
+		color $color-2
+		background $color-1
+usel = user-select
+
+/*
+* @name $fix-flickering
+* @description Fixes the flickering on pseudo elements when animated by transition.
+* @alias $fixfl
+* @author
+* @ref
+* @usage
+*/
+$fix-flickering,
+$fixfl
+	-webkit-backface-visibility hidden
+	-ms-backface-visibility hidden
+	backface-visibility hidden
+
+/*
+* @name animated($time, $ease, $where)
+* @description Function for faster transition creation.
+* @alias transition(), trans()
+* @author
+* @ref
+* @usage
+*/
+animated($time = 0.3s, $ease = ease-in-out, $where = all)
+	-webkit-transition $time $ease $where
+	-khtml-transition $time $ease $where
+	-moz-transition $time $ease $where
+	-ms-transition $time $ease $where
+	-o-transition $time $ease $where
+	transition $time $ease $where
+transition = animated
+trans = animated
+
+/*
+* @name $nospeak
+* @description Hides the element from screen readers.
+* @alias $no-speak
+* @author
+* @ref
+* @usage
+*/
+$nospeak,
+$no-speak
+	speak none
+
+/*
+* @name $hw-accelerated
+* @description Enables hardware acceleration.
+* @alias $hwacc
+* @author
+* @ref
+* @usage Use in the parent element.
+*/
+$hw-accelerated,
+$hwacc
+	-webkit-transform rotateZ(360deg)
+	-webkit-backface-visibility hidden
+ 	-webkit-perspective 1000
+ 	-webkit-backface-visibility hidden
+ 	backface-visibility hidden
+	-webkit-perspective 1000
+	perspective 1000
+
+/*
+* @name fixsel()
+* @description Removes select tag's default style.
+* @alias
+* @author
+* @ref
+* @usage
+*/
+fixsel()
+	-webkit-appearance none
+	-moz-appearance none
+	appearance none
+	overflow -moz-hidden-unscrollable
+	text-indent .01px
+	text-overflow ''
+	&::-ms-expand
+		display none

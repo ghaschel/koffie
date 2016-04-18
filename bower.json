@@ -1,26 +1,24 @@
 {
-  "name": "Treasure",
-  "version": "1.1.3",
+  "name": "Koffie",
+  "version": "1.0.0",
   "authors": [
     "Guilherme Haschel <ghaschel@gmail.com>"
   ],
-  "description": "A pack of useful LESS mixins and JS/jQuery functions found on the internet / made by me.",
-  "main": "./dist/less/treasure.less, ./dist/htc/pie.htc, ./dist/js/treasure.min.js",
+  "description": "A pack of useful mixins, functions and classes for a faster development. Availabe in Stylus, LESS and SASS.",
+  "main": "./styl/treasure.styl",
   "moduleType": [
     "node"
   ],
   "keywords": [
     "node",
-    "js",
-    "jquery",
-    "plugin",
-    "javascript",
     "less",
+    "stylus",
+    "sass",
+    "koffie"
     "css",
+    "css3",
     "addon",
     "treasure",
-    "treasure-less",
-    "treasure-js"
   ],
   "license": "MIT",
   "ignore": [
@@ -30,7 +28,5 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "jquery": "~2.1.1"
-  }
+  "dependencies": {}
 }

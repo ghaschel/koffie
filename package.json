@@ -1,24 +1,31 @@
 {
-  "name": "treasure",
-  "version": "1.1.3",
-  "description": "<img src=\"http://benschwarz.github.io/bower-badges/badge@2x.png\" width=\"130\" height=\"30\">",
-  "main": "dist/styl/treasure.styl",
+  "name": "koffie",
+  "version": "1.0.0",
+  "description": "Pack of useful mixins, functions and classes for a faster development. Available in Stylus, LESS, and SASS (coming soon)",
+  "main": "styl/koffie.styl",
   "scripts": {
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/ghaschel/treasure.git"
+    "url": "git+ssh://git@github.com/ghaschel/koffie.git"
   },
   "keywords": [
-    "treasure"
+    "treasure",
+    "koffie",
+    "sass",
+    "less",
+    "stylus",
+    "css",
+    "keyframes",
+    "css3"
   ],
   "author": "Guilherme Haschel",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ghaschel/treasure/issues"
+    "url": "https://github.com/ghaschel/koffie/issues"
   },
-  "homepage": "https://github.com/ghaschel/treasure#readme",
+  "homepage": "https://github.com/ghaschel/koffie#readme",
   "devDependencies": {
     "grunt-mocha-test": "*",
     "grunt": "*",
