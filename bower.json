@@ -5,7 +5,7 @@
     "Guilherme Haschel <ghaschel@gmail.com>"
   ],
   "description": "A pack of useful mixins, functions and classes for a faster development. Availabe in Stylus, LESS and SASS.",
-  "main": "./styl/treasure.styl",
+  "main": "./styl/koffie.styl",
   "moduleType": [
     "node"
   ],
