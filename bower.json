@@ -14,11 +14,11 @@
     "less",
     "stylus",
     "sass",
-    "koffie"
+    "koffie",
     "css",
     "css3",
     "addon",
-    "treasure",
+    "treasure"
   ],
   "license": "MIT",
   "ignore": [
