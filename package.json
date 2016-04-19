@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/ghaschel/koffie#readme",
   "devDependencies": {
-    "less": "^2.6.1",
-    "stylus": "^0.54.2"
+    "less": "*",
+    "stylus": "*"
   }
 }
