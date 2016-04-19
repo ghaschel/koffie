@@ -4,7 +4,9 @@
   "description": "Pack of useful mixins, functions and classes for a faster development. Available in Stylus, LESS, and SASS (coming soon)",
   "main": "styl/koffie.styl",
   "scripts": {
-    "test": "grunt test"
+    "pretest": "chmod 0777 ./test/test.sh",
+    "test": "./test/test.sh",
+    "posttest": "rm -rf ./test/test-less.css && rm -rf ./test/test-stylus.css;"
   },
   "repository": {
     "type": "git",
@@ -27,9 +29,7 @@
   },
   "homepage": "https://github.com/ghaschel/koffie#readme",
   "devDependencies": {
-    "grunt-mocha-test": "*",
-    "grunt": "*",
-    "chai": "*",
-    "grunt-cli": "*"
+    "less": "^2.6.1",
+    "stylus": "^0.54.2"
   }
 }

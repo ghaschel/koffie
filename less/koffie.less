@@ -11,7 +11,7 @@
              - Guilherme Haschel
 */
 
-@require "configs"
+@import (reference) "configs.less";
 
 /*
 * @name text-border(color1, size1, color2, size2, color3, size3, color4, size4)
@@ -165,14 +165,14 @@
 * @usage
 */
 .scroll-bar(@size: 6px, @background1: transparent, @background2: #ccc, @radius: 5px) {
-  scrollbar-3dlight-color: @bakcground1;
+  scrollbar-3dlight-color: @background1;
   scrollbar-arrow-color: darken(@background2, 50%);
-  scrollbar-darkshadow-color: @bakcground1;
+  scrollbar-darkshadow-color: @background1;
   scrollbar-face-color: @background2;
-  scrollbar-base-color: @bakcground1;
-  scrollbar-highlight-color: @bakcground1;
-  scrollbar-shadow-color: @bakcground1;
-  scrollbar-track-color: @bakcground1;
+  scrollbar-base-color: @background1;
+  scrollbar-highlight-color: @background1;
+  scrollbar-shadow-color: @background1;
+  scrollbar-track-color: @background1;
   &::-webkit-scrollbar {
     width: @size;  /* for vertical scrollbars */
     height: @size; /* for horizontal scrollbars */
@@ -195,7 +195,7 @@
 * @ref https://www.w3.org/Style/Examples/007/scrollbars.en.html
 * Usage html, body {.disable-scroll-styling()}
 */
-.disable-scroll-styling()
+.disable-scroll-styling {
 	scrollbar-face-color: ThreeDFace !important;
 	scrollbar-shadow-color: ThreeDDarkShadow !important;
 	scrollbar-highlight-color: ThreeDHighlight !important;
@@ -203,6 +203,7 @@
 	scrollbar-darkshadow-color: ThreeDDarkShadow !important;
 	scrollbar-track-color: Scrollbar !important;
 	scrollbar-arrow-color: ButtonText !important;
+}
 
 /*
 * @name border-radius(@radius)
@@ -215,12 +216,11 @@
 .border-radius(@radius: 5px){
 	-webkit-border-radius: @radius;
 	-khtml-border-radius: @radius;
-	-icab-border-radius: @radius;
 	-moz-border-radius: @radius;
 	border-radius: @radius;
-  & when (@ie6), (@ie7), (@ie8) {
-		behavior url($absPath + 'PIE.htc')
-		-ms-behavior url($absPath + 'PIE.htc')
+  & when (@ie6 = true), (@ie7 = true), (@ie8 = true) {
+		behavior: url('@{absPath}PIE.htc');
+		-ms-behavior: url('@{absPath}PIE.htc');
   }
 }
 
@@ -232,8 +232,7 @@
 * @ref
 * @usage
 */
-.padding-x(@value: 0px),
-.p-x(@value: 0px){
+.padding-x(@value: 0px) {
 	padding-left: @value;
 	padding-right: @value;
 }
@@ -288,7 +287,6 @@
 .opacity(@opacity: 0.5) {
 	-webkit-opacity: @opacity;
 	-khtml-opacity: @opacity;
-	-icab-opacity: @opacity;
 	-moz-opacity: @opacity;
 	opacity: @opacity;
 	@opperc: @opacity * 100;
@@ -309,9 +307,9 @@
 * @usage
 */
 .nout {
-  outline none
+  outline: none;
 	&:focus {
-		outline none
+		outline: none;
   }
 }
 
@@ -450,7 +448,7 @@
 * @ref
 * @usage
 */
-.user-select(@color-1: yellow, @color-2: red){
+.user-select(@color-1: yellow, @color-2: red) {
 	&::selection {
 		color: @color-2;
 		background: @color-1;
@@ -487,7 +485,6 @@
 .animated(@time: 0.3s, @ease: ease-in-out, @where: all){
 	-webkit-transition: @time @ease @where;
 	-khtml-transition: @time @ease @where;
-	-icab-transition: @time @ease @where;
 	-moz-transition: @time @ease @where;
 	-ms-transition: @time @ease @where;
 	-o-transition: @time @ease @where;
@@ -542,4 +539,18 @@
 	&::-ms-expand {
 		display: none;
   }
+}
+
+/*
+* @name .hyphen
+* @description Add a hyphen to broken words.
+* @alias
+* @ref
+* @usage
+*/
+.hyphen {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }

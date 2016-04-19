@@ -1,0 +1,149 @@
+@import (reference) "../less/koffie.less";
+
+html {
+  .scroll-bar(6px, #ddd, #ccc, 5px);
+  body {
+    .scroll-bar();
+    &.noscrollstyle {
+      &:extend(.disable-scroll-styling);
+    }
+  }
+  .circle {
+    .border-radius(25px);
+  }
+  .circler {
+    .border-radius(50%);
+  }
+  .padding-test {
+    .padding-x(3px);
+    .padding-y(3px);
+  }
+  .margin-test {
+    .margin-x(3px);
+    .margin-y(3px);
+  }
+  .opc {
+    .opacity(50%);
+  }
+  .outline {
+    &:extend(.nout all);
+  }
+  .tt {
+    &:before {
+      .top-triangle();
+    }
+    &:after {
+      .top-triangle(15px, #fff);
+    }
+  }
+  .bt {
+    &:before {
+      .bottom-triangle();
+    }
+    &:after {
+      .bottom-triangle(15px, #fff);
+    }
+  }
+  .rt {
+    &:before {
+      .right-triangle();
+    }
+    &:after {
+      .right-triangle(15px, #fff);
+    }
+  }
+  .lt {
+    &:before {
+      .left-triangle();
+    }
+    &:after {
+      .left-triangle(15px, #fff);
+    }
+  }
+  span {
+    &:nth-child(1) {
+      .colored-text-border(red, 1, yellow, 1, green, 1, purple, 1);
+    }
+    &:nth-child(2) {
+      .colored-text-border();
+    }
+    &:nth-child(3) {
+      &:extend(.font-smoothing);
+    }
+    &:nth-child(4) {
+      &:extend(.anti-aliasing);
+    }
+    &:nth-child(5) {
+      &:extend(.antialiasing);
+    }
+    &:nth-child(6) {
+      &:extend(.no-user-select);
+    }
+    &:nth-child(7) {
+      &:extend(.nousel);
+    }
+    &:nth-child(8) {
+      .user-select(yellow, red);
+    }
+    &:nth-child(9) {
+      .user-select();
+    }
+    &:nth-child(10) {
+      &:before {
+        &:extend(.fix-flickering);
+      }
+      &:after {
+        &:extend(.fixfl);
+      }
+    }
+    &:nth-child(11) {
+      .animated(0.3s, ease-in-out, all);
+    }
+    &:nth-child(12) {
+      .animated();
+    }
+    &:nth-child(13) {
+      &:extend(.no-speak);
+    }
+    &:nth-child(14) {
+      &:extend(.nospeak);
+    }
+  }
+  p {
+    &:extend(.hyphen);
+  }
+  div {
+    &:nth-child(1) {
+      &:extend(.hw-accelerated);
+    }
+    &:nth-child(2) {
+      &:extend(.hwacc);
+    }
+  }
+  select {
+    &:extend(.fixsel all);
+  }
+  input[type=text] {
+    &:nth-child(1) {
+      .error-input(#666);
+    }
+    &:nth-child(2) {
+      .error-input();
+    }
+    &:nth-child(3) {
+      .placeholder(#333);
+    }
+    &:nth-child(4) {
+      .placeholder();
+    }
+    &:nth-child(5) {
+      .placeholder-i(red);
+    }
+    &:nth-child(6) {
+      .placeholder-i();
+    }
+    &:nth-child(7) {
+      &:extend(.fix-input all);
+    }
+  }
+}
