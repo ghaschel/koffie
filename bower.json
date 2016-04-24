@@ -1,10 +1,10 @@
 {
   "name": "Koffie",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "authors": [
     "Guilherme Haschel <ghaschel@gmail.com>"
   ],
-  "description": "A pack of useful mixins, functions and classes for a faster development. Availabe in Stylus, LESS and SASS.",
+  "description": "A pack of useful mixins, functions and classes for a faster development. Availabe in Stylus, LESS and SCSS.",
   "main": "./styl/koffie.styl",
   "moduleType": [
     "node"

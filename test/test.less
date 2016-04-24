@@ -1,4 +1,4 @@
-@import (reference) "../less/koffie.less";
+@import (reference) "../dist/less/koffie.less";
 
 html {
   .scroll-bar(6px, #ddd, #ccc, 5px);
@@ -65,7 +65,7 @@ html {
       .text-border(red, 1, yellow, 1, green, 1, purple, 1);
     }
     &:nth-child(2) {
-      .colored-text-border();
+      .text-border();
     }
     &:nth-child(3) {
       &:extend(.font-smoothing);

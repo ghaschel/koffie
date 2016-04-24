@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>{{project.name}}</title>
+  <link rel="stylesheet" href="assets/js/prettify/prettify.css?v=1" type="text/css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=1" type="text/css" />
+  <link rel="stylesheet" href="assets/css/qtcreator_light.css?v=1" type="text/css" />
+  <link rel='icon' type='image/x-icon', href='assets/img/favicon.ico' />
+  <link rel='apple-touch-icon-precomposed' href='assets/img/favicon.png' />
+</head>
+<body onload="">
+
+  <header>
+    <h1>{{project.name}}</h1>
+    <p class="version">v.<strong>{{project.version}}</strong></p>
+    <p class="description">{{project.description}}</p>
+    <a href="http://gruntjs.com/"><img src="https://cdn.gruntjs.com/builtwith.svg" alt="Built with Grunt"></a>
+  </header>
+
+  <div id="wrapper">
+
+    <nav role="main">
+      <h2>Filters</h2>
+      <button class="filter" data-filter="all">All</button>
+      <button class="filter" data-filter=".less">LESS</button>
+      <button class="filter" data-filter=".stylus">Stylus</button>
+    </nav>
+
+    <div class="styleguide">
+      <p class="warning">Due language limitations, aliases are not available in every language.<p>
+
+      {{#files}}
+      <div class="file">
+
+        {{#blocks}}
+
+          <div class="block mix {{format}}">
+
+            <div class="info">
+              <h4 data-format="({{format}})">{{name}}</h4>
+              {{#if description}}
+                <p class="description">{{description}}</p>
+              {{/if}}
+
+              {{#if alias}}
+                <h5 class="no-mgn-btm">Alias:</h5>
+                <p class="alias">{{alias}}</p>
+              {{/if}}
+
+              {{#if input}}
+              <h5 class="no-mgn-btm">Input:</h5>
+<pre><code class="less">{{input}}</code></pre>
+              {{/if}}
+
+              {{#if markup}}
+              <h5 class="no-mgn-btm">Output:</h5>
+<pre><code class="css compensate">{{markup.escaped}}</code></pre>
+
+                {{#state}}
+                <p class="state"><span>{{name}}</span> - {{description}}</p>
+                {{/state}}
+              {{/if}}
+
+              {{#if author}}
+              <p class="author">Author: {{author}}</p>
+              {{/if}}
+
+              {{#if ref}}
+                  <p class="ref">
+                    References:
+                    {{#each ref}}
+                      <a href="{{this}}" target="_blank" rel="bookmark">Link {{@index}}</a>
+                    {{/each}}
+                  </p>
+              {{/if}}
+
+
+            </div>
+
+        </div>
+        {{/blocks}}
+
+      </div>
+      {{/files}}
+
+    </div>
+
+  </div>
+
+<script src="assets/js/jquery.min.js?v=1" type="text/javascript"></script>
+<script src="assets/js/jquery.mixitup.js?v=1" type="text/javascript"></script>
+<script src="assets/js/highlight.pack.js?v=1" type="text/javascript"></script>
+<script type="text/javascript">
+   window.onload = function(){
+     document.body.innerHTML = document.body.innerHTML.replace(/@markup\n/g, '');
+     setTimeout(function(){
+       $('.file').mixItUp();
+     }, 200);
+   };
+   hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>

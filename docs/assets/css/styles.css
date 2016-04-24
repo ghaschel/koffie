@@ -159,6 +159,17 @@ td { vertical-align: top; }
             #wrapper .info h4 {
                 font-size: 18px;
                 margin: 0;
+                position: relative;
+                display: inline-block;
+            }
+
+            #wrapper .info h4:before {
+                content: attr(data-format);
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 70%;
+                transform: translateX(105%) translateY(-25%);
             }
 
             #wrapper .info .description {
@@ -382,4 +393,16 @@ p.warning {
   margin-top: 10px;
   font-style: italic;
   color: #888;
+}
+
+h3.format.stylus {
+  text-transform: capitalize;
+}
+
+h3.format.less {
+  text-transform: uppercase;
+}
+
+h3.format.scss {
+  text-transform: uppercase;
 }

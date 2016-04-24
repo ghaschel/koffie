@@ -7,7 +7,7 @@
 888 Y88b  Y888   '  888    888   888 Y888    ,
 888  Y88b  "88_-~   888    888   888  "88___/
 
-		     - 1.0
+		     - 1.0.2
              - Guilherme Haschel
 */
 
@@ -20,8 +20,9 @@
 * @author
 * @ref
 * @input .text-border(red, 1px, yellow, 1px, green, 1px, purple, 1px)
-* @type mixin
+* @format less
 * @markup
+text-shadow: 1px 1px red, -1px -1px yellow, 1px -1px green, -1px 1px purple;
 */
 .text-border( @color1: red, @size1: 1, @color2: yellow, @size2: 1, @color3: green, @size3: 1, @color4: purple, @size4: 1 ) {
   @size1-rplc: replace(replace(replace(replace(replace("@{size1}", "px", ""), "%", ""), "rem", ""), "em", ""), "pt", "");
@@ -34,7 +35,7 @@
   @size3-2:~"-@{size3-rplc}px";
   @size4-1:~"-@{size4-rplc}px";
   @size4-2:~"@{size4-rplc}px";
-  text-shadow:  @size1-1 @size1-1 @color1, @size2-1 @size2-1 @color2, @size3-1 @size3-2 @color3, @size4-1 @size4-2 @color4;
+  text-shadow: @size1-1 @size1-1 @color1, @size2-1 @size2-1 @color2, @size3-1 @size3-2 @color3, @size4-1 @size4-2 @color4;
 }
 
 /*
@@ -44,7 +45,7 @@
 * @author
 * @ref
 * @input .error-input(red)
-* @type function
+* @format less
 * @markup
 input {
   border: 1px solid red !important;
@@ -98,7 +99,7 @@ input:focus {
 * @author
 * @ref
 * @input .placeholder(#eee)
-* @type function
+* @format less
 * @markup
 input::-webkit-input-placeholder {
   color: red;
@@ -141,7 +142,7 @@ input:focus {
 * @author
 * @ref
 * @input &:extend(.fix-input all);
-* @type function
+* @format less
 * @markup
 input:focus::-webkit-input-placeholder {
   color: transparent;
@@ -172,7 +173,7 @@ input:invalid {
 * @author Maximilian Hoffmann & drinchev
 * @ref http://stackoverflow.com/questions/11459746/css3-webfont-smoothing-and-antialiasing-in-firefox-and-opera, http://drinchev.github.io/monosocialiconsfont/
 * @input &:extend(.antialiasing);
-* @type placeholder
+* @format less
 * @markup
 -webkit-text-rendering: optimizeLegibility;
 -moz-text-rendering: optimizeLegibility;
@@ -209,7 +210,7 @@ font-smoothing: antialiased;
 * @author Drew Noakes
 * @ref http://stackoverflow.com/questions/7725652/css-scrollbar-style-cross-browser
 * @input .scroll-bar(6px, transparent, #ccc, 5px)
-* @type function
+* @format less
 * @markup
 html {
   scrollbar-3dlight-color: transparent;
@@ -264,7 +265,7 @@ html::-webkit-scrollbar-thumb {
 * @author W3C
 * @ref https://www.w3.org/Style/Examples/007/scrollbars.en.html
 * @input &:extend(.disable-scroll-styling);
-* @type function
+* @format less
 * @markup
 scrollbar-face-color: ThreeDFace !important;
 scrollbar-shadow-color: ThreeDDarkShadow !important;
@@ -291,7 +292,7 @@ scrollbar-arrow-color: ButtonText !important;
 * @author
 * @ref http://css3pie.com
 * @input .border-radius(5px)
-* @type function
+* @format less
 * @markup
 -webkit-border-radius: 5px;
 -khtml-border-radius: 5px;
@@ -318,7 +319,7 @@ behavior: url('https://cdn.rawgit.com/ghaschel/koffie/master/htc/PIE.htc');
 * @author
 * @ref
 * @input .padding-x(3px)
-* @type function
+* @format less
 * @markup
 padding-left: 3px;
 padding-right: 3px;
@@ -335,7 +336,7 @@ padding-right: 3px;
 * @author
 * @ref
 * @input .padding-y(6px)
-* @type function
+* @format less
 * @markup
 padding-top: 6px;
 padding-bottom: 6px;
@@ -352,7 +353,7 @@ padding-bottom: 6px;
 * @author
 * @ref
 * @input .margin-y(9px)
-* @type function
+* @format less
 * @markup
 margin-top: 9px;
 margin-bottom: 9px;
@@ -369,7 +370,7 @@ margin-bottom: 9px;
 * @author
 * @ref
 * @input .margin-x(6px)
-* @type function
+* @format less
 * @markup
 margin-left: 6px;
 margin-right: 6px;
@@ -386,7 +387,7 @@ margin-right: 6px;
 * @author
 * @ref
 * @input .opacity(0.35)
-* @type function
+* @format less
 * @markup
 -webkit-opacity: 0.35;
 -khtml-opacity: 0.35;
@@ -416,7 +417,7 @@ filter: alpha(opacity=35);
  * @author
  * @ref
  * @input &:extend(.nout all);
- * @type function
+* @format less
  * @markup
  a {
    outline: none;
@@ -439,7 +440,7 @@ filter: alpha(opacity=35);
 * @author
 * @ref
 * @input span:after { .top-triangle(15px, #fff) }
-* @type function
+* @format less
 * @markup
 span:after {
   content: '';
@@ -476,7 +477,7 @@ span:after {
 * @author
 * @ref
 * @input span:after { .bottom-triangle(15px, #fff) }
-* @type function
+* @format less
 * @markup
 span:after {
   content: '';
@@ -513,7 +514,7 @@ span:after {
 * @author
 * @ref
 * @input span:after { .left-triangle(15px, #fff) }
-* @type function
+* @format less
 * @markup
 span:after {
   content: '';
@@ -550,7 +551,7 @@ span:after {
 * @author
 * @ref
 * @input span:after { .right-triangle(15px, #fff) }
-* @type function
+* @format less
 * @markup
 span:after {
   content: '';
@@ -587,7 +588,7 @@ span:after {
 * @author
 * @ref
 * @input &:extend(.text-overflow);
-* @type placeholder
+* @format less
 * @markup
 overflow: hidden
 white-space: nowrap
@@ -611,7 +612,7 @@ display: inline-block
 * @author
 * @ref
 * @input &:extend(.no-user-select);
-* @type placeholder
+* @format less
 * @markup
 -webkit-user-select: none;
 -khtml-user-select: none;
@@ -637,7 +638,7 @@ user-select: none;
 * @author
 * @ref
 * @input .user-select(yellow, red)
-* @type function
+* @format less
 * @markup
 p::selection {
   color: red;
@@ -666,7 +667,7 @@ p::-moz-selection {
 * @author
 * @ref
 * @input .&:extend(.fix-flickering);
-* @type placeholder
+* @format less
 * @markup
 -webkit-backface-visibility: hidden;
 -ms-backface-visibility: hidden;
@@ -686,7 +687,7 @@ backface-visibility: hidden;
 * @author
 * @ref
 * @input .animated(0.3s, ease-in-out, all)
-* @type function
+* @format less
 * @markup
 -webkit-transition: 0.3s ease-in-out all;
 -khtml-transition: 0.3s ease-in-out all;
@@ -711,7 +712,7 @@ transition: 0.3s ease-in-out all;
 * @author
 * @ref
 * @input &:extend(.nospeak)
-* @type placeholder
+* @format less
 * @markup
 speak: none;
 */
@@ -727,7 +728,7 @@ speak: none;
 * @author
 * @ref
 * @input &:extend(.hw-accelerated);
-* @type placeholder
+* @format less
 * @markup
 -webkit-transform: rotateZ(360deg);
 -webkit-backface-visibility: hidden;
@@ -753,7 +754,7 @@ perspective: 1000;
 * @author
 * @ref
 * @input &:extend(.fixsel all)
-* @type function
+* @format less
 * @markup
 select {
   -webkit-appearance: none;
@@ -786,7 +787,7 @@ select::-ms-expand {
 * @author Kenneth Auchenberg
 * @ref https://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
 * @input &:extend(.hyphen);
-* @type placeholder
+* @format less
 * @markup
 -webkit-hyphens: auto;
 -moz-hyphens: auto;
