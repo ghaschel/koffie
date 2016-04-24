@@ -1,6 +1,6 @@
 {
   "name": "koffie",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Pack of useful mixins, functions and classes for a faster development. Available in Stylus, LESS, and SCSS (coming soon)",
   "main": "styl/koffie.styl",
   "scripts": {
