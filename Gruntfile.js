@@ -16,7 +16,11 @@ module.exports = function(grunt) {
 						},
 						// Finds @ref in comment blocks
 						ref: function(i, line, block) {
-							return line.split(',');
+							if (line.length > 0) {
+								return line.split(',');
+							} else {
+								return;
+							}
 						},
 						// Finds @author in comment blocks
 						author: function(i, line, block) {
@@ -42,4 +46,7 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('dss');
 	grunt.loadNpmTasks('grunt-dss');
+
+	grunt.option('debug', false);
+	
 };

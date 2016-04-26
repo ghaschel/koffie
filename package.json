@@ -1,12 +1,12 @@
 {
   "name": "koffie",
-  "version": "1.0.4",
-  "description": "Pack of useful mixins, functions and classes for a faster development. Available in Stylus, LESS, and SCSS (coming soon)",
+  "version": "1.1.4",
+  "description": "A pack of useful mixins, functions, classes and placeholders for a faster development. Available in Stylus, LESS, and SCSS.",
   "main": "styl/koffie.styl",
   "scripts": {
     "pretest": "chmod 0777 ./test/test.sh",
     "test": "./test/test.sh",
-    "posttest": "rm -rf ./test/test-less.css && rm -rf ./test/test-stylus.css;"
+    "posttest": "rm -rf ./test/test-less.css && rm -rf ./test/test-stylus.css && rm -rf ./test/test-scss.css;"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "grunt-cli": "^1.2.0",
     "grunt-dss": "^1.0.8",
     "less": "^2.6.1",
+    "node-sass": "^3.6.0",
     "stylus": "^0.54.2"
   }
 }

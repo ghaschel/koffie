@@ -1,0 +1,17 @@
+{
+  "propertyOrdering": false,
+  "hexLength": "short",
+  "decimalZero": false,
+  "importantRule": true,
+  "zeroUnit": "no_unit",
+  "qualifyingElement": false,
+  "duplicateProperty": true,
+  "importPath": false,
+  "finalNewline": true,
+  "spaceBetweenParens": "one_space",
+  "urlQuotes": true,
+  "trailingSemicolon": true,
+  "spaceBeforeBrace": "one_space",
+  "spaceAroundOperator": "both",
+  "spaceAroundComma": "after"
+}

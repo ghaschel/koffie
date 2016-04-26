@@ -1,17 +1,15 @@
-/*
+//
+// 888   _              88~\   88~\ ,e,
+// 888 e~ ~   e88~-_  _888__ _888__  "   e88~~8e
+// 888d8b    d888   i  888    888   888 d888  88b
+// 888Y88b   8888   |  888    888   888 8888__888
+// 888 Y88b  Y888   '  888    888   888 Y888    ,
+// 888  Y88b  "88_-~   888    888   888  "88___/
+//
+// 		     - 1.1.4
+//              - Guilherme Haschel
 
-888   _              88~\   88~\ ,e,
-888 e~ ~   e88~-_  _888__ _888__  "   e88~~8e
-888d8b    d888   i  888    888   888 d888  88b
-888Y88b   8888   |  888    888   888 8888__888
-888 Y88b  Y888   '  888    888   888 Y888    ,
-888  Y88b  "88_-~   888    888   888  "88___/
-
-		     - 1.1.4
-             - Guilherme Haschel
-*/
-
-@import (reference) 'configs';
+@import 'configs';
 
 /*
 * @name text-border
@@ -19,33 +17,41 @@
 * @alias
 * @author
 * @ref
-* @input .text-border(red, 1px, yellow, 1px, green, 1px, purple, 1px)
-* @format less
+* @input &#64;include text-border(red, 1px, yellow, 1px, green, 1px, purple, 1px)
+* @format scss
 * @markup
-text-shadow: 1px 1px red, -1px -1px yellow, 1px -1px green, -1px 1px purple;
+text-shadow: 1px 1px #f00, -1px -1px #ff0, 1px -1px #008000, -1px 1px #800080;
 */
-.text-border( @color1: red, @size1: 1, @color2: yellow, @size2: 1, @color3: green, @size3: 1, @color4: purple, @size4: 1 ) {
-  @size1-rplc: replace(replace(replace(replace(replace('@{size1}', 'px', ''), '%', ''), 'rem', ''), 'em', ''), 'pt', '');
-  @size2-rplc: replace(replace(replace(replace(replace('@{size2}', 'px', ''), '%', ''), 'rem', ''), 'em', ''), 'pt', '');
-  @size3-rplc: replace(replace(replace(replace(replace('@{size3}', 'px', ''), '%', ''), 'rem', ''), 'em', ''), 'pt', '');
-  @size4-rplc: replace(replace(replace(replace(replace('@{size4}', 'px', ''), '%', ''), 'rem', ''), 'em', ''), 'pt', '');
-  @size1-1: ~'@{size1-rplc}px';
-  @size2-1: ~'-@{size2-rplc}px';
-  @size3-1: ~'@{size3-rplc}px';
-  @size3-2: ~'-@{size3-rplc}px';
-  @size4-1: ~'-@{size4-rplc}px';
-  @size4-2: ~'@{size4-rplc}px';
-  text-shadow: @size1-1 @size1-1 @color1, @size2-1 @size2-1 @color2, @size3-1 @size3-2 @color3, @size4-1 @size4-2 @color4;
+@mixin text-border($color1: #f00, $size1: 1px, $color2: #ff0, $size2: 1px, $color3: #008000, $size3: 1px, $color4: #800080, $size4: 1px) {
+  @if (unitless($size1)) {
+    $size1: #{$size1}px;
+  }
+  @if (unitless($size2)) {
+    $size2: #{$size2}px;
+  }
+  @if (unitless($size3)) {
+    $size3: #{$size3}px;
+  }
+  @if (unitless($size3)) {
+    $size3: #{$size3}px;
+  }
+  $size1-1: $size1;
+  $size2-1: unquote('-' + $size2);
+  $size3-1: $size3;
+  $size3-2: unquote('-' + $size3);
+  $size4-1: unquote('-' + $size4);
+  $size4-2: $size4;
+  text-shadow: $size1-1 $size1-1 $color1, $size2-1 $size2-1 $color2, $size3-1 $size3-2 $color3, $size4-1 $size4-2 $color4;
 }
 
 /*
-* @name .error-input
+* @name error-input($color)
 * @description Changes the placeholder, border and outline colors.
 * @alias
 * @author
 * @ref
-* @input .error-input(red)
-* @format less
+* @input &#64;include error-input(red)
+* @format scss
 * @markup
 input {
   border: 1px solid red !important;
@@ -71,35 +77,44 @@ input:focus {
   outline-color: red;
 }
 */
-.error-input( @color: #e36d56 ) {
-  border: 1px solid @color !important;
-  color: @color;
-  outline-color: @color;
+@mixin error-input($color: #e36d56) {
+  border: 1px solid $color !important;
+  color: $color;
+  outline-color: $color;
+
   &::-webkit-input-placeholder {
-    color: @color;
+    color: $color;
   }
+
   &::-moz-placeholder {
-    color: @color;
+    color: $color;
   }
+
   &:-moz-placeholder {
-    color: @color;
+    color: $color;
   }
+
   &:-ms-input-placeholder {
-    color: @color;
+    color: $color;
   }
+
+  &::placeholder {
+    color: $color;
+  }
+
   &:focus {
-    outline-color: @color;
+    outline-color: $color;
   }
 }
 
 /*
-* @name .placeholder
+* @name placeholder($color)
 * @description Changes the placeholder color.
 * @alias
 * @author
 * @ref
-* @input .placeholder(#eee)
-* @format less
+* @input &#64;include placeholder(#eee)
+* @format scss
 * @markup
 input::-webkit-input-placeholder {
   color: red;
@@ -120,29 +135,36 @@ input:focus {
   outline-color: red;
 }
 */
-.placeholder( @color: #eeeeee ) {
+@mixin placeholder($color: #eee) {
   &::-webkit-input-placeholder {
-    color: @color;
+    color: $color;
   }
+
   &::-moz-placeholder {
-    color: @color;
+    color: $color;
   }
+
   &:-moz-placeholder {
-    color: @color;
+    color: $color;
   }
+
   &:-ms-input-placeholder {
-    color: @color;
+    color: $color;
+  }
+
+  &::placeholder {
+    color: $color;
   }
 }
 
 /*
-* @name .fix-input
+* @name fix-input()
 * @description Removes the placeholder while the input is focused and empty. Also removes the 'invalid' input state red box shadow from Firefox.
 * @alias
 * @author
 * @ref
-* @input &:extend(.fix-input all);
-* @format less
+* @input &#64;include fix-input()
+* @format scss
 * @markup
 input:focus::-webkit-input-placeholder {
   color: transparent;
@@ -153,12 +175,13 @@ input:invalid {
   box-shadow: none;
 }
 */
-.fix-input {
+@mixin fix-input {
   &:focus {
     &::-webkit-input-placeholder {
       color: transparent;
     }
   }
+
   &:invalid {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
@@ -166,14 +189,13 @@ input:invalid {
   }
 }
 
-/*
-* @name .antialiasing
+/*@name %antialiasing
 * @description Enables font antialiasing.
-* @alias .anti-aliasing, .font-smoothing
+* @alias %anti-aliasing, %font-smoothing
 * @author Maximilian Hoffmann & drinchev
 * @ref http://stackoverflow.com/questions/11459746/css3-webfont-smoothing-and-antialiasing-in-firefox-and-opera, http://drinchev.github.io/monosocialiconsfont/
-* @input &:extend(.antialiasing);
-* @format less
+* @input &#64;extend %antialiasing
+* @format scss
 * @markup
 -moz-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
@@ -187,9 +209,9 @@ input:invalid {
 font-smoothing: antialiased;
 text-rendering: optimizeLegibility;
 */
-.font-smoothing,
-.anti-aliasing,
-.antialiasing {
+%antialiasing,
+%anti-aliasing,
+%font-smoothing {
   -moz-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-text-rendering: optimizeLegibility;
@@ -204,27 +226,27 @@ text-rendering: optimizeLegibility;
 }
 
 /*
-* @name .scroll-bar
+* @name scroll-bar($size, $background1, $background2, $radius)
 * @description Changes the scrollbar's default style (Not for Firefox).
 * @alias
 * @author Drew Noakes
 * @ref http://stackoverflow.com/questions/7725652/css-scrollbar-style-cross-browser
-* @input .scroll-bar(6px, transparent, #ccc, 5px)
-* @format less
+* @input &#64;include scroll-bar(6px, transparent, #ccc, 5px)
+* @format scss
 * @markup
 html {
   scrollbar-3dlight-color: transparent;
   scrollbar-arrow-color: #666;
-  scrollbar-base-color: transparent;
-  scrollbar-darkshadow-color: transparent;
   scrollbar-face-color: #ccc;
+  scrollbar-darkshadow-color: transparent;
+  scrollbar-base-color: transparent;
   scrollbar-highlight-color: transparent;
   scrollbar-shadow-color: transparent;
   scrollbar-track-color: transparent;
 }
 html::-webkit-scrollbar {
-  width: 6px;
   height: 6px;
+  width: 6px;
 }
 html::-webkit-scrollbar-track {
   background: transparent;
@@ -235,37 +257,40 @@ html::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 */
-.scroll-bar( @size: 6px, @background1: transparent, @background2: #ccc, @radius: 5px ) {
-  scrollbar-3dlight-color: @background1;
-  scrollbar-arrow-color: darken(@background2, 50%);
-  scrollbar-base-color: @background1;
-  scrollbar-darkshadow-color: @background1;
-  scrollbar-face-color: @background2;
-  scrollbar-highlight-color: @background1;
-  scrollbar-shadow-color: @background1;
-  scrollbar-track-color: @background1;
+@mixin scroll-bar($size: 6px, $background1: transparent, $background2: #ccc, $radius: 5px) {
+  scrollbar-3dlight-color: $background1;
+  scrollbar-arrow-color: darken($background2, 50%);
+  scrollbar-base-color: $background1;
+  scrollbar-darkshadow-color: $background1;
+  scrollbar-face-color: $background2;
+  scrollbar-highlight-color: $background1;
+  scrollbar-shadow-color: $background1;
+  scrollbar-track-color: $background1;
+
   &::-webkit-scrollbar {
-    height: @size; /* for horizontal scrollbars */
-    width: @size;  /* for vertical scrollbars */
+    height: $size;
+    width: $size;
   }
+
   &::-webkit-scrollbar-track {
-    background: @background1;
+    background: $background1;
   }
+
   &::-webkit-scrollbar-thumb {
-    -webkit-border-radius: @radius;
-    background: @background2;
-    border-radius: @radius;
+    -webkit-border-radius: $radius;
+    background: $background2;
+    border-radius: $radius;
   }
 }
 
 /*
-* @name .disable-scroll-styling
+* @name disable-scroll-styling()
 * @description Disable scrollbar styling by not vendor-prefixed properties.
 * @alias
 * @author W3C
 * @ref https://www.w3.org/Style/Examples/007/scrollbars.en.html
-* @input &:extend(.disable-scroll-styling);
-* @format less
+* @input &#64;extend %disable-scroll-styling()
+* @format scss
 * @markup
 scrollbar-3dlight-color: ThreeDLightShadow !important;
 scrollbar-arrow-color: ButtonText !important;
@@ -275,119 +300,119 @@ scrollbar-highlight-color: ThreeDHighlight !important;
 scrollbar-shadow-color: ThreeDDarkShadow !important;
 scrollbar-track-color: Scrollbar !important;
 */
-.disable-scroll-styling {
+%disable-scroll-styling {
   scrollbar-3dlight-color: ThreeDLightShadow !important;
   scrollbar-arrow-color: ButtonText !important;
   scrollbar-darkshadow-color: ThreeDDarkShadow !important;
-	scrollbar-face-color: ThreeDFace !important;
-	scrollbar-highlight-color: ThreeDHighlight !important;
+  scrollbar-face-color: ThreeDFace !important;
+  scrollbar-highlight-color: ThreeDHighlight !important;
   scrollbar-shadow-color: ThreeDDarkShadow !important;
-	scrollbar-track-color: Scrollbar !important;
+  scrollbar-track-color: Scrollbar !important;
 }
 
 /*
-* @name .border-radius
+* @name border-radius($radius)
 * @description Cross-browser border-radius.
-* @alias
+* @alias bradius()
 * @author
 * @ref http://css3pie.com
-* @input .border-radius(5px)
-* @format less
+* @input &#64;include border-radius(5px)
+* @format scss
 * @markup
 -khtml-border-radius: 5px;
 -moz-border-radius: 5px;
--webkit-border-radius: 5px;
-border-radius: 5px;
 -ms-behaviour: url('https://cdn.rawgit.com/ghaschel/koffie/master/htc/PIE.htc');
+-webkit-border-radius: 5px;
 behavior: url('https://cdn.rawgit.com/ghaschel/koffie/master/htc/PIE.htc');
+border-radius: 5px;
 */
-.border-radius( @radius: 5px ) {
-	-khtml-border-radius: @radius;
-	-moz-border-radius: @radius;
-  -webkit-border-radius: @radius;
-	border-radius: @radius;
-  & when (@ie6 = true), (@ie7 = true), (@ie8 = true) {
-    -ms-behavior: url('@{absPath}PIE.htc');
-		behavior: url('@{absPath}PIE.htc');
-  }
+@mixin border-radius($radius: 5px) {
+  -khtml-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  @if $ie6 or $ie7 or $ie8 {
+    -ms-behavior: url($abs-path + 'PIE.htc');
+    behavior: url($abs-path + 'PIE.htc');
+	}
 }
 
 /*
-* @name .padding-x
+* @name padding-x($value)
 * @description Wrapper function for easier use of padding-left and padding-right.
 * @alias
 * @author
 * @ref
-* @input .padding-x(3px)
-* @format less
+* @input &#64;include padding-x(3px)
+* @format scss
 * @markup
 padding-left: 3px;
 padding-right: 3px;
 */
-.padding-x( @value: 0px ) {
-	padding-left: @value;
-	padding-right: @value;
+@mixin padding-x($value: none) {
+  padding-left: $value;
+  padding-right: $value;
 }
 
 /*
-* @name .padding-y
+* @name padding-y($value)
 * @description Wrapper function for easier use of padding-top and padding-bottom.
 * @alias
 * @author
 * @ref
-* @input .padding-y(6px)
-* @format less
+* @input &#64;include padding-y(6px)
+* @format scss
 * @markup
 padding-bottom: 6px;
 padding-top: 6px;
 */
-.padding-y( @value: 0px ) {
-  padding-bottom: @value;
-	padding-top: @value;
+@mixin padding-y($value: none) {
+  padding-bottom: $value;
+  padding-top: $value;
 }
 
 /*
-* @name .margin-y
+* @name margin-y($value)
 * @description Wrapper function for easier use of margin-top and margin-bottom.
 * @alias
 * @author
 * @ref
-* @input .margin-y(9px)
-* @format less
+* @input &#64;include margin-y(9px)
+* @format scss
 * @markup
 margin-bottom: 9px;
 margin-top: 9px;
 */
-.margin-y( @value: 0px ) {
-  margin-bottom: @value;
-	margin-top: @value;
+@mixin margin-y($value: none) {
+  margin-bottom: $value;
+  margin-top: $value;
 }
 
 /*
-* @name .margin-x
+* @name margin-x($value)
 * @description Wrapper function for easier use of margin-left and margin-right.
 * @alias
 * @author
 * @ref
-* @input .margin-x(6px)
-* @format less
+* @input &#64;include margin-x(6px)
+* @format scss
 * @markup
 margin-left: 6px;
 margin-right: 6px;
 */
-.margin-x( @value: 0px ) {
-	margin-left: @value;
-	margin-right: @value;
+@mixin margin-x($value: none) {
+  margin-left: $value;
+  margin-right: $value;
 }
 
 /*
-* @name .opacity
+* @name opacity($opacity)
 * @description Cross-browser opacity function.
 * @alias
 * @author
 * @ref
-* @input .opacity(0.35)
-* @format less
+* @input &#64;include opacity(0.35)
+* @format scss
 * @markup
 -webkit-opacity: 0.35;
 -khtml-opacity: 0.35;
@@ -396,51 +421,51 @@ opacity: 0.35;
 -ms-filter: progrid:DXImageTransform.Microsoft.Alpha(opacity=35);
 filter: alpha(opacity=35);
 */
-.opacity( @opacity: 0.5 ) {
-	-khtml-opacity: @opacity;
-	-moz-opacity: @opacity;
-  -webkit-opacity: @opacity;
-	opacity: @opacity;
-	@opperc: @opacity * 100;
-  & when (@ie8) {
-    -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+@mixin opacity($opacity: .5) {
+  -khtml-opacity: $opacity;
+  -moz-opacity: $opacity;
+  -webkit-opacity: $opacity;
+  opacity: $opacity;
+  @if $ie8 {
+    -ms-filter: unquote('progid:DXImageTransform.Microsoft.Alpha(opacity=' + round($opacity * 100) + ')');
   }
-  & when (@ie5), (@ie6), (@ie7) {
-	   filter: ~"alpha(opacity=@{opperc})";
-  }
- }
-
- /*
- * @name .nout
- * @description Removes the outline when focus state is active.
- * @alias
- * @author
- * @ref
- * @input &:extend(.nout all);
-* @format less
- * @markup
- a {
-   outline: none;
- }
- a:focus {
-   outline: none;
- }
- */
-.nout {
-  outline: none;
-	&:focus {
-		outline: none;
+  @if $ie5 or $ie6 or $ie7 {
+    filter: unquote('alpha(opacity=' + round($opacity * 100) + ')');
   }
 }
 
 /*
-* @name .top-triangle
+* @name %nout
+* @description Removes the outline when focus state is active.
+* @alias
+* @author
+* @ref
+* @input &#64;extend %nout
+* @format scss
+* @markup
+a {
+  outline: none;
+}
+a:focus {
+  outline: none;
+}
+*/
+%nout {
+  outline: none;
+
+  &:focus {
+    outline: none;
+	}
+}
+
+/*
+* @name top-triangle($size, $color)
 * @description Displays a triangle at the element's top.
 * @alias
 * @author
 * @ref
-* @input span:after { .top-triangle(15px, #fff) }
-* @format less
+* @input span:after { @include top-triangle(15px, $fff) }
+* @format scss
 * @markup
 span:after {
   border-bottom: 15px solid #fff;
@@ -455,29 +480,27 @@ span:after {
   width: 1px;
 }
 */
-.top-triangle( @size: 15px, @color: #fff ) {
-  border-bottom: @size solid @color;
-  border-left: @size solid transparent;
-  border-right: @size solid transparent;
-  border-top: @size solid transparent;
-	content: '';
-	display: inline-block;
-	height: 1px;
-	position: absolute;
-	@top: (@size * 2) - 1;
-	@top2: ~'-@{top}';
-	top: @top2;
+@mixin top-triangle($size: 15px, $color: #fff) {
+  border-bottom: $size solid $color;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: $size solid transparent;
+  content: '';
+  display: inline-block;
+  height: 1px;
+  position: absolute;
+  top: round(($size * 2) - 1);
   width: 1px;
 }
 
 /*
-* @name .bottom-triangle
+* @name bottom-triangle($size, $color)
 * @description Displays a triangle in the element's bottom.
 * @alias
 * @author
 * @ref
-* @input span:after { .bottom-triangle(15px, #fff) }
-* @format less
+* @input span:after { @include bottom-triangle(15px, $fff) }
+* @format scss
 * @markup
 span:after {
   border-bottom: 15px solid transparent;
@@ -492,29 +515,27 @@ span:after {
   width: 1px;
 }
 */
-.bottom-triangle( @size: 15px, @color: #fff ) {
-  border-left: @size solid transparent;
-  border-top: @size solid @color;
-  border-bottom: @size solid transparent;
-  border-right: @size solid transparent;
-  @bottom: (@size * 2) - 1;
-  @bottom2: ~'-@{bottom}';
-  bottom: @bottom2;
-	content: '';
-	display: inline-block;
-	height: 1px;
-	position: absolute;
+@mixin bottom-triangle($size: 15px, $color: #fff) {
+  border-bottom: $size solid transparent;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: $size solid $color;
+  bottom: round(($size * 2) - 1);
+  content: '';
+  display: inline-block;
+  height: 1px;
+  position: absolute;
   width: 1px;
 }
 
 /*
-* @name .left-triangle
+* @name left-triangle($size, $color)
 * @description Displays a triangle in the element's left.
 * @alias
 * @author
 * @ref
-* @input span:after { .left-triangle(15px, #fff) }
-* @format less
+* @input span:after { @include left-triangle(15px, $fff) }
+* @format scss
 * @markup
 span:after {
   border-bottom: 15px solid transparent;
@@ -529,29 +550,27 @@ span:after {
   width: 1px;
 }
 */
-.left-triangle( @size: 15px, @color: #fff ) {
-  border-left: @size solid transparent;
-  border-top: @size solid transparent;
-  border-bottom: @size solid transparent;
-  border-right: @size solid @color;
-	content: '';
-	display: inline-block;
-	height: 1px;
-  @left: (@size * 2) - 1;
-  @left2: ~'-@{left}';
-  left: @left2;
-	position: absolute;
+@mixin left-triangle($size: 15px, $color: #fff) {
+  border-bottom: $size solid transparent;
+  border-left: $size solid transparent;
+  border-right: $size solid $color;
+  border-top: $size solid transparent;
+  content: '';
+  display: inline-block;
+  height: 1px;
+  left: round(($size * 2) - 1);
+  position: absolute;
   width: 1px;
 }
 
 /*
-* @name .right-triangle
+* @name right-triangle($size, $color)
 * @description Displays a triangle in the element's right.
 * @alias
 * @author
 * @ref
-* @input span:after { .right-triangle(15px, #fff) }
-* @format less
+* @input span:after { @include right-triangle(15px, $fff) }
+* @format scss
 * @markup
 span:after {
   border-bottom: 15px solid transparent;
@@ -566,169 +585,169 @@ span:after {
   width: 1px;
 }
 */
-.right-triangle( @size: 15px, @color: #fff ) {
-  border-bottom: @size solid transparent;
-  border-left: @size solid @color;
-  border-right: @size solid transparent;
-  border-top: @size solid transparent;
-	content: '';
-	display: inline-block;
-	height: 1px;
+@mixin right-triangle($size: 15px, $color: #fff) {
+  border-bottom: $size solid transparent;
+  border-left: $size solid $color;
+  border-right: $size solid transparent;
+  border-top: $size solid transparent;
+  content: '';
+  display: inline-block;
+  height: 1px;
   position: absolute;
-  @right: (@size * 2) - 1;
-  @right2: ~'-@{right}';
-  right: @right2;
-	width: 1px;
+  right: round(($size * 2) - 1);
+  width: 1px;
 }
 
 /*
-* @name .text-overflow
+* @name %text-overflow
 * @description Displays reticences at the line's end in case it doesn't fit.
-* @alias .txt-ovf, .txtovf
+* @alias %txt-ovf, %txtovf
 * @author
 * @ref
-* @input &:extend(.text-overflow);
-* @format less
+* @input &#64;extend %text-overflow
+* @format scss
 * @markup
-display: inline-block
-max-widt: 100%
 overflow: hidden
-text-overflow: ellipsis
 white-space: nowrap
+text-overflow: ellipsis
+max-widt: 100%
+display: inline-block
 */
-.text-overflow,
-.txt-ovf {
+%text-overflow,
+%txt-ovf,
+%txtovf {
   display: inline-block;
   max-width: 100%;
-	overflow: hidden;
-	text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 /*
-* @name .no-user-select
+* @name %no-user-select
 * @description Disable user content selection.
-* @alias .nousel
+* @alias %nousel
 * @author
 * @ref
-* @input &:extend(.no-user-select);
-* @format less
+* @input &#64;extend %no-user-select
+* @format scss
 * @markup
--webkit-user-select: none;
 -khtml-user-select: none;
 -moz-user-select: none;
 -ms-user-select: none;
 -o-user-select: none;
+-webkit-user-select: none;
 user-select: none;
 */
-.no-user-select,
-.nousel {
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	-o-user-select: none;
+%no-user-select,
+%nousel {
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
   -webkit-user-select: none;
-	user-select: none;
+  user-select: none;
 }
 
 /*
-* @name .user-select
+* @name user-select($color-1, $color-2)
 * @description Changes the user content selection color.
-* @alias
+* @alias usel()
 * @author
 * @ref
-* @input .user-select(yellow, red)
-* @format less
+* @input &#64;include user-select(yellow, red)
+* @format scss
 * @markup
 p::selection {
-  color: red;
   background: yellow;
+  color: red;
 }
 p::-moz-selection {
-  color: yellow;
   background: red;
+  color: yellow;
 }
 */
-.user-select( @color-1: yellow, @color-2: red ) {
-	&::selection {
-    background: @color-1;
-		color: @color-2;
-	}
-	&::-moz-selection {
-		background: @color-1;
-    color: @color-2;
-	}
+@mixin user-select($color-1: #ff0, $color-2: #f00) {
+  &::selection {
+    background: $color-1;
+    color: $color-2;
+  }
+
+  &::-moz-selection {
+    background: $color-1;
+    color: $color-2;
+  }
 }
 
 /*
-* @name .fix-flickering
+* @name %fix-flickering
 * @description Fixes the flickering on pseudo elements when animated by transition.
-* @alias .fixfl
+* @alias %fixfl
 * @author
 * @ref
-* @input .&:extend(.fix-flickering);
-* @format less
+* @input &#64;extend %fix-flickering
+* @format scss
 * @markup
 -ms-backface-visibility: hidden;
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;
 */
-.fix-flickering,
-.fixfl {
-	-ms-backface-visibility: hidden; /* IE */
-  -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+%fix-flickering,
+%fixfl {
+  -ms-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 /*
-* @name .transition
+* @name transition($time, $ease, $where)
 * @description Function for faster transition creation.
 * @alias
 * @author
 * @ref
-* @input .transition(0.3s, ease-in-out, all)
-* @format less
+* @input &#64;include transition(0.3s, ease-in-out, all)
+* @format scss
 * @markup
+-webkit-transition: 0.3s ease-in-out all;
 -khtml-transition: 0.3s ease-in-out all;
 -moz-transition: 0.3s ease-in-out all;
 -ms-transition: 0.3s ease-in-out all;
 -o-transition: 0.3s ease-in-out all;
--webkit-transition: 0.3s ease-in-out all;
 transition: 0.3s ease-in-out all;
 */
-.transition( @time: 0.3s, @ease: ease-in-out, @where: all ) {
-	-khtml-transition: @time @ease @where;
-	-moz-transition: @time @ease @where;
-	-ms-transition: @time @ease @where;
-	-o-transition: @time @ease @where;
-  -webkit-transition: @time @ease @where;
-	transition: @time @ease @where;
+@mixin transition($time: .3s, $ease: ease-in-out, $where: all) {
+  -khtml-transition: $time $ease $where;
+  -moz-transition: $time $ease $where;
+  -ms-transition: $time $ease $where;
+  -o-transition: $time $ease $where;
+  -webkit-transition: $time $ease $where;
+  transition: $time $ease $where;
 }
 
 /*
-* @name .nospeak
+* @name %nospeak
 * @description Hides an element from screen readers.
-* @alias .no-speak
+* @alias %no-speak
 * @author
 * @ref
-* @input &:extend(.nospeak)
-* @format less
+* @input &#64;extend %nospeak
+* @format scss
 * @markup
 speak: none;
 */
-.nospeak,
-.no-speak {
-	speak: none;
+%nospeak,
+%no-speak {
+  speak: none;
 }
 
 /*
-* @name .hw-accelerated
+* @name %hw-accelerated
 * @description Enables hardware acceleration. Use at the desided element's parent.
-* @alias .hwacc
+* @alias %hwacc
 * @author
 * @ref
-* @input &:extend(.hw-accelerated);
-* @format less
+* @input &#64;extend %hw-accelerated
+* @format scss
 * @markup
 -webkit-backface-visibility: hidden;
 -webkit-perspective: 1000;
@@ -736,27 +755,27 @@ speak: none;
 backface-visibility: hidden;
 perspective: 1000;
 */
-.hw-accelerated,
-.hwacc {
+%hw-accelerated,
+%hwacc {
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
-	-webkit-transform: rotateZ(360deg);
- 	backface-visibility: hidden;
-	perspective: 1000;
+  -webkit-transform: rotateZ(360deg);
+  backface-visibility: hidden;
+  perspective: 1000;
 }
 
 /*
-* @name .fixsel
+* @name fixsel()
 * @description Removes select tag's default style.
 * @alias
 * @author
 * @ref
-* @input &:extend(.fixsel all)
-* @format less
+* @input &#64;include fixsel()
+* @format scss
 * @markup
 select {
-  -moz-appearance: none;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   overflow: -moz-hidden-unscrollable;
   text-indent: .01px;
@@ -766,33 +785,34 @@ select::-ms-expand {
   display: none;
 }
 */
-.fixsel {
-	-moz-appearance: none;
+@mixin fixsel {
+  -moz-appearance: none;
   -webkit-appearance: none;
-	appearance: none;
-	overflow: -moz-hidden-unscrollable;
-	text-indent: .01px;
-	text-overflow: '';
-	&::-ms-expand {
-		display: none;
-  }
+  appearance: none;
+  overflow: -moz-hidden-unscrollable;
+  text-indent: .01px;
+  text-overflow: '';
+
+  &::-ms-expand {
+    display: none;
+	}
 }
 
 /*
-* @name .hyphen
+* @name %hyphen
 * @description Add a hyphen to broken words.
 * @alias
 * @author Kenneth Auchenberg
 * @ref https://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
-* @input &:extend(.hyphen);
-* @format less
+* @input &#64;extend %hyphen
+* @format scss
 * @markup
+-webkit-hyphens: auto;
 -moz-hyphens: auto;
 -ms-hyphens: auto;
--webkit-hyphens: auto;
 hyphens: auto;
 */
-.hyphen {
+%hyphen {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;

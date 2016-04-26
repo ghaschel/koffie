@@ -16,7 +16,12 @@
     <h1>{{project.name}}</h1>
     <p class="version">v.<strong>{{project.version}}</strong></p>
     <p class="description">{{project.description}}</p>
-    <a href="http://gruntjs.com/"><img src="https://cdn.gruntjs.com/builtwith.svg" alt="Built with Grunt"></a>
+    <a href="http://gruntjs.com/">
+        <img src="https://cdn.gruntjs.com/builtwith.svg" alt="Built with Grunt" title="Built with Grunt">
+    </a>
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons 4.0 International" title="Licensed under Creative Commons 4.0 International" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
   </header>
 
   <div id="wrapper">
@@ -26,10 +31,11 @@
       <button class="filter" data-filter="all">All</button>
       <button class="filter" data-filter=".less">LESS</button>
       <button class="filter" data-filter=".stylus">Stylus</button>
+      <button class="filter" data-filter=".scss">SCSS</button>
     </nav>
 
     <div class="styleguide">
-      <p class="warning">Due language limitations, aliases are not available in every language.<p>
+      <p class="warning">Due language limitations, aliases are not available in every language.</p>
 
       {{#files}}
       <div class="file">
@@ -93,6 +99,9 @@
 <script src="assets/js/jquery.mixitup.js?v=1" type="text/javascript"></script>
 <script src="assets/js/highlight.pack.js?v=1" type="text/javascript"></script>
 <script type="text/javascript">
+  jQuery('code').each(function(){
+    jQuery(this).text(jQuery(this).text().replace('&#64;', '@'));
+  });
    window.onload = function(){
      document.body.innerHTML = document.body.innerHTML.replace(/@markup\n/g, '');
      setTimeout(function(){

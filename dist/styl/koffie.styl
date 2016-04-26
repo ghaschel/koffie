@@ -7,11 +7,11 @@
 888 Y88b  Y888   '  888    888   888 Y888    ,
 888  Y88b  "88_-~   888    888   888  "88___/
 
-		     - 1.0.2
+		     - 1.1.4
              - Guilherme Haschel
 */
 
-@require "configs"
+@require 'configs'
 
 /*
 * @name text-border
@@ -19,19 +19,19 @@
 * @alias tb()
 * @author
 * @ref
-* @input text-border(red, 1px, yellow, 1px, green, 1px, purple, 1px)
+* @input text-border( red, 1px, yellow, 1px, green, 1px, purple, 1px )
 * @format stylus
 * @markup
 text-shadow: 1px 1px #f00, -1px -1px #ff0, 1px -1px #008000, -1px 1px #800080;
 */
-text-border($color1 = red, $size1 = 1px, $color2 = yellow, $size2 = 1px, $color3 = green, $size3 = 1px, $color4 = purple, $size4 = 1px)
-	$size1-1 = unit($size1, px)
-	$size2-1 = unquote('-' + unit($size2, px))
-	$size3-1 = unit($size3, px)
-	$size3-2 = unquote('-' + unit($size3, px))
-	$size4-1 = unquote('-' + unit($size4, px))
-	$size4-2 = unit($size4, px)
-	text-shadow $size1-1 $size1-1 $color1, $size2-1 $size2-1 $color2, $size3-1 $size3-2 $color3, $size4-1 $size4-2 $color4
+text-border( $color1 = red, $size1 = 1px, $color2 = yellow, $size2 = 1px, $color3 = green, $size3 = 1px, $color4 = purple, $size4 = 1px )
+  $size1-1 = unit( $size1, px )
+  $size2-1 = unquote( '-' + unit( $size2, px ) )
+  $size3-1 = unit( $size3, px )
+  $size3-2 = unquote( '-' + unit( $size3, px ) )
+  $size4-1 = unquote( '-' + unit( $size4, px ) )
+  $size4-2 = unit( $size4, px )
+  text-shadow $size1-1 $size1-1 $color1, $size2-1 $size2-1 $color2, $size3-1 $size3-2 $color3, $size4-1 $size4-2 $color4
 tb = text-border
 
 /*
@@ -67,22 +67,22 @@ input:focus {
   outline-color: red;
 }
 */
-error-input($color = #e36d56)
-	border 1px solid $color !important
-	color $color
-	outline-color $color
-	&::-webkit-input-placeholder
-		color $color
-	&::-moz-placeholder
-		color $color
-	&:-moz-placeholder
-		color $color
-	&:-ms-input-placeholder
-		color $color
-	&::placeholder
-		color $color
-	&:focus
-		outline-color $color
+error-input( $color = #e36d56 )
+  border 1px solid $color !important
+  color $color
+  outline-color $color
+  &::-webkit-input-placeholder
+    color $color
+  &::-moz-placeholder
+    color $color
+  &:-moz-placeholder
+    color $color
+  &:-ms-input-placeholder
+    color $color
+  &::placeholder
+    color $color
+  &:focus
+    outline-color $color
 error = error-input
 err = error-input
 
@@ -114,17 +114,17 @@ input:focus {
   outline-color: red;
 }
 */
-placeholder($color = #eeeeee)
-	&::-webkit-input-placeholder
-		color $color
-	&::-moz-placeholder
-		color $color
-	&:-moz-placeholder
-		color $color
-	&:-ms-input-placeholder
-		color $color
-	&::placeholder
-		color $color
+placeholder( $color = #eeeeee )
+  &::-webkit-input-placeholder
+    color $color
+  &::-moz-placeholder
+    color $color
+  &:-moz-placeholder
+    color $color
+  &:-ms-input-placeholder
+    color $color
+  &::placeholder
+    color $color
 ph = placeholder
 
 /*
@@ -146,13 +146,13 @@ input:invalid {
 }
 */
 fix-input()
-	&:focus
-		&::-webkit-input-placeholder
-			color transparent
-	&:invalid
-		-webkit-box-shadow none
-		-moz-box-shadow none
-		box-shadow none
+  &:focus
+    &::-webkit-input-placeholder
+      color transparent
+  &:invalid
+    -moz-box-shadow none
+    -webkit-box-shadow none
+    box-shadow none
 
 /*
 * @name $antialiasing
@@ -163,32 +163,32 @@ fix-input()
 * @input $antialiasing
 * @format stylus
 * @markup
--webkit-text-rendering: optimizeLegibility;
--moz-text-rendering: optimizeLegibility;
--ms-text-rendering: optimizeLegibility;
--o-text-rendering: optimizeLegibility;
-text-rendering: optimizeLegibility;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
--moz-font-smoothing: antialiased;
--ms-font-smoothing: antialiased;
--o-font-smoothing: antialiased;
-font-smoothing: antialiased;
+-moz-font-smoothing antialiased
+-moz-osx-font-smoothing grayscale
+-moz-text-rendering optimizeLegibility
+-ms-font-smoothing antialiased
+-ms-text-rendering optimizeLegibility
+-o-font-smoothing antialiased
+-o-text-rendering optimizeLegibility
+-webkit-font-smoothing antialiased
+-webkit-text-rendering optimizeLegibility
+font-smoothing antialiased
+text-rendering optimizeLegibility
 */
 $antialiasing,
 $anti-aliasing,
 $font-smoothing
-	-webkit-text-rendering optimizeLegibility
-	-moz-text-rendering optimizeLegibility
-	-ms-text-rendering optimizeLegibility
-	-o-text-rendering optimizeLegibility
-	text-rendering optimizeLegibility
-	-webkit-font-smoothing antialiased
-	-moz-osx-font-smoothing grayscale
-	-moz-font-smoothing antialiased
-	-ms-font-smoothing antialiased
-	-o-font-smoothing antialiased
-	font-smoothing antialiased
+  -moz-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  -moz-text-rendering optimizeLegibility
+  -ms-font-smoothing antialiased
+  -ms-text-rendering optimizeLegibility
+  -o-font-smoothing antialiased
+  -o-text-rendering optimizeLegibility
+  -webkit-font-smoothing antialiased
+  -webkit-text-rendering optimizeLegibility
+  font-smoothing antialiased
+  text-rendering optimizeLegibility
 
 /*
 * @name scroll-bar($size, $background1, $background2, $radius)
@@ -202,9 +202,9 @@ $font-smoothing
 html {
   scrollbar-3dlight-color: transparent;
   scrollbar-arrow-color: #666;
+  scrollbar-base-color: transparent;
   scrollbar-darkshadow-color: transparent;
   scrollbar-face-color: #ccc;
-  scrollbar-base-color: transparent;
   scrollbar-highlight-color: transparent;
   scrollbar-shadow-color: transparent;
   scrollbar-track-color: transparent;
@@ -222,24 +222,24 @@ html::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 */
-scroll-bar($size = 6px, $background1 = transparent, $background2 = #ccc, $radius = 5px)
-	scrollbar-3dlight-color $background1
-	scrollbar-arrow-color darken($background2, 50%)
-	scrollbar-darkshadow-color $background1
-	scrollbar-face-color $background2
-	scrollbar-base-color $background1
-	scrollbar-highlight-color $background1
-	scrollbar-shadow-color $background1
-	scrollbar-track-color $background1
-	&::-webkit-scrollbar
-		width $size
-		height $size
-	&::-webkit-scrollbar-track
-		background $background1
-	&::-webkit-scrollbar-thumb
-		background $background2
-		-webkit-border-radius $radius
-		border-radius $radius
+scroll-bar( $size = 6px, $background1 = transparent, $background2 = #ccc, $radius = 5px )
+  scrollbar-3dlight-color $background1
+  scrollbar-arrow-color darken($background2, 50% )
+  scrollbar-base-color $background1
+  scrollbar-darkshadow-color $background1
+  scrollbar-face-color $background2
+  scrollbar-highlight-color $background1
+  scrollbar-shadow-color $background1
+  scrollbar-track-color $background1
+  &::-webkit-scrollbar
+    height $size
+    width $size
+  &::-webkit-scrollbar-track
+    background $background1
+  &::-webkit-scrollbar-thumb
+    -webkit-border-radius $radius
+    background $background2
+    border-radius $radius
 
 /*
 * @name disable-scroll-styling()
@@ -250,22 +250,22 @@ scroll-bar($size = 6px, $background1 = transparent, $background2 = #ccc, $radius
 * @input disable-scroll-styling()
 * @format stylus
 * @markup
-scrollbar-face-color: ThreeDFace !important;
-scrollbar-shadow-color: ThreeDDarkShadow !important;
-scrollbar-highlight-color: ThreeDHighlight !important;
 scrollbar-3dlight-color: ThreeDLightShadow !important;
-scrollbar-darkshadow-color: ThreeDDarkShadow !important;
-scrollbar-track-color: Scrollbar !important;
 scrollbar-arrow-color: ButtonText !important;
+scrollbar-darkshadow-color: ThreeDDarkShadow !important;
+scrollbar-face-color: ThreeDFace !important;
+scrollbar-highlight-color: ThreeDHighlight !important;
+scrollbar-shadow-color: ThreeDDarkShadow !important;
+scrollbar-track-color: Scrollbar !important;
 */
 disable-scroll-styling()
-	scrollbar-face-color ThreeDFace !important
-	scrollbar-shadow-color ThreeDDarkShadow !important
-	scrollbar-highlight-color ThreeDHighlight !important
-	scrollbar-3dlight-color ThreeDLightShadow !important
-	scrollbar-darkshadow-color ThreeDDarkShadow !important
-	scrollbar-track-color Scrollbar !important
-	scrollbar-arrow-color ButtonText !important
+  scrollbar-3dlight-color ThreeDLightShadow !important
+  scrollbar-arrow-color ButtonText !important
+  scrollbar-darkshadow-color ThreeDDarkShadow !important
+  scrollbar-face-color ThreeDFace !important
+  scrollbar-highlight-color ThreeDHighlight !important
+  scrollbar-shadow-color ThreeDDarkShadow !important
+  scrollbar-track-color Scrollbar !important
 
 /*
 * @name border-radius($radius)
@@ -283,14 +283,14 @@ border-radius: 5px;
 behavior: url('https://cdn.rawgit.com/ghaschel/koffie/master/htc/PIE.htc');
 -ms-behaviour: url('https://cdn.rawgit.com/ghaschel/koffie/master/htc/PIE.htc');
 */
-border-radius($radius = 5px)
-	-webkit-border-radius $radius
-	-khtml-border-radius $radius
-	-moz-border-radius $radius
-	border-radius $radius
-	if $ie6 || $ie7 || $ie8
+border-radius( $radius = 5px )
+  -khtml-border-radius $radius
+  -moz-border-radius $radius
+  -webkit-border-radius $radius
+  border-radius $radius
+  if $ie6 || $ie7 || $ie8
+    -ms-behavior url($absPath + 'PIE.htc')
 		behavior url($absPath + 'PIE.htc')
-		-ms-behavior url($absPath + 'PIE.htc')
 bradius = border-radius
 
 /*
@@ -305,9 +305,9 @@ bradius = border-radius
 padding-left: 3px;
 padding-right: 3px;
 */
-padding-x($value = 0px)
-	padding-left $value
-	padding-right $value
+padding-x( $value = none )
+  padding-left $value
+  padding-right $value
 paddingx = padding-x
 
 /*
@@ -319,12 +319,12 @@ paddingx = padding-x
 * @input padding-y(6px)
 * @format stylus
 * @markup
-padding-top: 6px;
 padding-bottom: 6px;
+padding-top: 6px;
 */
-padding-y($value = 0px)
-	padding-top $value
-	padding-bottom $value
+padding-y( $value = none )
+  padding-bottom $value
+  padding-top $value
 paddingy = padding-y
 
 /*
@@ -336,12 +336,12 @@ paddingy = padding-y
 * @input margin-y(9px)
 * @format stylus
 * @markup
-margin-top: 9px;
 margin-bottom: 9px;
+margin-top: 9px;
 */
-margin-y($value = 0px)
-	margin-top $value
-	margin-bottom $value
+margin-y( $value = none )
+  margin-bottom $value
+  margin-top $value
 marginy = margin-y
 
 /*
@@ -356,9 +356,9 @@ marginy = margin-y
 margin-left: 6px;
 margin-right: 6px;
 */
-margin-x($value = 0px)
-	margin-left $value
-	margin-right $value
+margin-x( $value = none )
+  margin-left $value
+  margin-right $value
 marginx  = margin-x
 
 /*
@@ -370,22 +370,22 @@ marginx  = margin-x
 * @input opacity(0.35)
 * @format stylus
 * @markup
--webkit-opacity: 0.35;
 -khtml-opacity: 0.35;
 -moz-opacity: 0.35;
+-webkit-opacity: 0.35;
 opacity: 0.35;
 -ms-filter: progrid:DXImageTransform.Microsoft.Alpha(opacity=35);
 filter: alpha(opacity=35);
 */
-opacity($opacity = 0.5)
-	-webkit-opacity $opacity
-	-khtml-opacity $opacity
-	-moz-opacity $opacity
-	opacity $opacity
-	if $ie8
-		-ms-filter unquote('progid:DXImageTransform.Microsoft.Alpha(opacity=' + round($opacity * 100) + ')')
-	if $ie5 || $ie6 || $ie7
-		filter unquote('alpha(opacity=' + round($opacity * 100) + ')')
+opacity( $opacity = .5 )
+  -khtml-opacity $opacity
+  -moz-opacity $opacity
+  -webkit-opacity $opacity
+  opacity $opacity
+  if $ie8
+    -ms-filter unquote( 'progid:DXImageTransform.Microsoft.Alpha(opacity=' + round($opacity * 100) + ')' )
+  if $ie5 || $ie6 || $ie7
+    filter unquote( 'alpha(opacity=' + round($opacity * 100) + ')' )
 opc = opacity
 
 /*
@@ -405,9 +405,9 @@ a:focus {
 }
 */
 nout()
-	outline none
-	&:focus
-		outline none
+  outline none
+  &:focus
+    outline none
 
 /*
 * @name top-triangle($size, $color)
@@ -419,29 +419,29 @@ nout()
 * @format stylus
 * @markup
 span:after {
+  border-bottom: 15px solid #fff;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid transparent;
   content: '';
   display: inline-block;
   height: 1px;
-  width: 1px;
   position: absolute;
   top: 29px;
-  border-left: 15px solid transparent;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid #fff;
-  border-right: 15px solid transparent;
+  width: 1px;
 }
 */
-top-triangle($size = 15px, $color = #fff)
-	content ''
-	display inline-block
-	height 1px
-	width 1px
-	position absolute
-	top round(($size * 2) - 1)
-	border-left $size solid transparent
-	border-top $size solid transparent
-	border-bottom $size solid $color
-	border-right $size solid transparent
+top-triangle( $size = 15px, $color = #fff )
+  border-bottom $size solid $color
+  border-left $size solid transparent
+  border-right $size solid transparent
+  border-top $size solid transparent
+  content ''
+  display inline-block
+  height 1px
+  position absolute
+  top round( ($size * 2) - 1 )
+  width 1px
 
 /*
 * @name bottom-triangle($size, $color)
@@ -453,29 +453,29 @@ top-triangle($size = 15px, $color = #fff)
 * @format stylus
 * @markup
 span:after {
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #fff;
+  bottom: 29px;
   content: '';
   display: inline-block;
   height: 1px;
-  width: 1px;
   position: absolute;
-  bottom: 29px;
-  border-left: 15px solid transparent;
-  border-top: 15px solid #fff;
-  border-bottom: 15px solid transparent;
-  border-right: 15px solid transparent;
+  width: 1px;
 }
 */
-bottom-triangle($size = 15px, $color = #fff)
-	content ''
-	display inline-block
-	height 1px
-	width 1px
-	position absolute
-	bottom round(($size * 2) - 1)
-	border-left $size solid transparent
-	border-top $size solid $color
-	border-bottom $size solid transparent
-	border-right $size solid transparent
+bottom-triangle( $size = 15px, $color = #fff )
+  border-bottom $size solid transparent
+  border-left $size solid transparent
+  border-right $size solid transparent
+  border-top $size solid $color
+  bottom round( ($size * 2) - 1 )
+  content ''
+  display inline-block
+  height 1px
+  position absolute
+  width 1px
 
 /*
 * @name left-triangle($size, $color)
@@ -487,30 +487,30 @@ bottom-triangle($size = 15px, $color = #fff)
 * @format stylus
 * @markup
 span:after {
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-right: 15px solid #fff;
+  border-top: 15px solid transparent
   content: '';
   display: inline-block;
   height: 1px;
-  width: 1px;
-  position: absolute;
   left: 29px;
-  border-left: 15px solid transparent;
-  border-top: 15px solid transparent
-  border-bottom: 15px solid transparent;
-  border-right: 15px solid #fff;
+  position: absolute;
+  width: 1px;
 }
 
 */
-left-triangle($size = 15px, $color = #fff)
-	content ''
-	display inline-block
-	height 1px
-	width 1px
-	position absolute
-	left round(($size * 2) - 1)
-	border-left $size solid transparent
-	border-top $size solid transparent
-	border-bottom $size solid transparent
-	border-right $size solid $color
+left-triangle( $size = 15px, $color = #fff )
+  border-bottom $size solid transparent
+  border-left $size solid transparent
+  border-right $size solid $color
+  border-top $size solid transparent
+  content ''
+  display inline-block
+  height 1px
+  left round( ($size * 2) - 1 )
+  position absolute
+  width 1px
 
 /*
 * @name right-triangle($size, $color)
@@ -522,29 +522,29 @@ left-triangle($size = 15px, $color = #fff)
 * @format stylus
 * @markup
 span:after {
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #fff;
+  border-right: 15px solid transparent;
+  border-top: 15px solid transparent;
   content: '';
   display: inline-block;
   height: 1px;
-  width: 1px;
   position: absolute;
   right: 29px;
-  border-left: 15px solid #fff;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-right: 15px solid transparent;
+  width: 1px;
 }
 */
-right-triangle($size = 15px, $color = #fff)
-	content ''
-	display inline-block
-	height 1px
-	width 1px
-	position absolute
-	right round(($size * 2) - 1)
-	border-left $size solid $color
-	border-top $size solid transparent
-	border-bottom $size solid transparent
-	border-right $size solid transparent
+right-triangle( $size = 15px, $color = #fff )
+  border-bottom $size solid transparent
+  border-left $size solid $color
+  border-right $size solid transparent
+  border-top $size solid transparent
+  content ''
+  display inline-block
+  height 1px
+  position absolute
+  right round( ($size * 2) - 1 )
+  width 1px
 
 /*
 * @name $text-overflow
@@ -555,20 +555,20 @@ right-triangle($size = 15px, $color = #fff)
 * @input $text-overflow
 * @format stylus
 * @markup
-overflow: hidden
-white-space: nowrap
-text-overflow: ellipsis
-max-widt: 100%
 display: inline-block
+max-widt: 100%
+overflow: hidden
+text-overflow: ellipsis
+white-space: nowrap
 */
 $text-overflow,
 $txt-ovf,
 $txtovf
-	overflow hidden
-	white-space nowrap
-	text-overflow ellipsis
-	max-width 100%
-	display inline-block
+  display inline-block
+  max-width 100%
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
 
 /*
 * @name $no-user-select
@@ -579,21 +579,21 @@ $txtovf
 * @input $no-user-select
 * @format stylus
 * @markup
--webkit-user-select: none;
 -khtml-user-select: none;
 -moz-user-select: none;
 -ms-user-select: none;
 -o-user-select: none;
+-webkit-user-select: none;
 user-select: none;
 */
 $no-user-select,
 $nousel
-	-webkit-user-select none
-	-khtml-user-select none
-	-moz-user-select none
-	-ms-user-select none
-	-o-user-select none
-	user-select none
+  -khtml-user-select none
+  -moz-user-select none
+  -ms-user-select none
+  -o-user-select none
+  -webkit-user-select none
+  user-select none
 
 /*
 * @name user-select($color-1, $color-2)
@@ -613,13 +613,13 @@ p::-moz-selection {
   background: red;
 }
 */
-user-select($color-1 = yellow, $color-2 = red)
-	&::selection
-		color $color-2
-		background $color-1
-	&::-moz-selection
-		color $color-2
-		background $color-1
+user-select( $color-1 = yellow, $color-2 = red )
+  &::selection
+    background $color-1
+    color $color-2
+  &::-moz-selection
+    background $color-1
+    color $color-2
 usel = user-select
 
 /*
@@ -637,35 +637,35 @@ backface-visibility: hidden;
 */
 $fix-flickering,
 $fixfl
-	-webkit-backface-visibility hidden
-	-ms-backface-visibility hidden
-	backface-visibility hidden
+  -ms-backface-visibility hidden
+  -webkit-backface-visibility hidden
+  backface-visibility hidden
 
 /*
-* @name animated($time, $ease, $where)
+* @name transition($time, $ease, $where)
 * @description Function for faster transition creation.
 * @alias transition(), trans()
 * @author
 * @ref
-* @input animated(0.3s, ease-in-out, all)
+* @input transition(0.3s, ease-in-out, all)
 * @format stylus
 * @markup
--webkit-transition: 0.3s ease-in-out all;
 -khtml-transition: 0.3s ease-in-out all;
 -moz-transition: 0.3s ease-in-out all;
 -ms-transition: 0.3s ease-in-out all;
 -o-transition: 0.3s ease-in-out all;
+-webkit-transition: 0.3s ease-in-out all;
 transition: 0.3s ease-in-out all;
 */
-animated($time = 0.3s, $ease = ease-in-out, $where = all)
-	-webkit-transition $time $ease $where
-	-khtml-transition $time $ease $where
-	-moz-transition $time $ease $where
-	-ms-transition $time $ease $where
-	-o-transition $time $ease $where
-	transition $time $ease $where
-transition = animated
-trans = animated
+transition( $time = .3s, $ease = ease-in-out, $where = all )
+  -khtml-transition $time $ease $where
+  -moz-transition $time $ease $where
+  -ms-transition $time $ease $where
+  -o-transition $time $ease $where
+  -webkit-transition $time $ease $where
+  transition $time $ease $where
+animated = transition
+trans = transition
 
 /*
 * @name $nospeak
@@ -680,7 +680,7 @@ speak: none;
 */
 $nospeak,
 $no-speak
-	speak none
+  speak none
 
 /*
 * @name $hw-accelerated
@@ -691,23 +691,19 @@ $no-speak
 * @input $hw-accelerated
 * @format stylus
 * @markup
--webkit-transform: rotateZ(360deg);
--webkit-backface-visibility: hidden;
--webkit-perspective: 1000;
--webkit-backface-visibility: hidden;
-backface-visibility: hidden;
--webkit-perspective: 1000;
-perspective: 1000;
+-webkit-backface-visibility hidden
+-webkit-transform rotateZ( 360deg )
+-webkit-perspective 1000
+backface-visibility hidden
+perspective 1000
 */
 $hw-accelerated,
 $hwacc
-	-webkit-transform rotateZ(360deg)
-	-webkit-backface-visibility hidden
- 	-webkit-perspective 1000
- 	-webkit-backface-visibility hidden
- 	backface-visibility hidden
-	-webkit-perspective 1000
-	perspective 1000
+  -webkit-backface-visibility hidden
+  -webkit-transform rotateZ( 360deg )
+  -webkit-perspective 1000
+  backface-visibility hidden
+  perspective 1000
 
 /*
 * @name fixsel()
@@ -719,8 +715,8 @@ $hwacc
 * @format stylus
 * @markup
 select {
-  -webkit-appearance: none;
   -moz-appearance: none;
+  -webkit-appearance: none;
   appearance: none;
   overflow: -moz-hidden-unscrollable;
   text-indent: .01px;
@@ -731,14 +727,14 @@ select::-ms-expand {
 }
 */
 fixsel()
-	-webkit-appearance none
-	-moz-appearance none
-	appearance none
-	overflow -moz-hidden-unscrollable
-	text-indent .01px
-	text-overflow ''
-	&::-ms-expand
-		display none
+  -moz-appearance none
+  -webkit-appearance none
+  appearance none
+  overflow -moz-hidden-unscrollable
+  text-indent .01px
+  text-overflow ''
+  &::-ms-expand
+    display none
 
 /*
 * @name $hyphen
@@ -749,13 +745,13 @@ fixsel()
 * @input $hyphen
 * @format stylus
 * @markup
--webkit-hyphens: auto;
 -moz-hyphens: auto;
 -ms-hyphens: auto;
+-webkit-hyphens: auto;
 hyphens: auto;
 */
 $hyphen
-	-webkit-hyphens auto
-	-moz-hyphens auto
-	-ms-hyphens auto
-	hyphens auto
+  -moz-hyphens auto
+  -ms-hyphens auto
+  -webkit-hyphens auto
+  hyphens auto

@@ -1,14 +1,28 @@
-#Koffie
+Koffie :coffee: [![License](https://img.shields.io/npm/l/koffie.svg)](#)
+===============================================================
 
-[![GitHub version](https://badge.fury.io/gh/ghaschel%2Fkoffie.svg)](https://badge.fury.io/gh/ghaschel%2Fkoffie)
-[![npm version](https://badge.fury.io/js/koffie.svg)](https://badge.fury.io/js/koffie)
-[![Bower version](https://badge.fury.io/bo/koffie.svg)](https://badge.fury.io/bo/koffie)
-[![Build Status](https://travis-ci.org/ghaschel/koffie.svg?branch=master)](https://travis-ci.org/ghaschel/koffie)
-[![Dependency Status](https://david-dm.org/ghaschel/koffie.svg)](https://david-dm.org/ghaschel/koffie)
-[![devDependency Status](https://david-dm.org/ghaschel/koffie/dev-status.svg)](https://david-dm.org/ghaschel/koffie#info=devDependencies)
+[![GitHub version](https://img.shields.io/github/tag/ghaschel/koffie.svg?maxAge=2592000)](https://github.com/ghaschel/koffie)
+[![npm version](https://img.shields.io/npm/v/koffie.svg?maxAge=2592000)](https://www.npmjs.com/package/koffie)
+[![Bower version](https://img.shields.io/bower/v/koffie.svg?maxAge=2592000)](#)
+[![Build Status](https://img.shields.io/travis/ghaschel/koffie.svg?maxAge=2592000)](https://travis-ci.org/ghaschel/koffie)
+[![Dependency Status](https://img.shields.io/david/ghaschel/koffie.svg?maxAge=2592000)](https://david-dm.org/ghaschel/koffie)
+[![devDependency Status](https://img.shields.io/david/dev/ghaschel/koffie.svg?maxAge=2592000)](https://david-dm.org/ghaschel/koffie#info=devDependencies)
 
-*A pack of useful mixins, functions and classes for a faster development. Available in Stylus, LESS and SCSS (coming soon)*
+*A pack of useful mixins, functions, classes and placeholders for a faster development. Available in Stylus, LESS, and SCSS.*
 
-=========
+Install
+-------
+You can get the latest version of Koffie in a few different ways.
 
-> Readme coming soon.
+- Get the [Latest Release](https://github.com/ghaschel/koffie/archive/v1.1.4.zip)
+- Clone the repo: `git clone https://github.com/ghaschel/koffie.git`
+- Install with [Bower](https://bower.io/): `bower install koffie`
+- Install with [npm](https://www.npmjs.com/): `npm install koffie`
+
+Documentation
+-------------
+Don't be shy, take a look at the [docs](https://rawgit.com/ghaschel/koffie/master/docs/index.html) and see how a cup of Koffie can help you code faster :smile_cat:
+
+License
+-------
+Code released under [the MIT license](https://github.com/ghaschel/koffie/blob/master/LICENSE). Documentation released under [Creative Commons](https://github.com/ghaschel/koffie/blob/master/docs/LICENSE)

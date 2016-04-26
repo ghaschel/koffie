@@ -1,0 +1,160 @@
+@import '../dist/scss/koffie';
+
+html {
+  @include scroll-bar(6px, #ddd, #ccc, 5px);
+
+  body {
+    @include scroll-bar();
+
+    &.noscroll {
+      @extend %disable-scroll-styling;
+    }
+
+    input {
+      &:nth-child(1) {
+        @include error-input();
+      }
+
+      &:nth-child(2) {
+        @include error-input(red);
+      }
+
+      &:nth-child(3) {
+        @include placeholder(#eee);
+      }
+
+      &:nth-child(4) {
+        @include placeholder();
+      }
+
+      &:nth-child(5) {
+        @include fix-input();
+      }
+    }
+
+    .circle {
+      @include border-radius(10px);
+      @extend %nout;
+    }
+
+    .circle-2 {
+      @include border-radius();
+    }
+
+    .padding-x {
+      @include padding-x(10px);
+    }
+
+    .padding-y {
+      @include padding-y(10px);
+    }
+
+    .margin-x {
+      @include margin-x(10px);
+    }
+
+    .margin-y {
+      @include margin-y(10px);
+    }
+
+    .opc {
+      @include opacity(0.7);
+    }
+
+    .opc-2 {
+      @include opacity();
+    }
+
+    span {
+      &:nth-child(1) {
+        @extend %antialiasing;
+        &:before {
+          @include top-triangle();
+        }
+        &:after {
+          @include top-triangle(10px, red);
+        }
+      }
+
+      &:nth-child(2) {
+        @extend %anti-aliasing;
+        &:before {
+          @include bottom-triangle()
+        }
+        &:after {
+          @include bottom-triangle(10px, red)
+        }
+      }
+
+      &:nth-child(3) {
+        @extend %font-smoothing;
+        @extend %hyphen;
+        &:before {
+          @include left-triangle();
+        }
+        &:after {
+          @include left-triangle(10px, red);
+        }
+      }
+
+      &:nth-child(4) {
+        @extend %text-overflow;
+        @extend %hwacc;
+        &:before {
+          @include right-triangle();
+        }
+        &:after {
+          @include right-triangle(10px, red);
+        }
+      }
+
+      &:nth-child(5) {
+        @extend %txt-ovf;
+        @extend %hw-accelerated;
+      }
+
+      &:nth-child(6) {
+        @extend %txtovf;
+        @extend %no-speak;
+      }
+
+      &:nth-child(7) {
+        @extend %no-user-select;
+        @extend %nospeak;
+      }
+
+      &:nth-child(8) {
+        @extend %nousel;
+        @include transition(0.5, ease, all);
+      }
+
+      &:nth-child(9) {
+        @include user-select();
+        @include transition();
+      }
+
+      &:nth-child(10) {
+        @include user-select(red, orange);
+        &:before {
+          @extend %fix-flickering;
+        }
+        &:after {
+          @extend %fixfl;
+        }
+      }
+
+      &:nth-child(11) {
+        @include text-border(red, 1, yellow, 1px, green, 1px, purple, 1px);
+      }
+
+      &:nth-child(12) {
+        @include text-border();
+      }
+    }
+
+    select {
+      @include fixsel();
+    }
+
+  }
+}
