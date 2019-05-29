@@ -1,0 +1,43 @@
+@function strip-unit($number) {
+  @if type-of($number)=='number'and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function is-px($value) {
+  @return is-number($value) and index('px', unit($value)) !=null;
+}
+
+@function is-pt($value) {
+  @return is-number($value) and index('pt', unit($value)) !=null;
+}
+
+@function rem($value) {
+  $pt-ratio: 1.328147;
+  $em-ratio: 0.063;
+  $max: length($value);
+  $values: '';
+
+  @for $i from 1 through $max {
+    $val: nth($value, $i);
+    $unitless-val: strip-unit($val);
+
+    @if is-pt($val) {
+      $val: ($unitless-val * $pt-ratio) * $em-ratio;
+    }
+
+    @if is-px($val) {
+      $val: $unitless-val * $em-ratio;
+    }
+
+    $values: #{$values + $val}rem;
+
+    @if $i < $max {
+      $values: #{$values + " "};
+    }
+  }
+
+  @return $values;
+}

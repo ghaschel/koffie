@@ -197,31 +197,15 @@ input:invalid {
 * @input &#64;extend %antialiasing
 * @format scss
 * @markup
--moz-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
--moz-text-rendering: optimizeLegibility;
--ms-font-smoothing: antialiased;
--ms-text-rendering: optimizeLegibility;
--o-font-smoothing: antialiased;
--o-text-rendering: optimizeLegibility;
--webkit-font-smoothing: antialiased;
--webkit-text-rendering: optimizeLegibility;
-font-smoothing: antialiased;
-text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: optimizeLegibility;
 */
 %antialiasing,
 %anti-aliasing,
 %font-smoothing {
-  -moz-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -moz-text-rendering: optimizeLegibility;
-  -ms-font-smoothing: antialiased;
-  -ms-text-rendering: optimizeLegibility;
-  -o-font-smoothing: antialiased;
-  -o-text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-rendering: optimizeLegibility;
-  font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
   text-rendering: optimizeLegibility;
 }
 
