@@ -1,4 +1,4 @@
-@import '../dist/scss/koffie';
+@import '../src/scss/koffie';
 
 html {
   @include scroll-bar(6px, #ddd, #ccc, 5px);
