@@ -1,10 +1,9 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
-
 		'dss': {
 			docs: {
 				files: {
-					'docs/': 'dist/**/koffie.{less,styl,scss}'
+					'docs/': 'src/**/koffie.{less,styl,scss}'
 				},
 				options: {
 					template: 'docs/template/',
@@ -44,9 +43,8 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.loadNpmTasks('dss');
-	grunt.loadNpmTasks('grunt-dss');
-
+  grunt.loadNpmTasks('dss');
+  grunt.loadNpmTasks('grunt-dss');
 	grunt.option('debug', false);
 	
 };
