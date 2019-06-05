@@ -316,9 +316,9 @@ border-radius: 5px;
   -webkit-border-radius: $radius;
   border-radius: $radius;
   @if $ie6 or $ie7 or $ie8 {
-    -ms-behavior: url($abs-path + 'PIE.htc');
-    behavior: url($abs-path + 'PIE.htc');
-	}
+    -ms-behavior: url($abs-path+'PIE.htc');
+    behavior: url($abs-path+'PIE.htc');
+  }
 }
 
 /*
@@ -405,7 +405,7 @@ opacity: 0.35;
 -ms-filter: progrid:DXImageTransform.Microsoft.Alpha(opacity=35);
 filter: alpha(opacity=35);
 */
-@mixin opacity($opacity: .5) {
+@mixin opacity($opacity: 0.5) {
   -khtml-opacity: $opacity;
   -moz-opacity: $opacity;
   -webkit-opacity: $opacity;
@@ -439,7 +439,7 @@ a:focus {
 
   &:focus {
     outline: none;
-	}
+  }
 }
 
 /*
@@ -699,7 +699,7 @@ backface-visibility: hidden;
 -o-transition: 0.3s ease-in-out all;
 transition: 0.3s ease-in-out all;
 */
-@mixin transition($time: .3s, $ease: ease-in-out, $where: all) {
+@mixin transition($time: 0.3s, $ease: ease-in-out, $where: all) {
   -khtml-transition: $time $ease $where;
   -moz-transition: $time $ease $where;
   -ms-transition: $time $ease $where;
@@ -774,12 +774,12 @@ select::-ms-expand {
   -webkit-appearance: none;
   appearance: none;
   overflow: -moz-hidden-unscrollable;
-  text-indent: .01px;
+  text-indent: 0.01px;
   text-overflow: '';
 
   &::-ms-expand {
     display: none;
-	}
+  }
 }
 
 /*

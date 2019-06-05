@@ -26,10 +26,10 @@ text-shadow: 1px 1px #f00, -1px -1px #ff0, 1px -1px #008000, -1px 1px #800080;
 */
 text-border( $color1 = red, $size1 = 1px, $color2 = yellow, $size2 = 1px, $color3 = green, $size3 = 1px, $color4 = purple, $size4 = 1px )
   $size1-1 = unit( $size1, px )
-  $size2-1 = unquote( '-' + unit( $size2, px ) )
+  $size2-1 = unquote( '-' + unit( $size2, px ) );
   $size3-1 = unit( $size3, px )
   $size3-2 = unquote( '-' + unit( $size3, px ) )
-  $size4-1 = unquote( '-' + unit( $size4, px ) )
+  $size4-1 = unquote( '-' + unit( $size4, px ) );
   $size4-2 = unit( $size4, px )
   text-shadow $size1-1 $size1-1 $color1, $size2-1 $size2-1 $color2, $size3-1 $size3-2 $color3, $size4-1 $size4-2 $color4
 tb = text-border

@@ -6,7 +6,8 @@
   "scripts": {
     "pretest": "chmod 0777 ./test/test.sh",
     "test": "./test/test.sh",
-    "posttest": "rm -rf ./test/test-less.css && rm -rf ./test/test-stylus.css && rm -rf ./test/test-scss.css;"
+    "posttest": "rm -rf ./test/test-less.css && rm -rf ./test/test-stylus.css && rm -rf ./test/test-scss.css;",
+    "lint-sass": "npx sass-lint -c .sasslintrc src/**/*.scss -v -q -i node_modules/**/*"
   },
   "repository": {
     "type": "git",
@@ -36,5 +37,9 @@
     "less": "^3.9.0",
     "node-sass": "^4.12.0",
     "stylus": "^0.54.5"
+  },
+  "dependencies": {
+    "sass-lint": "^1.13.1",
+    "stylint": "^1.5.9"
   }
 }
