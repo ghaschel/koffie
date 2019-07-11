@@ -1,16 +1,3 @@
-//
-// 888   _              88~\   88~\ ,e,
-// 888 e~ ~   e88~-_  _888__ _888__  "   e88~~8e
-// 888d8b    d888   i  888    888   888 d888  88b
-// 888Y88b   8888   |  888    888   888 8888__888
-// 888 Y88b  Y888   '  888    888   888 Y888    ,
-// 888  Y88b  "88_-~   888    888   888  "88___/
-//
-// 		     - 1.1.4
-//              - Guilherme Haschel
-
-@import 'configs';
-
 /*
 * @name text-border
 * @description Creates a four colored border in the desired element's text.
@@ -42,69 +29,6 @@ text-shadow: 1px 1px #f00, -1px -1px #ff0, 1px -1px #008000, -1px 1px #800080;
   $size4-1: unquote('-' + $size4);
   $size4-2: $size4;
   text-shadow: $size1-1 $size1-1 $color1, $size2-1 $size2-1 $color2, $size3-1 $size3-2 $color3, $size4-1 $size4-2 $color4;
-}
-
-/*
-* @name error-input($color)
-* @description Changes the placeholder, border and outline colors.
-* @alias
-* @author
-* @ref
-* @input &#64;include error-input(red)
-* @format scss
-* @markup
-input {
-  border: 1px solid red !important;
-  color: red;
-  outline-color: red;
-}
-input::-webkit-input-placeholder {
-  color: red;
-}
-input::-moz-placeholder {
-  color: red;
-}
-input:-moz-placeholder {
-  color: red;
-}
-input:-ms-input-placeholder {
-  color: red;
-}
-input::placeholder {
-  color: red;
-}
-input:focus {
-  outline-color: red;
-}
-*/
-@mixin error-input($color: #e36d56) {
-  border: 1px solid $color !important;
-  color: $color;
-  outline-color: $color;
-
-  &::-webkit-input-placeholder {
-    color: $color;
-  }
-
-  &::-moz-placeholder {
-    color: $color;
-  }
-
-  &:-moz-placeholder {
-    color: $color;
-  }
-
-  &:-ms-input-placeholder {
-    color: $color;
-  }
-
-  &::placeholder {
-    color: $color;
-  }
-
-  &:focus {
-    outline-color: $color;
-  }
 }
 
 /*
@@ -158,12 +82,12 @@ input:focus {
 }
 
 /*
-* @name fix-input()
-* @description Removes the placeholder while the input is focused and empty. Also removes the 'invalid' input state red box shadow from Firefox.
+* @name noPhOnFocus()
+* @description Removes the placeholder while the input is focused and empty.
 * @alias
 * @author
 * @ref
-* @input &#64;include fix-input()
+* @input &#64;include noPhOnFocus()
 * @format scss
 * @markup
 input:focus::-webkit-input-placeholder {
@@ -175,17 +99,15 @@ input:invalid {
   box-shadow: none;
 }
 */
-@mixin fix-input {
+@mixin noPhOnFocus {
   &:focus {
-    &::-webkit-input-placeholder {
+    &::-moz-placeholder, //TODO: averiguar
+    &:-moz-placeholder, //TODO: averiguar
+    &:-ms-input-placeholder, //TODO: Averiguar
+    &::placeholder,
+    &::-webkit-input-placeholder { //TODO: Averiguar
       color: transparent;
     }
-  }
-
-  &:invalid {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
   }
 }
 
@@ -211,23 +133,13 @@ input:invalid {
 
 /*
 * @name scroll-bar($size, $background1, $background2, $radius)
-* @description Changes the scrollbar's default style (Not for Firefox).
+* @description Changes the scrollbar's default style on chrome.
 * @alias
 * @author Drew Noakes
 * @ref http://stackoverflow.com/questions/7725652/css-scrollbar-style-cross-browser
 * @input &#64;include scroll-bar(6px, transparent, #ccc, 5px)
 * @format scss
 * @markup
-html {
-  scrollbar-3dlight-color: transparent;
-  scrollbar-arrow-color: #666;
-  scrollbar-face-color: #ccc;
-  scrollbar-darkshadow-color: transparent;
-  scrollbar-base-color: transparent;
-  scrollbar-highlight-color: transparent;
-  scrollbar-shadow-color: transparent;
-  scrollbar-track-color: transparent;
-}
 html::-webkit-scrollbar {
   height: 6px;
   width: 6px;
@@ -236,21 +148,12 @@ html::-webkit-scrollbar-track {
   background: transparent;
 }
 html::-webkit-scrollbar-thumb {
-  background: #ccc;;
+  background: #ccc;
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
 */
 @mixin scroll-bar($size: 6px, $background1: transparent, $background2: #ccc, $radius: 5px) {
-  scrollbar-3dlight-color: $background1;
-  scrollbar-arrow-color: darken($background2, 50%);
-  scrollbar-base-color: $background1;
-  scrollbar-darkshadow-color: $background1;
-  scrollbar-face-color: $background2;
-  scrollbar-highlight-color: $background1;
-  scrollbar-shadow-color: $background1;
-  scrollbar-track-color: $background1;
-
   &::-webkit-scrollbar {
     height: $size;
     width: $size;
@@ -268,112 +171,58 @@ html::-webkit-scrollbar-thumb {
 }
 
 /*
-* @name disable-scroll-styling()
-* @description Disable scrollbar styling by not vendor-prefixed properties.
-* @alias
-* @author W3C
-* @ref https://www.w3.org/Style/Examples/007/scrollbars.en.html
-* @input &#64;extend %disable-scroll-styling()
-* @format scss
-* @markup
-scrollbar-3dlight-color: ThreeDLightShadow !important;
-scrollbar-arrow-color: ButtonText !important;
-scrollbar-darkshadow-color: ThreeDDarkShadow !important;
-scrollbar-face-color: ThreeDFace !important;
-scrollbar-highlight-color: ThreeDHighlight !important;
-scrollbar-shadow-color: ThreeDDarkShadow !important;
-scrollbar-track-color: Scrollbar !important;
-*/
-%disable-scroll-styling {
-  scrollbar-3dlight-color: ThreeDLightShadow !important;
-  scrollbar-arrow-color: ButtonText !important;
-  scrollbar-darkshadow-color: ThreeDDarkShadow !important;
-  scrollbar-face-color: ThreeDFace !important;
-  scrollbar-highlight-color: ThreeDHighlight !important;
-  scrollbar-shadow-color: ThreeDDarkShadow !important;
-  scrollbar-track-color: Scrollbar !important;
-}
-
-/*
-* @name border-radius($radius)
-* @description Cross-browser border-radius.
-* @alias bradius()
-* @author
-* @ref http://css3pie.com
-* @input &#64;include border-radius(5px)
-* @format scss
-* @markup
--khtml-border-radius: 5px;
--moz-border-radius: 5px;
--ms-behaviour: url('https://cdn.rawgit.com/ghaschel/koffie/master/htc/PIE.htc');
--webkit-border-radius: 5px;
-behavior: url('https://cdn.rawgit.com/ghaschel/koffie/master/htc/PIE.htc');
-border-radius: 5px;
-*/
-@mixin border-radius($radius: 5px) {
-  -khtml-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-  @if $ie6 or $ie7 or $ie8 {
-    -ms-behavior: url($abs-path+'PIE.htc');
-    behavior: url($abs-path+'PIE.htc');
-  }
-}
-
-/*
-* @name padding-x($value)
+* @name p-x($value)
 * @description Wrapper function for easier use of padding-left and padding-right.
 * @alias
 * @author
 * @ref
-* @input &#64;include padding-x(3px)
+* @input &#64;include p-x(3px)
 * @format scss
 * @markup
 padding-left: 3px;
 padding-right: 3px;
 */
-@mixin padding-x($value: none) {
+@mixin p-x($value: none) {
   padding-left: $value;
   padding-right: $value;
 }
 
 /*
-* @name padding-y($value)
+* @name p-y($value)
 * @description Wrapper function for easier use of padding-top and padding-bottom.
 * @alias
 * @author
 * @ref
-* @input &#64;include padding-y(6px)
+* @input &#64;include p-y(6px)
 * @format scss
 * @markup
 padding-bottom: 6px;
 padding-top: 6px;
 */
-@mixin padding-y($value: none) {
+@mixin p-y($value: none) {
   padding-bottom: $value;
   padding-top: $value;
 }
 
 /*
-* @name margin-y($value)
+* @name m-y($value)
 * @description Wrapper function for easier use of margin-top and margin-bottom.
 * @alias
 * @author
 * @ref
-* @input &#64;include margin-y(9px)
+* @input &#64;include m-y(9px)
 * @format scss
 * @markup
 margin-bottom: 9px;
 margin-top: 9px;
 */
-@mixin margin-y($value: none) {
+@mixin m-y($value: none) {
   margin-bottom: $value;
   margin-top: $value;
 }
 
 /*
-* @name margin-x($value)
+* @name m-x($value)
 * @description Wrapper function for easier use of margin-left and margin-right.
 * @alias
 * @author
@@ -384,38 +233,9 @@ margin-top: 9px;
 margin-left: 6px;
 margin-right: 6px;
 */
-@mixin margin-x($value: none) {
+@mixin m-x($value: none) {
   margin-left: $value;
   margin-right: $value;
-}
-
-/*
-* @name opacity($opacity)
-* @description Cross-browser opacity function.
-* @alias
-* @author
-* @ref
-* @input &#64;include opacity(0.35)
-* @format scss
-* @markup
--webkit-opacity: 0.35;
--khtml-opacity: 0.35;
--moz-opacity: 0.35;
-opacity: 0.35;
--ms-filter: progrid:DXImageTransform.Microsoft.Alpha(opacity=35);
-filter: alpha(opacity=35);
-*/
-@mixin opacity($opacity: 0.5) {
-  -khtml-opacity: $opacity;
-  -moz-opacity: $opacity;
-  -webkit-opacity: $opacity;
-  opacity: $opacity;
-  @if $ie8 {
-    -ms-filter: unquote('progid:DXImageTransform.Microsoft.Alpha(opacity=' + round($opacity * 100) + ')');
-  }
-  @if $ie5 or $ie6 or $ie7 {
-    filter: unquote('alpha(opacity=' + round($opacity * 100) + ')');
-  }
 }
 
 /*
@@ -442,6 +262,8 @@ a:focus {
   }
 }
 
+
+//TODO: Refactor to a single one
 /*
 * @name top-triangle($size, $color)
 * @description Displays a triangle at the element's top.
@@ -597,6 +419,7 @@ text-overflow: ellipsis
 max-widt: 100%
 display: inline-block
 */
+//TODO: averiguar
 %text-overflow,
 %txt-ovf,
 %txtovf {
@@ -623,6 +446,7 @@ display: inline-block
 -webkit-user-select: none;
 user-select: none;
 */
+//TODO: averiguar
 %no-user-select,
 %nousel {
   -khtml-user-select: none;
@@ -657,7 +481,7 @@ p::-moz-selection {
     color: $color-2;
   }
 
-  &::-moz-selection {
+  &::-moz-selection { //TODO: Check if necessary
     background: $color-1;
     color: $color-2;
   }
@@ -676,6 +500,7 @@ p::-moz-selection {
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;
 */
+//TODO: Check if still valid
 %fix-flickering,
 %fixfl {
   -ms-backface-visibility: hidden;
@@ -683,6 +508,7 @@ backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
+//TODO: Check if still necessary
 /*
 * @name transition($time, $ease, $where)
 * @description Function for faster transition creation.
@@ -707,6 +533,7 @@ transition: 0.3s ease-in-out all;
   -webkit-transition: $time $ease $where;
   transition: $time $ease $where;
 }
+
 
 /*
 * @name %nospeak
@@ -739,6 +566,7 @@ speak: none;
 backface-visibility: hidden;
 perspective: 1000;
 */
+//TODO: Check if still works
 %hw-accelerated,
 %hwacc {
   -webkit-backface-visibility: hidden;
@@ -769,6 +597,7 @@ select::-ms-expand {
   display: none;
 }
 */
+//TODO: Check if still works. may be relevant
 @mixin fixsel {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -796,6 +625,7 @@ select::-ms-expand {
 -ms-hyphens: auto;
 hyphens: auto;
 */
+//TODO: Check if it works
 %hyphen {
   -moz-hyphens: auto;
   -ms-hyphens: auto;

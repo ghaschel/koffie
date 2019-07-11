@@ -4,10 +4,12 @@
   "description": "A pack of useful mixins, functions, classes and placeholders for a faster development. Available in Stylus, LESS, and SCSS.",
   "main": "styl/koffie.styl",
   "scripts": {
-    "pretest": "chmod 0777 ./test/test.sh",
-    "test": "./test/test.sh",
+    "test": "npx jest",
+    "release": "standard-version",
     "posttest": "rm -rf ./test/test-less.css && rm -rf ./test/test-stylus.css && rm -rf ./test/test-scss.css;",
-    "lint-sass": "npx sass-lint -c .sasslintrc src/**/*.scss -v -q -i node_modules/**/*"
+    "lint-stylus": "npx stylint -c .stylintrc",
+    "lint-sass": "npx sass-lint -c .sasslintrc src/**/*.scss -v",
+    "lint-less": "npx lesshint -c .lesshintrc src/less/*.less"
   },
   "repository": {
     "type": "git",
@@ -30,16 +32,27 @@
   },
   "homepage": "https://github.com/ghaschel/koffie#readme",
   "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
     "dss": "^1.0.4",
+    "glob": "^7.1.4",
     "grunt": "^1.0.4",
     "grunt-cli": "^1.3.2",
     "grunt-dss": "^1.0.8",
+    "husky": "^3.0.0",
+    "jest": "^24.8.0",
     "less": "^3.9.0",
+    "lesshint": "^6.3.7",
     "node-sass": "^4.12.0",
+    "sass-lint": "^1.13.1",
+    "sass-true": "^5.0.0",
+    "standard-version": "^6.0.1",
+    "stylint": "^1.5.9",
     "stylus": "^0.54.5"
   },
-  "dependencies": {
-    "sass-lint": "^1.13.1",
-    "stylint": "^1.5.9"
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }

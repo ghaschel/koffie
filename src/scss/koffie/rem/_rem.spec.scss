@@ -1,0 +1,32 @@
+@import 'true';
+@import 'rem';
+
+@include describe('rem()') {
+  @include it('should return 0.63rem for a 10px unit') {
+    @include assert-true(assert-equal(rem(10px), '0.63rem'));
+  }
+
+  @include it('should return 0.83673rem for a 10pt unit') {
+    @include assert-true(assert-equal(rem(10pt), '0.83673rem'));
+  }
+}
+
+@include describe('is-px()') {
+  @include it('should return true for a px value') {
+    @include assert-true(is-px(10px))
+  }
+
+  @include it('should return false for a pt value') {
+    @include assert-false(is-px(10pt))
+  }
+}
+
+@include describe('is-pt()') {
+  @include it('should return true for a pt value') {
+    @include assert-true(is-pt(10pt))
+  }
+
+  @include it('should return false for a px value') {
+    @include assert-false(is-pt(10px))
+  }
+}

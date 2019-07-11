@@ -1,0 +1,28 @@
+@import 'true';
+@import 'strip-unit';
+
+@include describe('strip-unit()') {
+  @include it('should strip the unit from a px value') {
+    @include assert-true(assert-equal(strip-unit(10px), 10));
+  }
+
+  @include it('should strip the unit from a pt value') {
+    @include assert-true(assert-equal(strip-unit(10pt), 10));
+  }
+
+  @include it('should strip the unit from a rem value') {
+    @include assert-true(assert-equal(strip-unit(10rem), 10));
+  }
+
+  @include it('should strip the unit from a em value') {
+    @include assert-true(assert-equal(strip-unit(10em), 10));
+  }
+
+  @include it('should strip the unit from a pc value') {
+    @include assert-true(assert-equal(strip-unit(10pc), 10));
+  }
+
+  @include it('should strip the unit from a % value') {
+    @include assert-true(assert-equal(strip-unit(10%), 10));
+  }
+}
