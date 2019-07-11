@@ -43,8 +43,7 @@ module.exports = function(grunt) {
 		}
 	});
 
-  grunt.loadNpmTasks('dss');
   grunt.loadNpmTasks('grunt-dss');
 	grunt.option('debug', false);
-	
+
 };

@@ -37,59 +37,40 @@
     <div class="styleguide">
       <p class="warning">Due language limitations, aliases are not available in every language.</p>
 
-      
       <div class="file">
 
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">text-border</h4>
-              
                 <p class="description">Creates a four colored border in the desired element&#x27;s text.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">.text-border(red, 1px, yellow, 1px, green, 1px, purple, 1px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">text-shadow: 1px 1px red, -1px -1px yellow, 1px -1px green, -1px 1px purple;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.error-input</h4>
-              
                 <p class="description">Changes the placeholder, border and outline colors.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">.error-input(red)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">input {
   border: 1px solid red !important;
@@ -115,35 +96,24 @@ input:focus {
   outline-color: red;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.placeholder</h4>
-              
                 <p class="description">Changes the placeholder color.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">.placeholder(#eee)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">input::-webkit-input-placeholder {
   color: red;
@@ -164,35 +134,24 @@ input:focus {
   outline-color: red;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.fix-input</h4>
-              
                 <p class="description">Removes the placeholder while the input is focused and empty. Also removes the &#x27;invalid&#x27; input state red box shadow from Firefox.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;:extend(.fix-input all);</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">input:focus::-webkit-input-placeholder {
   color: transparent;
@@ -203,38 +162,26 @@ input:invalid {
   box-shadow: none;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.antialiasing</h4>
-              
                 <p class="description">Enables font antialiasing.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">.anti-aliasing, .font-smoothing</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;:extend(.antialiasing);</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-moz-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
@@ -248,46 +195,30 @@ input:invalid {
 font-smoothing: antialiased;
 text-rendering: optimizeLegibility;</code></pre>
 
-                
-              
 
-              
               <p class="author">Author: Maximilian Hoffmann &amp; drinchev</p>
-              
 
-              
                   <p class="ref">
                     References:
-                    
                       <a href="http://stackoverflow.com/questions/11459746/css3-webfont-smoothing-and-antialiasing-in-firefox-and-opera" target="_blank" rel="bookmark">Link 0</a>
-                    
                       <a href=" http://drinchev.github.io/monosocialiconsfont/" target="_blank" rel="bookmark">Link 1</a>
-                    
                   </p>
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.scroll-bar</h4>
-              
                 <p class="description">Changes the scrollbar&#x27;s default style (Not for Firefox).</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">.scroll-bar(6px, transparent, #ccc, 5px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">html {
   scrollbar-3dlight-color: transparent;
@@ -312,44 +243,29 @@ html::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }</code></pre>
 
-                
-              
 
-              
               <p class="author">Author: Drew Noakes</p>
-              
 
-              
                   <p class="ref">
                     References:
-                    
                       <a href="http://stackoverflow.com/questions/7725652/css-scrollbar-style-cross-browser" target="_blank" rel="bookmark">Link 0</a>
-                    
                   </p>
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.disable-scroll-styling</h4>
-              
                 <p class="description">Disable scrollbar styling by not vendor-prefixed properties.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;:extend(.disable-scroll-styling);</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">scrollbar-3dlight-color: ThreeDLightShadow !important;
 scrollbar-arrow-color: ButtonText !important;
@@ -359,44 +275,29 @@ scrollbar-highlight-color: ThreeDHighlight !important;
 scrollbar-shadow-color: ThreeDDarkShadow !important;
 scrollbar-track-color: Scrollbar !important;</code></pre>
 
-                
-              
 
-              
               <p class="author">Author: W3C</p>
-              
 
-              
                   <p class="ref">
                     References:
-                    
                       <a href="https://www.w3.org/Style/Examples/007/scrollbars.en.html" target="_blank" rel="bookmark">Link 0</a>
-                    
                   </p>
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.border-radius</h4>
-              
                 <p class="description">Cross-browser border-radius.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">.border-radius(5px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-khtml-border-radius: 5px;
 -moz-border-radius: 5px;
@@ -405,211 +306,142 @@ border-radius: 5px;
 -ms-behaviour: url(&#x27;https://cdn.rawgit.com/ghaschel/koffie/master/htc/PIE.htc&#x27;);
 behavior: url(&#x27;https://cdn.rawgit.com/ghaschel/koffie/master/htc/PIE.htc&#x27;);</code></pre>
 
-                
-              
 
-              
 
-              
                   <p class="ref">
                     References:
-                    
                       <a href="http://css3pie.com" target="_blank" rel="bookmark">Link 0</a>
-                    
                   </p>
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.padding-x</h4>
-              
                 <p class="description">Wrapper function for easier use of padding-left and padding-right.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">.padding-x(3px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">padding-left: 3px;
 padding-right: 3px;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.padding-y</h4>
-              
                 <p class="description">Wrapper function for easier use of padding-top and padding-bottom.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">.padding-y(6px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">padding-bottom: 6px;
 padding-top: 6px;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.margin-y</h4>
-              
                 <p class="description">Wrapper function for easier use of margin-top and margin-bottom.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">.margin-y(9px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">margin-bottom: 9px;
 margin-top: 9px;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.margin-x</h4>
-              
                 <p class="description">Wrapper function for easier use of margin-left and margin-right.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">.margin-x(6px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">margin-left: 6px;
 margin-right: 6px;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.opacity</h4>
-              
                 <p class="description">Cross-browser opacity function.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">.opacity(0.35)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-webkit-opacity: 0.35;
 -khtml-opacity: 0.35;
 -moz-opacity: 0.35;
 opacity: 0.35;
--ms-filter: progrid:DXImageTransform.Microsoft.Alpha(opacity=35);
-filter: alpha(opacity=35);</code></pre>
+-ms-filter: progrid:DXImageTransform.Microsoft.Alpha(opacity&#x3D;35);
+filter: alpha(opacity&#x3D;35);</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.nout</h4>
-              
                 <p class="description">Removes the outline when focus state is active.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;:extend(.nout all);</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate"> a {
    outline: none;
@@ -618,35 +450,24 @@ filter: alpha(opacity=35);</code></pre>
    outline: none;
  }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.top-triangle</h4>
-              
                 <p class="description">Displays a triangle at the element&#x27;s top.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">span:after { .top-triangle(15px, #fff) }</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">span:after {
   border-bottom: 15px solid #fff;
@@ -661,35 +482,24 @@ filter: alpha(opacity=35);</code></pre>
   width: 1px;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.bottom-triangle</h4>
-              
                 <p class="description">Displays a triangle in the element&#x27;s bottom.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">span:after { .bottom-triangle(15px, #fff) }</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">span:after {
   border-bottom: 15px solid transparent;
@@ -704,35 +514,24 @@ filter: alpha(opacity=35);</code></pre>
   width: 1px;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.left-triangle</h4>
-              
                 <p class="description">Displays a triangle in the element&#x27;s left.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">span:after { .left-triangle(15px, #fff) }</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">span:after {
   border-bottom: 15px solid transparent;
@@ -747,35 +546,24 @@ filter: alpha(opacity=35);</code></pre>
   width: 1px;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.right-triangle</h4>
-              
                 <p class="description">Displays a triangle in the element&#x27;s right.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">span:after { .right-triangle(15px, #fff) }</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">span:after {
   border-bottom: 15px solid transparent;
@@ -790,38 +578,26 @@ filter: alpha(opacity=35);</code></pre>
   width: 1px;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.text-overflow</h4>
-              
                 <p class="description">Displays reticences at the line&#x27;s end in case it doesn&#x27;t fit.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">.txt-ovf, .txtovf</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;:extend(.text-overflow);</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">display: inline-block
 max-widt: 100%
@@ -829,38 +605,26 @@ overflow: hidden
 text-overflow: ellipsis
 white-space: nowrap</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.no-user-select</h4>
-              
                 <p class="description">Disable user content selection.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">.nousel</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;:extend(.no-user-select);</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-webkit-user-select: none;
 -khtml-user-select: none;
@@ -869,35 +633,24 @@ white-space: nowrap</code></pre>
 -o-user-select: none;
 user-select: none;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.user-select</h4>
-              
                 <p class="description">Changes the user content selection color.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">.user-select(yellow, red)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">p::selection {
   color: red;
@@ -908,72 +661,49 @@ p::-moz-selection {
   background: red;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.fix-flickering</h4>
-              
                 <p class="description">Fixes the flickering on pseudo elements when animated by transition.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">.fixfl</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">.&amp;:extend(.fix-flickering);</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-ms-backface-visibility: hidden;
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.transition</h4>
-              
                 <p class="description">Function for faster transition creation.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">.transition(0.3s, ease-in-out, all)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-khtml-transition: 0.3s ease-in-out all;
 -moz-transition: 0.3s ease-in-out all;
@@ -982,73 +712,49 @@ backface-visibility: hidden;</code></pre>
 -webkit-transition: 0.3s ease-in-out all;
 transition: 0.3s ease-in-out all;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.nospeak</h4>
-              
                 <p class="description">Hides an element from screen readers.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">.no-speak</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;:extend(.nospeak)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">speak: none;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.hw-accelerated</h4>
-              
                 <p class="description">Enables hardware acceleration. Use at the desided element&#x27;s parent.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">.hwacc</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;:extend(.hw-accelerated);</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-webkit-backface-visibility: hidden;
 -webkit-perspective: 1000;
@@ -1056,35 +762,24 @@ transition: 0.3s ease-in-out all;</code></pre>
 backface-visibility: hidden;
 perspective: 1000;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.fixsel</h4>
-              
                 <p class="description">Removes select tag&#x27;s default style.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;:extend(.fixsel all)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">select {
   -moz-appearance: none;
@@ -1098,171 +793,78 @@ select::-ms-expand {
   display: none;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix less">
 
             <div class="info">
               <h4 data-format="(less)">.hyphen</h4>
-              
                 <p class="description">Add a hyphen to broken words.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;:extend(.hyphen);</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-moz-hyphens: auto;
 -ms-hyphens: auto;
 -webkit-hyphens: auto;
 hyphens: auto;</code></pre>
 
-                
-              
 
-              
               <p class="author">Author: Kenneth Auchenberg</p>
-              
 
-              
                   <p class="ref">
                     References:
-                    
                       <a href="https://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/" target="_blank" rel="bookmark">Link 0</a>
-                    
                   </p>
-              
 
 
             </div>
 
         </div>
-        
 
       </div>
-      
       <div class="file">
 
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">text-border</h4>
-              
                 <p class="description">Creates a four colored border in the desired element&#x27;s text.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;include text-border(red, 1px, yellow, 1px, green, 1px, purple, 1px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">text-shadow: 1px 1px #f00, -1px -1px #ff0, 1px -1px #008000, -1px 1px #800080;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
-
-          <div class="block mix scss">
-
-            <div class="info">
-              <h4 data-format="(scss)">error-input($color)</h4>
-              
-                <p class="description">Changes the placeholder, border and outline colors.</p>
-              
-
-              
-
-              
-              <h5 class="no-mgn-btm">Input:</h5>
-<pre><code class="less">&amp;#64;include error-input(red)</code></pre>
-              
-
-              
-              <h5 class="no-mgn-btm">Output:</h5>
-<pre><code class="css compensate">input {
-  border: 1px solid red !important;
-  color: red;
-  outline-color: red;
-}
-input::-webkit-input-placeholder {
-  color: red;
-}
-input::-moz-placeholder {
-  color: red;
-}
-input:-moz-placeholder {
-  color: red;
-}
-input:-ms-input-placeholder {
-  color: red;
-}
-input::placeholder {
-  color: red;
-}
-input:focus {
-  outline-color: red;
-}</code></pre>
-
-                
-              
-
-              
-
-              
-
-
-            </div>
-
-        </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">placeholder($color)</h4>
-              
                 <p class="description">Changes the placeholder color.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;include placeholder(#eee)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">input::-webkit-input-placeholder {
   color: red;
@@ -1283,35 +885,24 @@ input:focus {
   outline-color: red;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
-              <h4 data-format="(scss)">fix-input()</h4>
-              
-                <p class="description">Removes the placeholder while the input is focused and empty. Also removes the &#x27;invalid&#x27; input state red box shadow from Firefox.</p>
-              
+              <h4 data-format="(scss)">noPhOnFocus()</h4>
+                <p class="description">Removes the placeholder while the input is focused and empty.</p>
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
-<pre><code class="less">&amp;#64;include fix-input()</code></pre>
-              
+<pre><code class="less">&amp;#64;include noPhOnFocus()</code></pre>
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">input:focus::-webkit-input-placeholder {
   color: transparent;
@@ -1322,103 +913,57 @@ input:invalid {
   box-shadow: none;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">%antialiasing</h4>
-              
                 <p class="description">Enables font antialiasing.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">%anti-aliasing, %font-smoothing</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;extend %antialiasing</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
-<pre><code class="css compensate">-moz-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
--moz-text-rendering: optimizeLegibility;
--ms-font-smoothing: antialiased;
--ms-text-rendering: optimizeLegibility;
--o-font-smoothing: antialiased;
--o-text-rendering: optimizeLegibility;
--webkit-font-smoothing: antialiased;
--webkit-text-rendering: optimizeLegibility;
-font-smoothing: antialiased;
-text-rendering: optimizeLegibility;</code></pre>
+<pre><code class="css compensate">  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: optimizeLegibility;</code></pre>
 
-                
-              
 
-              
               <p class="author">Author: Maximilian Hoffmann &amp; drinchev</p>
-              
 
-              
                   <p class="ref">
                     References:
-                    
                       <a href="http://stackoverflow.com/questions/11459746/css3-webfont-smoothing-and-antialiasing-in-firefox-and-opera" target="_blank" rel="bookmark">Link 0</a>
-                    
                       <a href=" http://drinchev.github.io/monosocialiconsfont/" target="_blank" rel="bookmark">Link 1</a>
-                    
                   </p>
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">scroll-bar($size, $background1, $background2, $radius)</h4>
-              
-                <p class="description">Changes the scrollbar&#x27;s default style (Not for Firefox).</p>
-              
+                <p class="description">Changes the scrollbar&#x27;s default style on chrome.</p>
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;include scroll-bar(6px, transparent, #ccc, 5px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
-<pre><code class="css compensate">html {
-  scrollbar-3dlight-color: transparent;
-  scrollbar-arrow-color: #666;
-  scrollbar-face-color: #ccc;
-  scrollbar-darkshadow-color: transparent;
-  scrollbar-base-color: transparent;
-  scrollbar-highlight-color: transparent;
-  scrollbar-shadow-color: transparent;
-  scrollbar-track-color: transparent;
-}
-html::-webkit-scrollbar {
+<pre><code class="css compensate">html::-webkit-scrollbar {
   height: 6px;
   width: 6px;
 }
@@ -1426,312 +971,122 @@ html::-webkit-scrollbar-track {
   background: transparent;
 }
 html::-webkit-scrollbar-thumb {
-  background: #ccc;;
+  background: #ccc;
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }</code></pre>
 
-                
-              
 
-              
               <p class="author">Author: Drew Noakes</p>
-              
 
-              
                   <p class="ref">
                     References:
-                    
                       <a href="http://stackoverflow.com/questions/7725652/css-scrollbar-style-cross-browser" target="_blank" rel="bookmark">Link 0</a>
-                    
                   </p>
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
-              <h4 data-format="(scss)">disable-scroll-styling()</h4>
-              
-                <p class="description">Disable scrollbar styling by not vendor-prefixed properties.</p>
-              
-
-              
-
-              
-              <h5 class="no-mgn-btm">Input:</h5>
-<pre><code class="less">&amp;#64;extend %disable-scroll-styling()</code></pre>
-              
-
-              
-              <h5 class="no-mgn-btm">Output:</h5>
-<pre><code class="css compensate">scrollbar-3dlight-color: ThreeDLightShadow !important;
-scrollbar-arrow-color: ButtonText !important;
-scrollbar-darkshadow-color: ThreeDDarkShadow !important;
-scrollbar-face-color: ThreeDFace !important;
-scrollbar-highlight-color: ThreeDHighlight !important;
-scrollbar-shadow-color: ThreeDDarkShadow !important;
-scrollbar-track-color: Scrollbar !important;</code></pre>
-
-                
-              
-
-              
-              <p class="author">Author: W3C</p>
-              
-
-              
-                  <p class="ref">
-                    References:
-                    
-                      <a href="https://www.w3.org/Style/Examples/007/scrollbars.en.html" target="_blank" rel="bookmark">Link 0</a>
-                    
-                  </p>
-              
-
-
-            </div>
-
-        </div>
-        
-
-          <div class="block mix scss">
-
-            <div class="info">
-              <h4 data-format="(scss)">border-radius($radius)</h4>
-              
-                <p class="description">Cross-browser border-radius.</p>
-              
-
-              
-                <h5 class="no-mgn-btm">Alias:</h5>
-                <p class="alias">bradius()</p>
-              
-
-              
-              <h5 class="no-mgn-btm">Input:</h5>
-<pre><code class="less">&amp;#64;include border-radius(5px)</code></pre>
-              
-
-              
-              <h5 class="no-mgn-btm">Output:</h5>
-<pre><code class="css compensate">-khtml-border-radius: 5px;
--moz-border-radius: 5px;
--ms-behaviour: url(&#x27;https://cdn.rawgit.com/ghaschel/koffie/master/htc/PIE.htc&#x27;);
--webkit-border-radius: 5px;
-behavior: url(&#x27;https://cdn.rawgit.com/ghaschel/koffie/master/htc/PIE.htc&#x27;);
-border-radius: 5px;</code></pre>
-
-                
-              
-
-              
-
-              
-                  <p class="ref">
-                    References:
-                    
-                      <a href="http://css3pie.com" target="_blank" rel="bookmark">Link 0</a>
-                    
-                  </p>
-              
-
-
-            </div>
-
-        </div>
-        
-
-          <div class="block mix scss">
-
-            <div class="info">
-              <h4 data-format="(scss)">padding-x($value)</h4>
-              
+              <h4 data-format="(scss)">p-x($value)</h4>
                 <p class="description">Wrapper function for easier use of padding-left and padding-right.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
-<pre><code class="less">&amp;#64;include padding-x(3px)</code></pre>
-              
+<pre><code class="less">&amp;#64;include p-x(3px)</code></pre>
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">padding-left: 3px;
 padding-right: 3px;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
-              <h4 data-format="(scss)">padding-y($value)</h4>
-              
+              <h4 data-format="(scss)">p-y($value)</h4>
                 <p class="description">Wrapper function for easier use of padding-top and padding-bottom.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
-<pre><code class="less">&amp;#64;include padding-y(6px)</code></pre>
-              
+<pre><code class="less">&amp;#64;include p-y(6px)</code></pre>
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">padding-bottom: 6px;
 padding-top: 6px;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
-              <h4 data-format="(scss)">margin-y($value)</h4>
-              
+              <h4 data-format="(scss)">m-y($value)</h4>
                 <p class="description">Wrapper function for easier use of margin-top and margin-bottom.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
-<pre><code class="less">&amp;#64;include margin-y(9px)</code></pre>
-              
+<pre><code class="less">&amp;#64;include m-y(9px)</code></pre>
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">margin-bottom: 9px;
 margin-top: 9px;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
-              <h4 data-format="(scss)">margin-x($value)</h4>
-              
+              <h4 data-format="(scss)">m-x($value)</h4>
                 <p class="description">Wrapper function for easier use of margin-left and margin-right.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;include margin-x(6px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">margin-left: 6px;
 margin-right: 6px;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
-
-          <div class="block mix scss">
-
-            <div class="info">
-              <h4 data-format="(scss)">opacity($opacity)</h4>
-              
-                <p class="description">Cross-browser opacity function.</p>
-              
-
-              
-
-              
-              <h5 class="no-mgn-btm">Input:</h5>
-<pre><code class="less">&amp;#64;include opacity(0.35)</code></pre>
-              
-
-              
-              <h5 class="no-mgn-btm">Output:</h5>
-<pre><code class="css compensate">-webkit-opacity: 0.35;
--khtml-opacity: 0.35;
--moz-opacity: 0.35;
-opacity: 0.35;
--ms-filter: progrid:DXImageTransform.Microsoft.Alpha(opacity=35);
-filter: alpha(opacity=35);</code></pre>
-
-                
-              
-
-              
-
-              
-
-
-            </div>
-
-        </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">%nout</h4>
-              
                 <p class="description">Removes the outline when focus state is active.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;extend %nout</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">a {
   outline: none;
@@ -1740,32 +1095,22 @@ a:focus {
   outline: none;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">top-triangle($size, $color)</h4>
-              
                 <p class="description">Displays a triangle at the element&#x27;s top.</p>
-              
 
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">span:after {
   border-bottom: 15px solid #fff;
@@ -1780,32 +1125,22 @@ a:focus {
   width: 1px;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">bottom-triangle($size, $color)</h4>
-              
                 <p class="description">Displays a triangle in the element&#x27;s bottom.</p>
-              
 
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">span:after {
   border-bottom: 15px solid transparent;
@@ -1820,32 +1155,22 @@ a:focus {
   width: 1px;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">left-triangle($size, $color)</h4>
-              
                 <p class="description">Displays a triangle in the element&#x27;s left.</p>
-              
 
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">span:after {
   border-bottom: 15px solid transparent;
@@ -1860,32 +1185,22 @@ a:focus {
   width: 1px;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">right-triangle($size, $color)</h4>
-              
                 <p class="description">Displays a triangle in the element&#x27;s right.</p>
-              
 
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">span:after {
   border-bottom: 15px solid transparent;
@@ -1900,38 +1215,26 @@ a:focus {
   width: 1px;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">%text-overflow</h4>
-              
                 <p class="description">Displays reticences at the line&#x27;s end in case it doesn&#x27;t fit.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">%txt-ovf, %txtovf</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;extend %text-overflow</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">overflow: hidden
 white-space: nowrap
@@ -1939,38 +1242,26 @@ text-overflow: ellipsis
 max-widt: 100%
 display: inline-block</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">%no-user-select</h4>
-              
                 <p class="description">Disable user content selection.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">%nousel</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;extend %no-user-select</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-khtml-user-select: none;
 -moz-user-select: none;
@@ -1979,38 +1270,26 @@ display: inline-block</code></pre>
 -webkit-user-select: none;
 user-select: none;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">user-select($color-1, $color-2)</h4>
-              
                 <p class="description">Changes the user content selection color.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">usel()</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;include user-select(yellow, red)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">p::selection {
   background: yellow;
@@ -2021,72 +1300,49 @@ p::-moz-selection {
   color: yellow;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">%fix-flickering</h4>
-              
                 <p class="description">Fixes the flickering on pseudo elements when animated by transition.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">%fixfl</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;extend %fix-flickering</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-ms-backface-visibility: hidden;
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">transition($time, $ease, $where)</h4>
-              
                 <p class="description">Function for faster transition creation.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;include transition(0.3s, ease-in-out, all)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-webkit-transition: 0.3s ease-in-out all;
 -khtml-transition: 0.3s ease-in-out all;
@@ -2095,73 +1351,49 @@ backface-visibility: hidden;</code></pre>
 -o-transition: 0.3s ease-in-out all;
 transition: 0.3s ease-in-out all;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">%nospeak</h4>
-              
                 <p class="description">Hides an element from screen readers.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">%no-speak</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;extend %nospeak</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">speak: none;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">%hw-accelerated</h4>
-              
                 <p class="description">Enables hardware acceleration. Use at the desided element&#x27;s parent.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">%hwacc</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;extend %hw-accelerated</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-webkit-backface-visibility: hidden;
 -webkit-perspective: 1000;
@@ -2169,35 +1401,24 @@ transition: 0.3s ease-in-out all;</code></pre>
 backface-visibility: hidden;
 perspective: 1000;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">fixsel()</h4>
-              
                 <p class="description">Removes select tag&#x27;s default style.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;include fixsel()</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">select {
   -webkit-appearance: none;
@@ -2211,123 +1432,82 @@ select::-ms-expand {
   display: none;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix scss">
 
             <div class="info">
               <h4 data-format="(scss)">%hyphen</h4>
-              
                 <p class="description">Add a hyphen to broken words.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">&amp;#64;extend %hyphen</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-webkit-hyphens: auto;
 -moz-hyphens: auto;
 -ms-hyphens: auto;
 hyphens: auto;</code></pre>
 
-                
-              
 
-              
               <p class="author">Author: Kenneth Auchenberg</p>
-              
 
-              
                   <p class="ref">
                     References:
-                    
                       <a href="https://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/" target="_blank" rel="bookmark">Link 0</a>
-                    
                   </p>
-              
 
 
             </div>
 
         </div>
-        
 
       </div>
-      
       <div class="file">
 
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">text-border</h4>
-              
                 <p class="description">Creates a four colored border in the desired element&#x27;s text.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">tb()</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">text-border( red, 1px, yellow, 1px, green, 1px, purple, 1px )</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">text-shadow: 1px 1px #f00, -1px -1px #ff0, 1px -1px #008000, -1px 1px #800080;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">error-input($color)</h4>
-              
                 <p class="description">Changes the placeholder, border and outline colors.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">error(), err()</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">error-input(red)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">input {
   border: 1px solid red !important;
@@ -2353,38 +1533,26 @@ input:focus {
   outline-color: red;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">placeholder($color)</h4>
-              
                 <p class="description">Changes the placeholder color.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">ph()</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">placeholder(#eee)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">input::-webkit-input-placeholder {
   color: red;
@@ -2405,35 +1573,24 @@ input:focus {
   outline-color: red;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">fix-input()</h4>
-              
                 <p class="description">Removes the placeholder while the input is focused and empty. Also removes the &#x27;invalid&#x27; input state red box shadow from Firefox.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">fix-input()</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">input:focus::-webkit-input-placeholder {
   color: transparent;
@@ -2444,38 +1601,26 @@ input:invalid {
   box-shadow: none;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">$antialiasing</h4>
-              
                 <p class="description">Enables font antialiasing.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">$anti-aliasing, $font-smoothing</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">$antialiasing</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-moz-font-smoothing antialiased
 -moz-osx-font-smoothing grayscale
@@ -2489,46 +1634,30 @@ input:invalid {
 font-smoothing antialiased
 text-rendering optimizeLegibility</code></pre>
 
-                
-              
 
-              
               <p class="author">Author: Maximilian Hoffmann &amp; drinchev</p>
-              
 
-              
                   <p class="ref">
                     References:
-                    
                       <a href="http://stackoverflow.com/questions/11459746/css3-webfont-smoothing-and-antialiasing-in-firefox-and-opera" target="_blank" rel="bookmark">Link 0</a>
-                    
                       <a href=" http://drinchev.github.io/monosocialiconsfont/" target="_blank" rel="bookmark">Link 1</a>
-                    
                   </p>
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">scroll-bar($size, $background1, $background2, $radius)</h4>
-              
                 <p class="description">Changes the scrollbar&#x27;s default style (Not for Firefox).</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">scroll-bar(6px, transparent, #ccc, 5px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">html {
   scrollbar-3dlight-color: transparent;
@@ -2553,44 +1682,29 @@ html::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }</code></pre>
 
-                
-              
 
-              
               <p class="author">Author: Drew Noakes</p>
-              
 
-              
                   <p class="ref">
                     References:
-                    
                       <a href="http://stackoverflow.com/questions/7725652/css-scrollbar-style-cross-browser" target="_blank" rel="bookmark">Link 0</a>
-                    
                   </p>
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">disable-scroll-styling()</h4>
-              
                 <p class="description">Disable scrollbar styling by not vendor-prefixed properties.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">disable-scroll-styling()</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">scrollbar-3dlight-color: ThreeDLightShadow !important;
 scrollbar-arrow-color: ButtonText !important;
@@ -2600,47 +1714,31 @@ scrollbar-highlight-color: ThreeDHighlight !important;
 scrollbar-shadow-color: ThreeDDarkShadow !important;
 scrollbar-track-color: Scrollbar !important;</code></pre>
 
-                
-              
 
-              
               <p class="author">Author: W3C</p>
-              
 
-              
                   <p class="ref">
                     References:
-                    
                       <a href="https://www.w3.org/Style/Examples/007/scrollbars.en.html" target="_blank" rel="bookmark">Link 0</a>
-                    
                   </p>
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">border-radius($radius)</h4>
-              
                 <p class="description">Cross-browser border-radius.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">bradius()</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">border-radius(5px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-webkit-border-radius: 5px;
 -khtml-border-radius: 5px;
@@ -2649,226 +1747,152 @@ border-radius: 5px;
 behavior: url(&#x27;https://cdn.rawgit.com/ghaschel/koffie/master/htc/PIE.htc&#x27;);
 -ms-behaviour: url(&#x27;https://cdn.rawgit.com/ghaschel/koffie/master/htc/PIE.htc&#x27;);</code></pre>
 
-                
-              
 
-              
 
-              
                   <p class="ref">
                     References:
-                    
                       <a href="http://css3pie.com" target="_blank" rel="bookmark">Link 0</a>
-                    
                   </p>
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">padding-x($value)</h4>
-              
                 <p class="description">Wrapper function for easier use of padding-left and padding-right.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">paddingx()</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">padding-x(3px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">padding-left: 3px;
 padding-right: 3px;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">padding-y($value)</h4>
-              
                 <p class="description">Wrapper function for easier use of padding-top and padding-bottom.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">paddingy()</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">padding-y(6px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">padding-bottom: 6px;
 padding-top: 6px;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">margin-y($value)</h4>
-              
                 <p class="description">Wrapper function for easier use of margin-top and margin-bottom.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">marginy()</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">margin-y(9px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">margin-bottom: 9px;
 margin-top: 9px;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">margin-x($value)</h4>
-              
                 <p class="description">Wrapper function for easier use of margin-left and margin-right.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">marginx()</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">margin-x(6px)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">margin-left: 6px;
 margin-right: 6px;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">opacity($opacity)</h4>
-              
                 <p class="description">Cross-browser opacity function.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">opc()</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">opacity(0.35)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-khtml-opacity: 0.35;
 -moz-opacity: 0.35;
 -webkit-opacity: 0.35;
 opacity: 0.35;
--ms-filter: progrid:DXImageTransform.Microsoft.Alpha(opacity=35);
-filter: alpha(opacity=35);</code></pre>
+-ms-filter: progrid:DXImageTransform.Microsoft.Alpha(opacity&#x3D;35);
+filter: alpha(opacity&#x3D;35);</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">nout()</h4>
-              
                 <p class="description">Removes the outline when focus state is active.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">nout()</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">a {
   outline: none;
@@ -2877,35 +1901,24 @@ a:focus {
   outline: none;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">top-triangle($size, $color)</h4>
-              
                 <p class="description">Displays a triangle at the element&#x27;s top.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">span:after { top-triangle(15px, $fff) }</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">span:after {
   border-bottom: 15px solid #fff;
@@ -2920,35 +1933,24 @@ a:focus {
   width: 1px;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">bottom-triangle($size, $color)</h4>
-              
                 <p class="description">Displays a triangle in the element&#x27;s bottom.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">span:after { bottom-triangle(15px, $fff) }</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">span:after {
   border-bottom: 15px solid transparent;
@@ -2963,35 +1965,24 @@ a:focus {
   width: 1px;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">left-triangle($size, $color)</h4>
-              
                 <p class="description">Displays a triangle in the element&#x27;s left.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">span:after { left-triangle(15px, $fff) }</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">span:after {
   border-bottom: 15px solid transparent;
@@ -3006,35 +1997,24 @@ a:focus {
   width: 1px;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">right-triangle($size, $color)</h4>
-              
                 <p class="description">Displays a triangle in the element&#x27;s right.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">span:after { right-triangle(15px, $fff) }</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">span:after {
   border-bottom: 15px solid transparent;
@@ -3049,38 +2029,26 @@ a:focus {
   width: 1px;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">$text-overflow</h4>
-              
                 <p class="description">Displays reticences at the line&#x27;s end in case it doesn&#x27;t fit.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">$txt-ovf, $txtovf</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">$text-overflow</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">display: inline-block
 max-widt: 100%
@@ -3088,38 +2056,26 @@ overflow: hidden
 text-overflow: ellipsis
 white-space: nowrap</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">$no-user-select</h4>
-              
                 <p class="description">Disable user content selection.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">$nousel</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">$no-user-select</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-khtml-user-select: none;
 -moz-user-select: none;
@@ -3128,38 +2084,26 @@ white-space: nowrap</code></pre>
 -webkit-user-select: none;
 user-select: none;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">user-select($color-1, $color-2)</h4>
-              
                 <p class="description">Changes the user content selection color.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">usel()</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">user-select(yellow, red)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">p::selection {
   color: red;
@@ -3170,75 +2114,51 @@ p::-moz-selection {
   background: red;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">$fix-flickering</h4>
-              
                 <p class="description">Fixes the flickering on pseudo elements when animated by transition.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">$fixfl</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">$fix-flickering</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-webkit-backface-visibility: hidden;
 -ms-backface-visibility: hidden;
 backface-visibility: hidden;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">transition($time, $ease, $where)</h4>
-              
                 <p class="description">Function for faster transition creation.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">transition(), trans()</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">transition(0.3s, ease-in-out, all)</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-khtml-transition: 0.3s ease-in-out all;
 -moz-transition: 0.3s ease-in-out all;
@@ -3247,73 +2167,49 @@ backface-visibility: hidden;</code></pre>
 -webkit-transition: 0.3s ease-in-out all;
 transition: 0.3s ease-in-out all;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">$nospeak</h4>
-              
                 <p class="description">Hides an element from screen readers.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">$no-speak</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">$nospeak</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">speak: none;</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">$hw-accelerated</h4>
-              
                 <p class="description">Enables hardware acceleration. Use at the desided element&#x27;s parent.</p>
-              
 
-              
                 <h5 class="no-mgn-btm">Alias:</h5>
                 <p class="alias">$hwacc</p>
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">$hw-accelerated</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-webkit-backface-visibility hidden
 -webkit-transform rotateZ( 360deg )
@@ -3321,35 +2217,24 @@ transition: 0.3s ease-in-out all;</code></pre>
 backface-visibility hidden
 perspective 1000</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">fixsel()</h4>
-              
                 <p class="description">Removes select tag&#x27;s default style.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">fixsel()</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">select {
   -moz-appearance: none;
@@ -3363,65 +2248,44 @@ select::-ms-expand {
   display: none;
 }</code></pre>
 
-                
-              
 
-              
 
-              
 
 
             </div>
 
         </div>
-        
 
           <div class="block mix stylus">
 
             <div class="info">
               <h4 data-format="(stylus)">$hyphen</h4>
-              
                 <p class="description">Add a hyphen to broken words.</p>
-              
 
-              
 
-              
               <h5 class="no-mgn-btm">Input:</h5>
 <pre><code class="less">$hyphen</code></pre>
-              
 
-              
               <h5 class="no-mgn-btm">Output:</h5>
 <pre><code class="css compensate">-moz-hyphens: auto;
 -ms-hyphens: auto;
 -webkit-hyphens: auto;
 hyphens: auto;</code></pre>
 
-                
-              
 
-              
               <p class="author">Author: Kenneth Auchenberg</p>
-              
 
-              
                   <p class="ref">
                     References:
-                    
                       <a href="https://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/" target="_blank" rel="bookmark">Link 0</a>
-                    
                   </p>
-              
 
 
             </div>
 
         </div>
-        
 
       </div>
-      
 
     </div>
 
