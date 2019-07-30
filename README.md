@@ -4,7 +4,7 @@ Koffie ☕️ [![License](https://img.shields.io/npm/l/koffie.svg)](#)
 [![npm version](https://img.shields.io/npm/v/koffie.svg?maxAge=2592000)](https://www.npmjs.com/package/koffie)
 [![Bower version](https://img.shields.io/bower/v/koffie.svg?maxAge=2592000)](#)
 [![Build Status](https://img.shields.io/travis/ghaschel/koffie.svg?maxAge=2592000)](https://travis-ci.org/ghaschel/koffie)
-[![devDependency Status](https://david-dm.org/ghaschel/koffie/dev-status.svg)](https://david-dm.org/ghaschel/koffie#info=devDependencies)
+[![devDependency Status](https://david-dm.org/ghaschel/koffie/dev-status.svg)](https://david-dm.org/ghaschel/koffie#info=devDependencies) [![Greenkeeper badge](https://badges.greenkeeper.io/ghaschel/koffie.svg)](https://greenkeeper.io/)
 
 *A pack of useful mixins, functions, classes and placeholders for a faster development. Available in Stylus, LESS, and SCSS.*
 
